@@ -1,3 +1,4 @@
 import './styles.css';
+import { createApp } from './app';
 
-document.querySelector<HTMLDivElement>('#app')!.textContent = 'でんしゃクイズ じゅんびちゅう';
+createApp(document.querySelector<HTMLElement>('#app')!).navigate('start');
