@@ -1,0 +1,14 @@
+[
+  { "id": "e5-hayabusa", "name": { "hiragana": "はやぶさ", "normal": "はやぶさ(E5系)" }, "category": "shinkansen", "image": "images/trains/e5-hayabusa.webp" },
+  { "id": "e6-komachi", "name": { "hiragana": "こまち", "normal": "こまち(E6系)" }, "category": "shinkansen", "image": "images/trains/e6-komachi.webp" },
+  { "id": "n700s-nozomi", "name": { "hiragana": "のぞみ", "normal": "のぞみ(N700S)" }, "category": "shinkansen", "image": "images/trains/n700s-nozomi.webp" },
+  { "id": "class923-doctor-yellow", "name": { "hiragana": "どくたーいえろー", "normal": "ドクターイエロー(923形)" }, "category": "shinkansen", "image": "images/trains/class923-doctor-yellow.webp" },
+  { "id": "e353-azusa", "name": { "hiragana": "あずさ", "normal": "あずさ(E353系)" }, "category": "express", "image": "images/trains/e353-azusa.webp", "lookalikes": ["e353-kaiji"] },
+  { "id": "e353-kaiji", "name": { "hiragana": "かいじ", "normal": "かいじ(E353系)" }, "category": "express", "image": "images/trains/e353-kaiji.webp", "lookalikes": ["e353-azusa"] },
+  { "id": "e657-hitachi", "name": { "hiragana": "ひたち", "normal": "ひたち(E657系)" }, "category": "express", "image": "images/trains/e657-hitachi.webp" },
+  { "id": "883-sonic", "name": { "hiragana": "そにっく", "normal": "ソニック(883系)" }, "category": "express", "image": "images/trains/883-sonic.webp" },
+  { "id": "e235-yamanote-sen", "name": { "hiragana": "やまのてせん", "normal": "山手線(E235系)" }, "category": "local", "image": "images/trains/e235-yamanote-sen.webp" },
+  { "id": "e233-chuo-sen", "name": { "hiragana": "ちゅうおうせん", "normal": "中央線(E233系)" }, "category": "local", "image": "images/trains/e233-chuo-sen.webp" },
+  { "id": "ef210-momotaro", "name": { "hiragana": "ももたろう", "normal": "桃太郎(EF210形・貨物)" }, "category": "local", "image": "images/trains/ef210-momotaro.webp" },
+  { "id": "metro1000-ginza-sen", "name": { "hiragana": "ぎんざせん", "normal": "銀座線(東京メトロ1000系)" }, "category": "local", "image": "images/trains/metro1000-ginza-sen.webp" }
+]

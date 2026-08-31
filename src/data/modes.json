@@ -1,0 +1,26 @@
+[
+  {
+    "id": "shinkansen",
+    "label": { "hiragana": "しんかんせん", "normal": "新幹線" },
+    "categories": ["shinkansen"],
+    "heroTrain": "images/hero/shinkansen.svg"
+  },
+  {
+    "id": "express",
+    "label": { "hiragana": "とっきゅう", "normal": "特急" },
+    "categories": ["express"],
+    "heroTrain": "images/hero/express.svg"
+  },
+  {
+    "id": "local",
+    "label": { "hiragana": "ふつうでんしゃ", "normal": "普通電車" },
+    "categories": ["local"],
+    "heroTrain": "images/hero/local.svg"
+  },
+  {
+    "id": "all",
+    "label": { "hiragana": "ぜんぶ", "normal": "ぜんぶ" },
+    "categories": ["shinkansen", "express", "local"],
+    "heroTrain": "images/hero/all.svg"
+  }
+]
