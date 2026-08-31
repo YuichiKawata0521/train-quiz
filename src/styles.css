@@ -1,0 +1,15 @@
+:root {
+  --blue: #1c7ed6;
+  --blue-dark: #1864ab;
+  --red: #e03131;
+  font-family: 'Hiragino Maru Gothic ProN', 'BIZ UDGothic', 'Yu Gothic', sans-serif;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body, #app { height: 100%; }
+body {
+  background: #e7f5ff;
+  -webkit-user-select: none;
+  user-select: none;
+  touch-action: manipulation;
+  overflow: hidden;
+}
