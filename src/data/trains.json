@@ -1,14 +1,1127 @@
 [
-  { "id": "e5-hayabusa", "name": { "hiragana": "はやぶさ", "normal": "はやぶさ(E5系)" }, "category": "shinkansen", "image": "images/trains/e5-hayabusa.webp" },
-  { "id": "e6-komachi", "name": { "hiragana": "こまち", "normal": "こまち(E6系)" }, "category": "shinkansen", "image": "images/trains/e6-komachi.webp" },
-  { "id": "n700s-nozomi", "name": { "hiragana": "のぞみ", "normal": "のぞみ(N700S)" }, "category": "shinkansen", "image": "images/trains/n700s-nozomi.webp" },
-  { "id": "class923-doctor-yellow", "name": { "hiragana": "どくたーいえろー", "normal": "ドクターイエロー(923形)" }, "category": "shinkansen", "image": "images/trains/class923-doctor-yellow.webp" },
-  { "id": "e353-azusa", "name": { "hiragana": "あずさ", "normal": "あずさ(E353系)" }, "category": "express", "image": "images/trains/e353-azusa.webp", "lookalikes": ["e353-kaiji"] },
-  { "id": "e353-kaiji", "name": { "hiragana": "かいじ", "normal": "かいじ(E353系)" }, "category": "express", "image": "images/trains/e353-kaiji.webp", "lookalikes": ["e353-azusa"] },
-  { "id": "e657-hitachi", "name": { "hiragana": "ひたち", "normal": "ひたち(E657系)" }, "category": "express", "image": "images/trains/e657-hitachi.webp" },
-  { "id": "883-sonic", "name": { "hiragana": "そにっく", "normal": "ソニック(883系)" }, "category": "express", "image": "images/trains/883-sonic.webp" },
-  { "id": "e235-yamanote-sen", "name": { "hiragana": "やまのてせん", "normal": "山手線(E235系)" }, "category": "local", "image": "images/trains/e235-yamanote-sen.webp" },
-  { "id": "e233-chuo-sen", "name": { "hiragana": "ちゅうおうせん", "normal": "中央線(E233系)" }, "category": "local", "image": "images/trains/e233-chuo-sen.webp" },
-  { "id": "ef210-momotaro", "name": { "hiragana": "ももたろう", "normal": "桃太郎(EF210形・貨物)" }, "category": "local", "image": "images/trains/ef210-momotaro.webp" },
-  { "id": "metro1000-ginza-sen", "name": { "hiragana": "ぎんざせん", "normal": "銀座線(東京メトロ1000系)" }, "category": "local", "image": "images/trains/metro1000-ginza-sen.webp" }
+  {
+    "id": "h5-hayabusa",
+    "name": {
+      "hiragana": "はやぶさ",
+      "normal": "はやぶさ(H5系)"
+    },
+    "category": "shinkansen",
+    "image": "images/trains/h5-hayabusa.webp",
+    "lookalikes": [
+      "e5-hayabusa"
+    ]
+  },
+  {
+    "id": "e5-hayabusa",
+    "name": {
+      "hiragana": "はやぶさ",
+      "normal": "はやぶさ(E5系)"
+    },
+    "category": "shinkansen",
+    "image": "images/trains/e5-hayabusa.webp",
+    "lookalikes": [
+      "h5-hayabusa"
+    ]
+  },
+  {
+    "id": "e2-hayate",
+    "name": {
+      "hiragana": "はやて",
+      "normal": "はやて(E2系)"
+    },
+    "category": "shinkansen",
+    "image": "images/trains/e2-hayate.webp",
+    "lookalikes": [
+      "e2-toki"
+    ]
+  },
+  {
+    "id": "e6-komachi",
+    "name": {
+      "hiragana": "こまち",
+      "normal": "こまち(E6系)"
+    },
+    "category": "shinkansen",
+    "image": "images/trains/e6-komachi.webp"
+  },
+  {
+    "id": "e3-tsubasa",
+    "name": {
+      "hiragana": "つばさ",
+      "normal": "つばさ(E3系)"
+    },
+    "category": "shinkansen",
+    "image": "images/trains/e3-tsubasa.webp"
+  },
+  {
+    "id": "e3-toreiyu-tsubasa",
+    "name": {
+      "hiragana": "とれいゆつばさ",
+      "normal": "とれいゆ つばさ(E3系)"
+    },
+    "category": "shinkansen",
+    "image": "images/trains/e3-toreiyu-tsubasa.webp"
+  },
+  {
+    "id": "e2-toki",
+    "name": {
+      "hiragana": "とき",
+      "normal": "とき(E2系)"
+    },
+    "category": "shinkansen",
+    "image": "images/trains/e2-toki.webp",
+    "lookalikes": [
+      "e2-hayate"
+    ]
+  },
+  {
+    "id": "e3-genbi-shinkansen",
+    "name": {
+      "hiragana": "げんびしんかんせん",
+      "normal": "げんびしんかんせん(E3系)"
+    },
+    "category": "shinkansen",
+    "image": "images/trains/e3-genbi-shinkansen.webp"
+  },
+  {
+    "id": "e7-kagayaki",
+    "name": {
+      "hiragana": "かがやき",
+      "normal": "かがやき(E7系)"
+    },
+    "category": "shinkansen",
+    "image": "images/trains/e7-kagayaki.webp"
+  },
+  {
+    "id": "n700s-nozomi",
+    "name": {
+      "hiragana": "のぞみ",
+      "normal": "のぞみ(N700S)"
+    },
+    "category": "shinkansen",
+    "image": "images/trains/n700s-nozomi.webp"
+  },
+  {
+    "id": "500-kodama",
+    "name": {
+      "hiragana": "こだま",
+      "normal": "こだま(500系)"
+    },
+    "category": "shinkansen",
+    "image": "images/trains/500-kodama.webp"
+  },
+  {
+    "id": "700-hikari-rail-star",
+    "name": {
+      "hiragana": "ひかりれーるすたー",
+      "normal": "ひかりレールスター(700系)"
+    },
+    "category": "shinkansen",
+    "image": "images/trains/700-hikari-rail-star.webp"
+  },
+  {
+    "id": "n700-mizuho",
+    "name": {
+      "hiragana": "みずほ",
+      "normal": "みずほ(N700系)"
+    },
+    "category": "shinkansen",
+    "image": "images/trains/n700-mizuho.webp",
+    "lookalikes": [
+      "n700-sakura"
+    ]
+  },
+  {
+    "id": "800-tsubame",
+    "name": {
+      "hiragana": "つばめ",
+      "normal": "つばめ(800系)"
+    },
+    "category": "shinkansen",
+    "image": "images/trains/800-tsubame.webp"
+  },
+  {
+    "id": "class923-doctor-yellow",
+    "name": {
+      "hiragana": "どくたーいえろー",
+      "normal": "ドクターイエロー(923形)"
+    },
+    "category": "shinkansen",
+    "image": "images/trains/class923-doctor-yellow.webp"
+  },
+  {
+    "id": "jreast-east-i",
+    "name": {
+      "hiragana": "いーすとあい",
+      "normal": "イーストアイ"
+    },
+    "category": "shinkansen",
+    "image": "images/trains/jreast-east-i.webp"
+  },
+  {
+    "id": "n700-sakura",
+    "name": {
+      "hiragana": "さくら",
+      "normal": "さくら(N700系)"
+    },
+    "category": "shinkansen",
+    "image": "images/trains/n700-sakura.webp",
+    "lookalikes": [
+      "n700-mizuho"
+    ]
+  },
+  {
+    "id": "e956-alfa-x",
+    "name": {
+      "hiragana": "あるふぁえっくす",
+      "normal": "ALFA-X(E956形)"
+    },
+    "category": "shinkansen",
+    "image": "images/trains/e956-alfa-x.webp"
+  },
+  {
+    "id": "kiha261-soya",
+    "name": {
+      "hiragana": "そうや",
+      "normal": "宗谷(キハ261系)"
+    },
+    "category": "express",
+    "image": "images/trains/kiha261-soya.webp",
+    "lookalikes": [
+      "kiha261-super-tokachi",
+      "kiha261-ozora"
+    ]
+  },
+  {
+    "id": "kiha261-super-tokachi",
+    "name": {
+      "hiragana": "すーぱーとかち",
+      "normal": "スーパーとかち(キハ261系)"
+    },
+    "category": "express",
+    "image": "images/trains/kiha261-super-tokachi.webp",
+    "lookalikes": [
+      "kiha261-soya",
+      "kiha261-ozora"
+    ]
+  },
+  {
+    "id": "kiha183-taisetsu",
+    "name": {
+      "hiragana": "たいせつ",
+      "normal": "大雪(キハ183系)"
+    },
+    "category": "express",
+    "image": "images/trains/kiha183-taisetsu.webp"
+  },
+  {
+    "id": "kiha283-okhotsk",
+    "name": {
+      "hiragana": "おほーつく",
+      "normal": "オホーツク(キハ283系)"
+    },
+    "category": "express",
+    "image": "images/trains/kiha283-okhotsk.webp",
+    "lookalikes": [
+      "kiha283-super-ozora"
+    ]
+  },
+  {
+    "id": "kiha283-super-ozora",
+    "name": {
+      "hiragana": "すーぱーおおぞら",
+      "normal": "スーパーおおぞら(キハ283系)"
+    },
+    "category": "express",
+    "image": "images/trains/kiha283-super-ozora.webp",
+    "lookalikes": [
+      "kiha283-okhotsk"
+    ]
+  },
+  {
+    "id": "kiha261-ozora",
+    "name": {
+      "hiragana": "おおぞら",
+      "normal": "おおぞら(キハ261系)"
+    },
+    "category": "express",
+    "image": "images/trains/kiha261-ozora.webp",
+    "lookalikes": [
+      "kiha261-soya",
+      "kiha261-super-tokachi"
+    ]
+  },
+  {
+    "id": "789-rairakku",
+    "name": {
+      "hiragana": "らいらっく",
+      "normal": "ライラック(789系)"
+    },
+    "category": "express",
+    "image": "images/trains/789-rairakku.webp"
+  },
+  {
+    "id": "789-kamui",
+    "name": {
+      "hiragana": "かむい",
+      "normal": "カムイ(789系)"
+    },
+    "category": "express",
+    "image": "images/trains/789-kamui.webp"
+  },
+  {
+    "id": "785-suzuran",
+    "name": {
+      "hiragana": "すずらん",
+      "normal": "すずらん(785系)"
+    },
+    "category": "express",
+    "image": "images/trains/785-suzuran.webp"
+  },
+  {
+    "id": "e653-inaho",
+    "name": {
+      "hiragana": "いなほ",
+      "normal": "いなほ(E653系)"
+    },
+    "category": "express",
+    "image": "images/trains/e653-inaho.webp"
+  },
+  {
+    "id": "e653-shirayuki",
+    "name": {
+      "hiragana": "しらゆき",
+      "normal": "しらゆき(E653系)"
+    },
+    "category": "express",
+    "image": "images/trains/e653-shirayuki.webp"
+  },
+  {
+    "id": "e751-tsugaru",
+    "name": {
+      "hiragana": "つがる",
+      "normal": "つがる(E751系)"
+    },
+    "category": "express",
+    "image": "images/trains/e751-tsugaru.webp"
+  },
+  {
+    "id": "e657-hitachi",
+    "name": {
+      "hiragana": "ひたち",
+      "normal": "ひたち(E657系)"
+    },
+    "category": "express",
+    "image": "images/trains/e657-hitachi.webp"
+  },
+  {
+    "id": "e257-wakashio",
+    "name": {
+      "hiragana": "わかしお",
+      "normal": "わかしお(E257系)"
+    },
+    "category": "express",
+    "image": "images/trains/e257-wakashio.webp"
+  },
+  {
+    "id": "e259-narita-express",
+    "name": {
+      "hiragana": "なりたえくすぷれす",
+      "normal": "成田エクスプレス(E259系)"
+    },
+    "category": "express",
+    "image": "images/trains/e259-narita-express.webp"
+  },
+  {
+    "id": "251-super-view-odoriko",
+    "name": {
+      "hiragana": "すーぱーびゅーおどりこ",
+      "normal": "スーパービュー踊り子(251系)"
+    },
+    "category": "express",
+    "image": "images/trains/251-super-view-odoriko.webp"
+  },
+  {
+    "id": "e257-odoriko",
+    "name": {
+      "hiragana": "おどりこ",
+      "normal": "踊り子(E257系)"
+    },
+    "category": "express",
+    "image": "images/trains/e257-odoriko.webp"
+  },
+  {
+    "id": "e261-saphir-odoriko",
+    "name": {
+      "hiragana": "さふぃーるおどりこ",
+      "normal": "サフィール踊り子(E261系)"
+    },
+    "category": "express",
+    "image": "images/trains/e261-saphir-odoriko.webp"
+  },
+  {
+    "id": "e353-azusa",
+    "name": {
+      "hiragana": "あずさ",
+      "normal": "あずさ(E353系)"
+    },
+    "category": "express",
+    "image": "images/trains/e353-azusa.webp",
+    "lookalikes": [
+      "e353-kaiji"
+    ]
+  },
+  {
+    "id": "e351-super-azusa",
+    "name": {
+      "hiragana": "すーぱーあずさ",
+      "normal": "スーパーあずさ(E351系)"
+    },
+    "category": "express",
+    "image": "images/trains/e351-super-azusa.webp"
+  },
+  {
+    "id": "e353-kaiji",
+    "name": {
+      "hiragana": "かいじ",
+      "normal": "かいじ(E353系)"
+    },
+    "category": "express",
+    "image": "images/trains/e353-kaiji.webp",
+    "lookalikes": [
+      "e353-azusa"
+    ]
+  },
+  {
+    "id": "ae-skyliner",
+    "name": {
+      "hiragana": "すかいらいなー",
+      "normal": "スカイライナー(京成AE形)"
+    },
+    "category": "express",
+    "image": "images/trains/ae-skyliner.webp"
+  },
+  {
+    "id": "gse-romance-car",
+    "name": {
+      "hiragana": "ろまんすかー",
+      "normal": "ロマンスカー(小田急GSE)"
+    },
+    "category": "express",
+    "image": "images/trains/gse-romance-car.webp"
+  },
+  {
+    "id": "100-spacia",
+    "name": {
+      "hiragana": "すぺーしあ",
+      "normal": "スペーシア(東武100系)"
+    },
+    "category": "express",
+    "image": "images/trains/100-spacia.webp"
+  },
+  {
+    "id": "n100-spacia-x",
+    "name": {
+      "hiragana": "すぺーしあえっくす",
+      "normal": "スペーシアX(東武N100系)"
+    },
+    "category": "express",
+    "image": "images/trains/n100-spacia-x.webp"
+  },
+  {
+    "id": "500-liberty-kegon",
+    "name": {
+      "hiragana": "りばてぃけごん",
+      "normal": "リバティけごん(東武500系)"
+    },
+    "category": "express",
+    "image": "images/trains/500-liberty-kegon.webp"
+  },
+  {
+    "id": "10000-new-red-arrow",
+    "name": {
+      "hiragana": "にゅーれっどあろー",
+      "normal": "ニューレッドアロー(西武10000系)"
+    },
+    "category": "express",
+    "image": "images/trains/10000-new-red-arrow.webp"
+  },
+  {
+    "id": "001-laview",
+    "name": {
+      "hiragana": "らびゅー",
+      "normal": "Laview(西武001系)"
+    },
+    "category": "express",
+    "image": "images/trains/001-laview.webp"
+  },
+  {
+    "id": "8000-fujisan-tokkyu",
+    "name": {
+      "hiragana": "ふじさんとっきゅう",
+      "normal": "フジサン特急(富士急行8000系)"
+    },
+    "category": "express",
+    "image": "images/trains/8000-fujisan-tokkyu.webp"
+  },
+  {
+    "id": "383-wide-view-shinano",
+    "name": {
+      "hiragana": "わいどびゅーしなの",
+      "normal": "ワイドビューしなの(383系)"
+    },
+    "category": "express",
+    "image": "images/trains/383-wide-view-shinano.webp"
+  },
+  {
+    "id": "kiha85-wide-view-hida",
+    "name": {
+      "hiragana": "わいどびゅーひだ",
+      "normal": "ワイドビューひだ(キハ85系)"
+    },
+    "category": "express",
+    "image": "images/trains/kiha85-wide-view-hida.webp"
+  },
+  {
+    "id": "1000-yukemuri",
+    "name": {
+      "hiragana": "ゆけむり",
+      "normal": "ゆけむり(長野電鉄1000系)"
+    },
+    "category": "express",
+    "image": "images/trains/1000-yukemuri.webp"
+  },
+  {
+    "id": "16010-alps-express",
+    "name": {
+      "hiragana": "あるぷすえきすぷれす",
+      "normal": "アルプスエキスプレス(富山地鉄16010形)"
+    },
+    "category": "express",
+    "image": "images/trains/16010-alps-express.webp"
+  },
+  {
+    "id": "2000-mu-sky",
+    "name": {
+      "hiragana": "みゅーすかい",
+      "normal": "ミュースカイ(名鉄2000系)"
+    },
+    "category": "express",
+    "image": "images/trains/2000-mu-sky.webp"
+  },
+  {
+    "id": "683-thunderbird",
+    "name": {
+      "hiragana": "さんだーばーど",
+      "normal": "サンダーバード(683系)"
+    },
+    "category": "express",
+    "image": "images/trains/683-thunderbird.webp"
+  },
+  {
+    "id": "281-haruka",
+    "name": {
+      "hiragana": "はるか",
+      "normal": "はるか(281系)"
+    },
+    "category": "express",
+    "image": "images/trains/281-haruka.webp"
+  },
+  {
+    "id": "287-kuroshio",
+    "name": {
+      "hiragana": "くろしお",
+      "normal": "くろしお(287系)"
+    },
+    "category": "express",
+    "image": "images/trains/287-kuroshio.webp"
+  },
+  {
+    "id": "jrwest-panda-kuroshio",
+    "name": {
+      "hiragana": "ぱんだくろしお",
+      "normal": "パンダくろしお"
+    },
+    "category": "express",
+    "image": "images/trains/jrwest-panda-kuroshio.webp"
+  },
+  {
+    "id": "289-kounotori",
+    "name": {
+      "hiragana": "こうのとり",
+      "normal": "こうのとり(289系)"
+    },
+    "category": "express",
+    "image": "images/trains/289-kounotori.webp"
+  },
+  {
+    "id": "kiha189-hamakaze",
+    "name": {
+      "hiragana": "はまかぜ",
+      "normal": "はまかぜ(キハ189系)"
+    },
+    "category": "express",
+    "image": "images/trains/kiha189-hamakaze.webp"
+  },
+  {
+    "id": "50000-rapit",
+    "name": {
+      "hiragana": "らぴーと",
+      "normal": "ラピート(南海50000系)"
+    },
+    "category": "express",
+    "image": "images/trains/50000-rapit.webp"
+  },
+  {
+    "id": "21000-urban-liner",
+    "name": {
+      "hiragana": "あーばんらいなー",
+      "normal": "アーバンライナー(近鉄21000系)"
+    },
+    "category": "express",
+    "image": "images/trains/21000-urban-liner.webp"
+  },
+  {
+    "id": "80000-hinotori",
+    "name": {
+      "hiragana": "ひのとり",
+      "normal": "ひのとり(近鉄80000系)"
+    },
+    "category": "express",
+    "image": "images/trains/80000-hinotori.webp"
+  },
+  {
+    "id": "50000-shimakaze",
+    "name": {
+      "hiragana": "しまかぜ",
+      "normal": "しまかぜ(近鉄50000系)"
+    },
+    "category": "express",
+    "image": "images/trains/50000-shimakaze.webp"
+  },
+  {
+    "id": "8000-elegant-saloon",
+    "name": {
+      "hiragana": "えれがんとさるーん",
+      "normal": "エレガント・サルーン(京阪8000系)"
+    },
+    "category": "express",
+    "image": "images/trains/8000-elegant-saloon.webp"
+  },
+  {
+    "id": "ktr8000-tango-no-umi",
+    "name": {
+      "hiragana": "たんごのうみ",
+      "normal": "丹後の海(京都丹後鉄道KTR8000形)"
+    },
+    "category": "express",
+    "image": "images/trains/ktr8000-tango-no-umi.webp"
+  },
+  {
+    "id": "273-yakumo",
+    "name": {
+      "hiragana": "やくも",
+      "normal": "やくも(273系)"
+    },
+    "category": "express",
+    "image": "images/trains/273-yakumo.webp"
+  },
+  {
+    "id": "hot7000-super-hakuto",
+    "name": {
+      "hiragana": "すーぱーはくと",
+      "normal": "スーパーはくと(HOT7000系)"
+    },
+    "category": "express",
+    "image": "images/trains/hot7000-super-hakuto.webp"
+  },
+  {
+    "id": "kiha187-super-oki",
+    "name": {
+      "hiragana": "すーぱーおき",
+      "normal": "スーパーおき(キハ187系)"
+    },
+    "category": "express",
+    "image": "images/trains/kiha187-super-oki.webp"
+  },
+  {
+    "id": "2700-uzushio",
+    "name": {
+      "hiragana": "うずしお",
+      "normal": "うずしお(2700系)"
+    },
+    "category": "express",
+    "image": "images/trains/2700-uzushio.webp",
+    "lookalikes": [
+      "2700-nanpu"
+    ]
+  },
+  {
+    "id": "2700-nanpu",
+    "name": {
+      "hiragana": "なんぷう",
+      "normal": "南風(2700系)"
+    },
+    "category": "express",
+    "image": "images/trains/2700-nanpu.webp",
+    "lookalikes": [
+      "2700-uzushio"
+    ]
+  },
+  {
+    "id": "8000-shiokaze",
+    "name": {
+      "hiragana": "しおかぜ",
+      "normal": "しおかぜ(8000系)"
+    },
+    "category": "express",
+    "image": "images/trains/8000-shiokaze.webp"
+  },
+  {
+    "id": "8600-ishizuchi",
+    "name": {
+      "hiragana": "いしづち",
+      "normal": "いしづち(8600系)"
+    },
+    "category": "express",
+    "image": "images/trains/8600-ishizuchi.webp"
+  },
+  {
+    "id": "2000-uwakai",
+    "name": {
+      "hiragana": "うわかい",
+      "normal": "宇和海(2000系)"
+    },
+    "category": "express",
+    "image": "images/trains/2000-uwakai.webp"
+  },
+  {
+    "id": "kiha185-tsurugisan",
+    "name": {
+      "hiragana": "つるぎさん",
+      "normal": "剣山(キハ185系)"
+    },
+    "category": "express",
+    "image": "images/trains/kiha185-tsurugisan.webp"
+  },
+  {
+    "id": "883-sonic",
+    "name": {
+      "hiragana": "そにっく",
+      "normal": "ソニック(883系)"
+    },
+    "category": "express",
+    "image": "images/trains/883-sonic.webp"
+  },
+  {
+    "id": "885-kamome",
+    "name": {
+      "hiragana": "かもめ",
+      "normal": "かもめ(885系)"
+    },
+    "category": "express",
+    "image": "images/trains/885-kamome.webp"
+  },
+  {
+    "id": "787-kirameki",
+    "name": {
+      "hiragana": "きらめき",
+      "normal": "きらめき(787系)"
+    },
+    "category": "express",
+    "image": "images/trains/787-kirameki.webp"
+  },
+  {
+    "id": "783-huis-ten-bosch",
+    "name": {
+      "hiragana": "はうすてんぼす",
+      "normal": "ハウステンボス(783系)"
+    },
+    "category": "express",
+    "image": "images/trains/783-huis-ten-bosch.webp"
+  },
+  {
+    "id": "kiha72-yufuin-no-mori",
+    "name": {
+      "hiragana": "ゆふいんのもり",
+      "normal": "ゆふいんの森(キハ72系)"
+    },
+    "category": "express",
+    "image": "images/trains/kiha72-yufuin-no-mori.webp"
+  },
+  {
+    "id": "kiha183-aso-boy",
+    "name": {
+      "hiragana": "あそぼーい",
+      "normal": "あそぼーい!(キハ183系)"
+    },
+    "category": "express",
+    "image": "images/trains/kiha183-aso-boy.webp"
+  },
+  {
+    "id": "kiha185-kyushu-odan-tokkyu",
+    "name": {
+      "hiragana": "きゅうしゅうおうだんとっきゅう",
+      "normal": "九州横断特急(キハ185系)"
+    },
+    "category": "express",
+    "image": "images/trains/kiha185-kyushu-odan-tokkyu.webp"
+  },
+  {
+    "id": "kiha47-ibusuki-no-tamatebako",
+    "name": {
+      "hiragana": "いぶすきのたまてばこ",
+      "normal": "指宿のたまて箱(キハ47形)"
+    },
+    "category": "express",
+    "image": "images/trains/kiha47-ibusuki-no-tamatebako.webp"
+  },
+  {
+    "id": "kiha125-umisachi-yamasachi",
+    "name": {
+      "hiragana": "うみさちやまさち",
+      "normal": "海幸山幸(キハ125形)"
+    },
+    "category": "express",
+    "image": "images/trains/kiha125-umisachi-yamasachi.webp"
+  },
+  {
+    "id": "e235-yamanote-sen",
+    "name": {
+      "hiragana": "やまのてせん",
+      "normal": "山手線(E235系)"
+    },
+    "category": "local",
+    "image": "images/trains/e235-yamanote-sen.webp"
+  },
+  {
+    "id": "e233-keihin-tohoku-sen",
+    "name": {
+      "hiragana": "けいひんとうほくせん",
+      "normal": "京浜東北線(E233系)"
+    },
+    "category": "local",
+    "image": "images/trains/e233-keihin-tohoku-sen.webp"
+  },
+  {
+    "id": "e233-chuo-sen",
+    "name": {
+      "hiragana": "ちゅうおうせん",
+      "normal": "中央線(E233系)"
+    },
+    "category": "local",
+    "image": "images/trains/e233-chuo-sen.webp"
+  },
+  {
+    "id": "e231-sobu-hon-sen",
+    "name": {
+      "hiragana": "そうぶほんせん",
+      "normal": "総武本線(E231系・黄色)"
+    },
+    "category": "local",
+    "image": "images/trains/e231-sobu-hon-sen.webp"
+  },
+  {
+    "id": "e235-yokosuka-sen",
+    "name": {
+      "hiragana": "よこすかせん",
+      "normal": "横須賀線(E235系1000番台)"
+    },
+    "category": "local",
+    "image": "images/trains/e235-yokosuka-sen.webp"
+  },
+  {
+    "id": "e233-tokaido-sen",
+    "name": {
+      "hiragana": "とうかいどうせん",
+      "normal": "東海道線(E233系)"
+    },
+    "category": "local",
+    "image": "images/trains/e233-tokaido-sen.webp"
+  },
+  {
+    "id": "e233-saikyo-sen",
+    "name": {
+      "hiragana": "さいきょうせん",
+      "normal": "埼京線(E233系)"
+    },
+    "category": "local",
+    "image": "images/trains/e233-saikyo-sen.webp"
+  },
+  {
+    "id": "e233-keiyo-sen",
+    "name": {
+      "hiragana": "けいようせん",
+      "normal": "京葉線(E233系)"
+    },
+    "category": "local",
+    "image": "images/trains/e233-keiyo-sen.webp"
+  },
+  {
+    "id": "e531-joban-sen",
+    "name": {
+      "hiragana": "じょうばんせん",
+      "normal": "常磐線(E531系)"
+    },
+    "category": "local",
+    "image": "images/trains/e531-joban-sen.webp"
+  },
+  {
+    "id": "metro1000-ginza-sen",
+    "name": {
+      "hiragana": "ぎんざせん",
+      "normal": "銀座線(東京メトロ1000系)"
+    },
+    "category": "local",
+    "image": "images/trains/metro1000-ginza-sen.webp"
+  },
+  {
+    "id": "metro2000-marunouchi-sen",
+    "name": {
+      "hiragana": "まるのうちせん",
+      "normal": "丸ノ内線(東京メトロ2000系)"
+    },
+    "category": "local",
+    "image": "images/trains/metro2000-marunouchi-sen.webp"
+  },
+  {
+    "id": "keisei3000-keisei-sen",
+    "name": {
+      "hiragana": "けいせいせん",
+      "normal": "京成線(3000形)"
+    },
+    "category": "local",
+    "image": "images/trains/keisei3000-keisei-sen.webp"
+  },
+  {
+    "id": "keikyu2100-keikyu-sen",
+    "name": {
+      "hiragana": "けいきゅうせん",
+      "normal": "京急電車(2100形)"
+    },
+    "category": "local",
+    "image": "images/trains/keikyu2100-keikyu-sen.webp"
+  },
+  {
+    "id": "sotetsu20000-sotetsu-sen",
+    "name": {
+      "hiragana": "そうてつせん",
+      "normal": "相鉄線(20000系)"
+    },
+    "category": "local",
+    "image": "images/trains/sotetsu20000-sotetsu-sen.webp"
+  },
+  {
+    "id": "yokohama3000-blue-line",
+    "name": {
+      "hiragana": "ぶるーらいん",
+      "normal": "ブルーライン(横浜市営地下鉄3000形)"
+    },
+    "category": "local",
+    "image": "images/trains/yokohama3000-blue-line.webp"
+  },
+  {
+    "id": "7300-yurikamome",
+    "name": {
+      "hiragana": "ゆりかもめ",
+      "normal": "ゆりかもめ(7300系)"
+    },
+    "category": "local",
+    "image": "images/trains/7300-yurikamome.webp"
+  },
+  {
+    "id": "monorail10000-tokyo-monorail",
+    "name": {
+      "hiragana": "とうきょうものれーる",
+      "normal": "東京モノレール(10000形)"
+    },
+    "category": "local",
+    "image": "images/trains/monorail10000-tokyo-monorail.webp"
+  },
+  {
+    "id": "toden8900-arakawa-sen",
+    "name": {
+      "hiragana": "とでんあらかわせん",
+      "normal": "都電荒川線(8900形)"
+    },
+    "category": "local",
+    "image": "images/trains/toden8900-arakawa-sen.webp"
+  },
+  {
+    "id": "enoden300-enoden",
+    "name": {
+      "hiragana": "えのでん",
+      "normal": "江ノ電(300形)"
+    },
+    "category": "local",
+    "image": "images/trains/enoden300-enoden.webp"
+  },
+  {
+    "id": "allegra-hakone-tozan-densha",
+    "name": {
+      "hiragana": "はこねとざんでんしゃ",
+      "normal": "箱根登山電車(アレグラ号)"
+    },
+    "category": "local",
+    "image": "images/trains/allegra-hakone-tozan-densha.webp"
+  },
+  {
+    "id": "323-osaka-kanjo-sen",
+    "name": {
+      "hiragana": "おおさかかんじょうせん",
+      "normal": "大阪環状線(323系)"
+    },
+    "category": "local",
+    "image": "images/trains/323-osaka-kanjo-sen.webp"
+  },
+  {
+    "id": "225-shin-kaisoku",
+    "name": {
+      "hiragana": "しんかいそく",
+      "normal": "新快速(225系)"
+    },
+    "category": "local",
+    "image": "images/trains/225-shin-kaisoku.webp",
+    "lookalikes": [
+      "225-hanwa-sen"
+    ]
+  },
+  {
+    "id": "225-hanwa-sen",
+    "name": {
+      "hiragana": "はんわせん",
+      "normal": "阪和線(225系)"
+    },
+    "category": "local",
+    "image": "images/trains/225-hanwa-sen.webp",
+    "lookalikes": [
+      "225-shin-kaisoku"
+    ]
+  },
+  {
+    "id": "207-fukuchiyama-sen",
+    "name": {
+      "hiragana": "ふくちやません",
+      "normal": "福知山線(207系)"
+    },
+    "category": "local",
+    "image": "images/trains/207-fukuchiyama-sen.webp"
+  },
+  {
+    "id": "osakametro30000-midosuji-sen",
+    "name": {
+      "hiragana": "みどうすじせん",
+      "normal": "御堂筋線(大阪メトロ30000系)"
+    },
+    "category": "local",
+    "image": "images/trains/osakametro30000-midosuji-sen.webp"
+  },
+  {
+    "id": "hankyu1000-hankyu-dentetsu",
+    "name": {
+      "hiragana": "はんきゅうでんてつ",
+      "normal": "阪急電鉄(1000系)"
+    },
+    "category": "local",
+    "image": "images/trains/hankyu1000-hankyu-dentetsu.webp"
+  },
+  {
+    "id": "hanshin1000-hanshin-sen",
+    "name": {
+      "hiragana": "はんしんせん",
+      "normal": "阪神線(1000系)"
+    },
+    "category": "local",
+    "image": "images/trains/hanshin1000-hanshin-sen.webp"
+  },
+  {
+    "id": "nankai8300-nankai-sen",
+    "name": {
+      "hiragana": "なんかいせん",
+      "normal": "南海線(8300系)"
+    },
+    "category": "local",
+    "image": "images/trains/nankai8300-nankai-sen.webp"
+  },
+  {
+    "id": "mo161-hankai-densha",
+    "name": {
+      "hiragana": "はんかいでんしゃ",
+      "normal": "阪堺電車(モ161形)"
+    },
+    "category": "local",
+    "image": "images/trains/mo161-hankai-densha.webp"
+  },
+  {
+    "id": "kyoto20-karasuma-sen",
+    "name": {
+      "hiragana": "からすません",
+      "normal": "烏丸線(京都市営地下鉄20系)"
+    },
+    "category": "local",
+    "image": "images/trains/kyoto20-karasuma-sen.webp"
+  },
+  {
+    "id": "kobe5000-kaigan-sen",
+    "name": {
+      "hiragana": "かいがんせん",
+      "normal": "海岸線(神戸市営地下鉄5000形)"
+    },
+    "category": "local",
+    "image": "images/trains/kobe5000-kaigan-sen.webp"
+  },
+  {
+    "id": "2020-port-liner",
+    "name": {
+      "hiragana": "ぽーとらいなー",
+      "normal": "ポートライナー(神戸新交通2020形)"
+    },
+    "category": "local",
+    "image": "images/trains/2020-port-liner.webp"
+  },
+  {
+    "id": "nishitetsu3000-tenjin-omuta-sen",
+    "name": {
+      "hiragana": "にしてつてんじんおおむたせん",
+      "normal": "西鉄天神大牟田線(3000形)"
+    },
+    "category": "local",
+    "image": "images/trains/nishitetsu3000-tenjin-omuta-sen.webp"
+  },
+  {
+    "id": "fukuoka3000-nanakuma-sen",
+    "name": {
+      "hiragana": "ななくません",
+      "normal": "七隈線(福岡市地下鉄3000系)"
+    },
+    "category": "local",
+    "image": "images/trains/fukuoka3000-nanakuma-sen.webp"
+  },
+  {
+    "id": "ef210-momotaro",
+    "name": {
+      "hiragana": "ももたろう",
+      "normal": "桃太郎(EF210形・貨物)"
+    },
+    "category": "local",
+    "image": "images/trains/ef210-momotaro.webp"
+  },
+  {
+    "id": "eh500-kintaro",
+    "name": {
+      "hiragana": "きんたろう",
+      "normal": "金太郎(EH500形・貨物)"
+    },
+    "category": "local",
+    "image": "images/trains/eh500-kintaro.webp"
+  },
+  {
+    "id": "d51-degoichi",
+    "name": {
+      "hiragana": "でごいち",
+      "normal": "デゴイチ(D51形蒸気機関車)"
+    },
+    "category": "local",
+    "image": "images/trains/d51-degoichi.webp"
+  }
 ]
