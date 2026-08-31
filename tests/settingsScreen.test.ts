@@ -51,4 +51,13 @@ describe('renderSettingsScreen', () => {
     expect(credits).toContain('Taro');
     expect(credits).toContain('CC BY-SA 4.0');
   });
+  it('おとを変更すると即保存される', () => {
+    const ctx = fixtureCtx();
+    renderSettingsScreen(ctx);
+    const checkbox = ctx.root.querySelector<HTMLInputElement>('input[name=sound]')!;
+    checkbox.checked = false;
+    checkbox.dispatchEvent(new Event('change', { bubbles: true }));
+    expect(ctx.settings.sound).toBe(false);
+    expect(loadSettings().sound).toBe(false);
+  });
 });

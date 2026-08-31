@@ -39,7 +39,7 @@ export function renderSettingsScreen(ctx: AppContext): void {
       <button class="btn btn-back" data-action="back">もどる</button>
     </section>`;
 
-  ctx.root.addEventListener('change', (e) => {
+  ctx.root.querySelector<HTMLElement>('.screen-settings')!.addEventListener('change', (e) => {
     const input = e.target as HTMLInputElement;
     if (input.name === 'notation') ctx.settings.notation = input.value as 'hiragana' | 'normal';
     if (input.name === 'count') ctx.settings.questionCount = Number(input.value) as 5 | 7 | 10;
