@@ -58,6 +58,8 @@ describe('renderQuestion', () => {
     buttons[wrongIndex].click();
     expect(ctx.root.querySelector<HTMLElement>('.overlay')!.hidden).toBe(false);
     expect(ctx.root.querySelector('.verdict')!.textContent).toBe('もういっかい');
+    expect(ctx.audio.play).toHaveBeenCalledWith('wrong');
+    expect(ctx.root.querySelector<HTMLImageElement>('.conductor')!.src).toContain('sad.png');
     vi.advanceTimersByTime(1500);
     expect(ctx.root.querySelector<HTMLElement>('.overlay')!.hidden).toBe(true);
     expect(buttons[wrongIndex].disabled).toBe(true);
@@ -72,6 +74,8 @@ describe('renderQuestion', () => {
     const buttons = [...ctx.root.querySelectorAll<HTMLButtonElement>('.choice')];
     buttons[q.correctIndex].click();
     expect(ctx.root.querySelector('.verdict')!.textContent).toBe('せいかい');
+    expect(ctx.audio.play).toHaveBeenCalledWith('horn');
+    expect(ctx.root.querySelector<HTMLImageElement>('.conductor')!.src).toContain('happy.png');
     vi.advanceTimersByTime(1500);
     expect(ctx.navigate).toHaveBeenCalledWith('interlude');
   });
@@ -84,5 +88,18 @@ describe('renderQuestion', () => {
     buttons[q.correctIndex].click();
     vi.advanceTimersByTime(1500);
     expect(ctx.navigate).toHaveBeenCalledWith('arrival');
+  });
+
+  it('進捗バー: 現在の問題までの駅がpassedになり、電車アイコンが表示される', () => {
+    const ctx = fixtureCtx(3);
+    renderQuestion(ctx);
+    const stations = [...ctx.root.querySelectorAll<HTMLElement>('.station')];
+    expect(stations).toHaveLength(3);
+    expect(stations[0].classList.contains('passed')).toBe(true);
+    expect(stations[1].classList.contains('passed')).toBe(false);
+    expect(stations[2].classList.contains('passed')).toBe(false);
+    const progressTrain = ctx.root.querySelector<HTMLImageElement>('.progress-train')!;
+    expect(progressTrain).not.toBeNull();
+    expect(progressTrain.src).toContain('images/hero/local.svg');
   });
 });
