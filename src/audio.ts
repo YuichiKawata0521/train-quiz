@@ -12,14 +12,18 @@ export function initAudio(
   for (const name of NAMES) {
     elements.set(name, new AudioCtor(asset(`sounds/${name}.wav`)));
   }
+  const intentionallyPlaying = new Set<HTMLAudioElement>();
   // iOS Safari: 最初のタップで全要素を一度再生してアンロック
   const unlock = () => {
     for (const el of elements.values()) {
+      if (intentionallyPlaying.has(el)) continue;
       el.muted = true;
       el.play()
         .then(() => {
-          el.pause();
-          el.currentTime = 0;
+          if (!intentionallyPlaying.has(el)) {
+            el.pause();
+            el.currentTime = 0;
+          }
           el.muted = false;
         })
         .catch(() => {
@@ -34,6 +38,8 @@ export function initAudio(
     play(name) {
       if (!getSettings().sound) return;
       const el = elements.get(name)!;
+      intentionallyPlaying.add(el);
+      el.muted = false;
       el.currentTime = 0;
       void el.play().catch(() => {});
     },
