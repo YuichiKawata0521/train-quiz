@@ -13,32 +13,42 @@ const FILES: Record<SoundName, string> = {
   run: 'run.mp3',
 };
 
-export function initAudio(
-  getSettings: () => Settings,
-  AudioCtor: typeof Audio = Audio,
-): AudioPlayer {
-  const elements = new Map<SoundName, HTMLAudioElement>();
+// HTMLAudio は iOS の PWA(Service Workerキャッシュ)で2回目以降の再生が
+// 失敗する(Range非対応シーク・ended状態の再再生quirk)。Web Audio API の
+// バッファ再生なら毎回新しいソースを作るため確実に鳴る。
+export interface AudioContextLike {
+  state: string;
+  destination: AudioNode | object;
+  resume(): Promise<void>;
+  decodeAudioData(data: ArrayBuffer): Promise<AudioBuffer>;
+  createBufferSource(): AudioBufferSourceNode;
+}
+
+interface AudioDeps {
+  context?: AudioContextLike;
+  fetchFn?: typeof fetch;
+}
+
+export function initAudio(getSettings: () => Settings, deps: AudioDeps = {}): AudioPlayer {
+  const context: AudioContextLike = deps.context ?? new AudioContext();
+  const fetchFn = deps.fetchFn ?? fetch.bind(globalThis);
+
+  const buffers = new Map<SoundName, AudioBuffer>();
+  const playing = new Map<SoundName, AudioBufferSourceNode>();
+
   for (const name of Object.keys(FILES) as SoundName[]) {
-    elements.set(name, new AudioCtor(asset(`sounds/${FILES[name]}`)));
+    fetchFn(asset(`sounds/${FILES[name]}`))
+      .then((res) => res.arrayBuffer())
+      .then((data) => context.decodeAudioData(data))
+      .then((buffer) => {
+        buffers.set(name, buffer);
+      })
+      .catch(() => {});
   }
-  const intentionallyPlaying = new Set<HTMLAudioElement>();
-  // iOS Safari: 最初のタップで全要素を一度再生してアンロック
+
+  // iOS Safari: AudioContext は suspended で始まるため、最初のタップで resume
   const unlock = () => {
-    for (const el of elements.values()) {
-      if (intentionallyPlaying.has(el)) continue;
-      el.muted = true;
-      el.play()
-        .then(() => {
-          if (!intentionallyPlaying.has(el)) {
-            el.pause();
-            el.currentTime = 0;
-          }
-          el.muted = false;
-        })
-        .catch(() => {
-          el.muted = false;
-        });
-    }
+    void context.resume().catch(() => {});
     document.removeEventListener('pointerup', unlock);
     document.removeEventListener('touchend', unlock);
   };
@@ -48,16 +58,25 @@ export function initAudio(
   return {
     play(name) {
       if (!getSettings().sound) return;
-      const el = elements.get(name)!;
-      intentionallyPlaying.add(el);
-      el.muted = false;
-      el.currentTime = 0;
-      void el.play().catch(() => {});
+      const buffer = buffers.get(name);
+      if (!buffer) return;
+      // iOSは復帰時に suspended/interrupted になることがあるため running 以外は resume
+      if (context.state !== 'running') void context.resume().catch(() => {});
+      const source = context.createBufferSource();
+      source.buffer = buffer;
+      source.connect(context.destination as AudioNode);
+      source.start();
+      playing.set(name, source);
     },
     stop(name) {
-      const el = elements.get(name)!;
-      el.pause();
-      el.currentTime = 0;
+      const source = playing.get(name);
+      if (!source) return;
+      try {
+        source.stop();
+      } catch {
+        // 既に停止済みなら無視
+      }
+      playing.delete(name);
     },
   };
 }
