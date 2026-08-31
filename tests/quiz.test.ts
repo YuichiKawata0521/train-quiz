@@ -107,6 +107,51 @@ describe('session', () => {
   });
 });
 
+describe('buildChoices with fallbackPool', () => {
+  // express相当の4件フィクスチャ: lookalike ペア (azusa/kaiji) + 2件
+  const smallExpressPool: Train[] = [
+    train('azusa', 'あずさ', 'express', ['kaiji']),
+    train('kaiji', 'かいじ', 'express', ['azusa']),
+    train('hitachi', 'ひたち', 'express'),
+    train('sonic', 'そにっく', 'express'),
+  ];
+  // fallback: 他カテゴリから数件
+  const fallbackPoolWithOthers: Train[] = [
+    ...smallExpressPool,
+    train('hayabusa', 'はやぶさ', 'shinkansen'),
+    train('komachi', 'こまち', 'shinkansen'),
+    train('yamanote', 'やまのてせん', 'local'),
+  ];
+
+  it('lookalike が正解でも fallbackPool から補充して常に4択', () => {
+    for (let seed = 0; seed < 20; seed++) {
+      // azusa (lookalike あり) を正解とし、smallExpressPool では誤答が2件になる
+      const choices = buildChoices(
+        azusa,
+        smallExpressPool,
+        'hiragana',
+        rngFrom(seed),
+        fallbackPoolWithOthers,
+      );
+      expect(choices).toHaveLength(4);
+      expect(choices.filter((c) => c.id === 'azusa')).toHaveLength(1);
+      expect(new Set(choices.map((c) => c.name.hiragana)).size).toBe(4);
+      expect(choices.some((c) => c.id === 'kaiji')).toBe(false);
+    }
+  });
+
+  it('fallbackPool 未指定のときは従来どおり3択に縮む (後方互換)', () => {
+    // pool = smallExpressPool (4件), lookalike azusa/kaiji が誤答除外される
+    // 同カテゴリから候補: azusa 除外, kaiji lookalike除外, hitachi, sonic → 2件
+    // 他カテゴリ: なし
+    // → distractors は 2件 → choices は 3択
+    const choices = buildChoices(azusa, smallExpressPool, 'hiragana', rngFrom(42));
+    expect(choices).toHaveLength(3);
+    expect(choices.filter((c) => c.id === 'azusa')).toHaveLength(1);
+    expect(new Set(choices.map((c) => c.name.hiragana)).size).toBe(3);
+  });
+});
+
 describe('poolForMode', () => {
   const mode: Mode = {
     id: 'express',

@@ -39,8 +39,10 @@ export function buildChoices(
   pool: Train[],
   notation: Notation,
   rng: Rng,
+  fallbackPool: Train[] = pool,
 ): Train[] {
   const seen = new Set([displayName(correct, notation)]);
+  const poolIds = new Set(pool.map((t) => t.id));
   const valid = (t: Train): boolean => {
     if (t.id === correct.id || isLookalike(t, correct)) return false;
     const name = displayName(t, notation);
@@ -56,7 +58,11 @@ export function buildChoices(
     pool.filter((t) => t.category !== correct.category),
     rng,
   ).filter(valid);
-  const distractors = [...sameCat, ...others].slice(0, 3);
+  const fallback = shuffle(
+    fallbackPool.filter((t) => !poolIds.has(t.id)),
+    rng,
+  ).filter(valid);
+  const distractors = [...sameCat, ...others, ...fallback].slice(0, 3);
   return shuffle([correct, ...distractors], rng);
 }
 
@@ -69,9 +75,10 @@ export function createSession(
   count: number,
   notation: Notation,
   rng: Rng = Math.random,
+  fallbackPool: Train[] = pool,
 ): SessionState {
   const questions = pickQuestions(pool, count, rng).map((train) => {
-    const choices = buildChoices(train, pool, notation, rng);
+    const choices = buildChoices(train, pool, notation, rng, fallbackPool);
     return { train, choices, correctIndex: choices.findIndex((c) => c.id === train.id) };
   });
   return { questions, current: 0, score: 0, failedThisQuestion: false, notation };
