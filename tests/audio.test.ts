@@ -41,13 +41,13 @@ describe('initAudio', () => {
     player.play('horn');
     expect(horn.muted).toBe(false);
   });
-  it('pointerdown で unlock が発動、意図的再生中の要素は pause されない', async () => {
+  it('pointerup で unlock が発動、意図的再生中の要素は pause されない', async () => {
     FakeAudio.instances = [];
     const player = initAudio(() => makeSettings(true), FakeAudio as unknown as typeof Audio);
     const horn = FakeAudio.instances.find((a) => a.src.includes('horn'))!;
     player.play('horn');
     expect(horn.play).toHaveBeenCalled();
-    document.dispatchEvent(new PointerEvent('pointerdown'));
+    document.dispatchEvent(new PointerEvent('pointerup'));
     await Promise.resolve();
     expect(horn.pause).not.toHaveBeenCalled();
   });

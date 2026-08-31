@@ -30,9 +30,11 @@ export function initAudio(
           el.muted = false;
         });
     }
-    document.removeEventListener('pointerdown', unlock);
+    document.removeEventListener('pointerup', unlock);
+    document.removeEventListener('touchend', unlock);
   };
-  document.addEventListener('pointerdown', unlock);
+  document.addEventListener('pointerup', unlock);
+  document.addEventListener('touchend', unlock);
 
   return {
     play(name) {
