@@ -7,6 +7,11 @@
     },
     "category": "shinkansen",
     "image": "images/trains/h5-hayabusa.webp",
+    "credit": {
+      "author": "MaedaAkihiko",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:JRH_Series-H5_H1.jpg"
+    },
     "lookalikes": [
       "e5-hayabusa"
     ]
@@ -19,6 +24,11 @@
     },
     "category": "shinkansen",
     "image": "images/trains/e5-hayabusa.webp",
+    "credit": {
+      "author": "MaedaAkihiko",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Series-E5-U44_Hayabusa-2.jpg"
+    },
     "lookalikes": [
       "h5-hayabusa"
     ]
@@ -31,6 +41,11 @@
     },
     "category": "shinkansen",
     "image": "images/trains/e2-hayate.webp",
+    "credit": {
+      "author": "DAJF",
+      "license": "CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:J3_ex_Hayate_1_at_Hachinohe_20030101.JPG"
+    },
     "lookalikes": [
       "e2-toki"
     ]
@@ -42,7 +57,12 @@
       "normal": "こまち(E6系)"
     },
     "category": "shinkansen",
-    "image": "images/trains/e6-komachi.webp"
+    "image": "images/trains/e6-komachi.webp",
+    "credit": {
+      "author": "掬茶",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:E6_series_Z18_train_set_at_Akita_20190803.jpg"
+    }
   },
   {
     "id": "e3-tsubasa",
@@ -51,7 +71,12 @@
       "normal": "つばさ(E3系)"
     },
     "category": "shinkansen",
-    "image": "images/trains/e3-tsubasa.webp"
+    "image": "images/trains/e3-tsubasa.webp",
+    "credit": {
+      "author": "掬茶",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:E3-2000_L72_Yonezawa_20250712b.jpg"
+    }
   },
   {
     "id": "e3-toreiyu-tsubasa",
@@ -60,7 +85,12 @@
       "normal": "とれいゆ つばさ(E3系)"
     },
     "category": "shinkansen",
-    "image": "images/trains/e3-toreiyu-tsubasa.webp"
+    "image": "images/trains/e3-toreiyu-tsubasa.webp",
+    "credit": {
+      "author": "Cheng-en Cheng from Taipei City, Taiwan",
+      "license": "CC BY-SA 2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:E3-700_R18_Toreiyu_Yamagata_20161009.jpg"
+    }
   },
   {
     "id": "e2-toki",
@@ -70,6 +100,11 @@
     },
     "category": "shinkansen",
     "image": "images/trains/e2-toki.webp",
+    "credit": {
+      "author": "MaedaAkihiko",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Series-E2-1000-J70.jpg"
+    },
     "lookalikes": [
       "e2-hayate"
     ]
@@ -81,7 +116,12 @@
       "normal": "げんびしんかんせん(E3系)"
     },
     "category": "shinkansen",
-    "image": "images/trains/e3-genbi-shinkansen.webp"
+    "image": "images/trains/e3-genbi-shinkansen.webp",
+    "credit": {
+      "author": "ひでわく",
+      "license": "CC BY-SA 2.5",
+      "source": "https://commons.wikimedia.org/wiki/File:E3-700_R19_Niigata_20160405.jpg"
+    }
   },
   {
     "id": "e7-kagayaki",
@@ -90,7 +130,12 @@
       "normal": "かがやき(E7系)"
     },
     "category": "shinkansen",
-    "image": "images/trains/e7-kagayaki.webp"
+    "image": "images/trains/e7-kagayaki.webp",
+    "credit": {
+      "author": "Meitetu1380",
+      "license": "CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:E7%E7%B3%BB.JPG"
+    }
   },
   {
     "id": "n700s-nozomi",
@@ -99,7 +144,12 @@
       "normal": "のぞみ(N700S)"
     },
     "category": "shinkansen",
-    "image": "images/trains/n700s-nozomi.webp"
+    "image": "images/trains/n700s-nozomi.webp",
+    "credit": {
+      "author": "Takeshi Aida",
+      "license": "CC BY-SA 2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Shinkansen_N700S_series_photographed_at_Higashi-Tagonoura_with_Mount_Fuji_in_the_background,_10_April_2023.jpg"
+    }
   },
   {
     "id": "500-kodama",
@@ -108,7 +158,12 @@
       "normal": "こだま(500系)"
     },
     "category": "shinkansen",
-    "image": "images/trains/500-kodama.webp"
+    "image": "images/trains/500-kodama.webp",
+    "credit": {
+      "author": "MaedaAkihiko",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Series500-Kodama.jpg"
+    }
   },
   {
     "id": "700-hikari-rail-star",
@@ -117,7 +172,12 @@
       "normal": "ひかりレールスター(700系)"
     },
     "category": "shinkansen",
-    "image": "images/trains/700-hikari-rail-star.webp"
+    "image": "images/trains/700-hikari-rail-star.webp",
+    "credit": {
+      "author": "MaedaAkihiko",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:JRW_Series700-7000-E9_Hikari592.jpg"
+    }
   },
   {
     "id": "n700-mizuho",
@@ -127,6 +187,11 @@
     },
     "category": "shinkansen",
     "image": "images/trains/n700-mizuho.webp",
+    "credit": {
+      "author": "Cheng-en Cheng",
+      "license": "CC BY-SA 2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:N700-8000_series_R11_500_series_V8_Shin-Shimonoseki_20140901.jpg"
+    },
     "lookalikes": [
       "n700-sakura"
     ]
@@ -138,7 +203,12 @@
       "normal": "つばめ(800系)"
     },
     "category": "shinkansen",
-    "image": "images/trains/800-tsubame.webp"
+    "image": "images/trains/800-tsubame.webp",
+    "credit": {
+      "author": "MaedaAkihiko",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Series800_U001.jpg"
+    }
   },
   {
     "id": "class923-doctor-yellow",
@@ -147,7 +217,12 @@
       "normal": "ドクターイエロー(923形)"
     },
     "category": "shinkansen",
-    "image": "images/trains/class923-doctor-yellow.webp"
+    "image": "images/trains/class923-doctor-yellow.webp",
+    "credit": {
+      "author": "MaedaAkihiko",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Type923-T4.jpg"
+    }
   },
   {
     "id": "jreast-east-i",
@@ -156,7 +231,12 @@
       "normal": "イーストアイ"
     },
     "category": "shinkansen",
-    "image": "images/trains/jreast-east-i.webp"
+    "image": "images/trains/jreast-east-i.webp",
+    "credit": {
+      "author": "MaedaAkihiko",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:TypeE926.jpg"
+    }
   },
   {
     "id": "n700-sakura",
@@ -166,6 +246,11 @@
     },
     "category": "shinkansen",
     "image": "images/trains/n700-sakura.webp",
+    "credit": {
+      "author": "z tanuki",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:N700-8000_R4_Sakura_Shin-Osaka_20110701_(1).jpg"
+    },
     "lookalikes": [
       "n700-mizuho"
     ]
@@ -177,7 +262,12 @@
       "normal": "ALFA-X(E956形)"
     },
     "category": "shinkansen",
-    "image": "images/trains/e956-alfa-x.webp"
+    "image": "images/trains/e956-alfa-x.webp",
+    "credit": {
+      "author": "N100teda",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:E956-1Sendai.jpg"
+    }
   },
   {
     "id": "kiha261-soya",
