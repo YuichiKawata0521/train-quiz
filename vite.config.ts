@@ -4,7 +4,12 @@ import { defineConfig } from 'vite';
 export default defineConfig({
   base: '/train-quiz/',
   test: {
-    environment: 'jsdom',
+    environment: 'happy-dom',
+    environmentOptions: {
+      'happy-dom': {
+        localStorage: true,
+      },
+    },
     setupFiles: ['tests/setup.ts'],
   },
 });

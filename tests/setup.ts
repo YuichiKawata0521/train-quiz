@@ -1,23 +1,10 @@
-import { vi } from 'vitest';
+// Vitest happy-dom's localStorage getter returns undefined
+// Initialize it using happy-dom's Storage class for real localStorage behavior
+import { Storage } from 'happy-dom';
 
-// Mock localStorage
-const localStorageMock = (() => {
-  let store: Record<string, string> = {};
-
-  return {
-    getItem: (key: string) => store[key] || null,
-    setItem: (key: string, value: string) => {
-      store[key] = value.toString();
-    },
-    removeItem: (key: string) => {
-      delete store[key];
-    },
-    clear: () => {
-      store = {};
-    },
-  };
-})();
-
-Object.defineProperty(window, 'localStorage', {
-  value: localStorageMock,
-});
+if (typeof window !== 'undefined' && !window.localStorage) {
+  Object.defineProperty(window, 'localStorage', {
+    value: new Storage(),
+    writable: true,
+  });
+}
