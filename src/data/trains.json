@@ -748,7 +748,12 @@
       "normal": "アルプスエキスプレス(富山地鉄16010形)"
     },
     "category": "express",
-    "image": "images/trains/16010-alps-express.webp"
+    "image": "images/trains/16010-alps-express.webp",
+    "credit": {
+      "author": "Rsa",
+      "license": "CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Toyama-chihou-railway_16011_20140913.jpg"
+    }
   },
   {
     "id": "2000-mu-sky",
@@ -757,7 +762,12 @@
       "normal": "ミュースカイ(名鉄2000系)"
     },
     "category": "express",
-    "image": "images/trains/2000-mu-sky.webp"
+    "image": "images/trains/2000-mu-sky.webp",
+    "credit": {
+      "author": "Alpsdake",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Meitetsu_2000_series.JPG"
+    }
   },
   {
     "id": "683-thunderbird",
@@ -766,7 +776,12 @@
       "normal": "サンダーバード(683系)"
     },
     "category": "express",
-    "image": "images/trains/683-thunderbird.webp"
+    "image": "images/trains/683-thunderbird.webp",
+    "credit": {
+      "author": "さりと",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:JR-WEST_683_series_Thunderbird_between_Naka-Tsubata_and_Hon-Tsubata.jpg"
+    }
   },
   {
     "id": "281-haruka",
@@ -775,7 +790,12 @@
       "normal": "はるか(281系)"
     },
     "category": "express",
-    "image": "images/trains/281-haruka.webp"
+    "image": "images/trains/281-haruka.webp",
+    "credit": {
+      "author": "kazokuda",
+      "license": "CC0",
+      "source": "https://commons.wikimedia.org/wiki/File:JRW_281_Haruka_at_Shin-Osaka_Station_2012-12-03.jpg"
+    }
   },
   {
     "id": "287-kuroshio",
@@ -784,7 +804,12 @@
       "normal": "くろしお(287系)"
     },
     "category": "express",
-    "image": "images/trains/287-kuroshio.webp"
+    "image": "images/trains/287-kuroshio.webp",
+    "credit": {
+      "author": "Mr.ちゅらさん",
+      "license": "CC BY 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Kuroshio_at_Tennoji_Station_Yamatoji_Home_2026-05_1.jpg"
+    }
   },
   {
     "id": "jrwest-panda-kuroshio",
@@ -793,7 +818,12 @@
       "normal": "パンダくろしお"
     },
     "category": "express",
-    "image": "images/trains/jrwest-panda-kuroshio.webp"
+    "image": "images/trains/jrwest-panda-kuroshio.webp",
+    "credit": {
+      "author": "MaedaAkihiko",
+      "license": "CC0",
+      "source": "https://commons.wikimedia.org/wiki/File:JRW_Series287-HC605_Panda-Kuroshio.jpg"
+    }
   },
   {
     "id": "289-kounotori",
@@ -802,7 +832,12 @@
       "normal": "こうのとり(289系)"
     },
     "category": "express",
-    "image": "images/trains/289-kounotori.webp"
+    "image": "images/trains/289-kounotori.webp",
+    "credit": {
+      "author": "にぶさま",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:289_Konotori_in_Osaka_Station.jpg"
+    }
   },
   {
     "id": "kiha189-hamakaze",
@@ -811,7 +846,12 @@
       "normal": "はまかぜ(キハ189系)"
     },
     "category": "express",
-    "image": "images/trains/kiha189-hamakaze.webp"
+    "image": "images/trains/kiha189-hamakaze.webp",
+    "credit": {
+      "author": "MaedaAkihiko",
+      "license": "CC0",
+      "source": "https://commons.wikimedia.org/wiki/File:JRW_Kiha189-H1_Hamakaze-4.jpg"
+    }
   },
   {
     "id": "50000-rapit",
@@ -820,7 +860,12 @@
       "normal": "ラピート(南海50000系)"
     },
     "category": "express",
-    "image": "images/trains/50000-rapit.webp"
+    "image": "images/trains/50000-rapit.webp",
+    "credit": {
+      "author": "Rsa",
+      "license": "CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Nankai_50000_series_201405040809_Neo_Xeon.jpg"
+    }
   },
   {
     "id": "21000-urban-liner",
@@ -829,7 +874,12 @@
       "normal": "アーバンライナー(近鉄21000系)"
     },
     "category": "express",
-    "image": "images/trains/21000-urban-liner.webp"
+    "image": "images/trains/21000-urban-liner.webp",
+    "credit": {
+      "author": "Cheng-en Cheng from Taichung City, Taiwan",
+      "license": "CC BY-SA 2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Kintetsu_21000_series_at_Tsuruhashi_Station_2019-11-17_(49925076618).jpg"
+    }
   },
   {
     "id": "80000-hinotori",
@@ -838,7 +888,12 @@
       "normal": "ひのとり(近鉄80000系)"
     },
     "category": "express",
-    "image": "images/trains/80000-hinotori.webp"
+    "image": "images/trains/80000-hinotori.webp",
+    "credit": {
+      "author": "六人目の審査員",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Kintetsu80000-20200202-Ishikiri~Ikoma.jpg"
+    }
   },
   {
     "id": "50000-shimakaze",
@@ -847,7 +902,12 @@
       "normal": "しまかぜ(近鉄50000系)"
     },
     "category": "express",
-    "image": "images/trains/50000-shimakaze.webp"
+    "image": "images/trains/50000-shimakaze.webp",
+    "credit": {
+      "author": "Cheng-en Cheng from Taichung City, Taiwan",
+      "license": "CC BY-SA 2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Kintetsu_50000_series_at_Tsuruhashi_Station_2019-11-17_(49925890357).jpg"
+    }
   },
   {
     "id": "8000-elegant-saloon",
@@ -856,7 +916,12 @@
       "normal": "エレガント・サルーン(京阪8000系)"
     },
     "category": "express",
-    "image": "images/trains/8000-elegant-saloon.webp"
+    "image": "images/trains/8000-elegant-saloon.webp",
+    "credit": {
+      "author": "yagi-s",
+      "license": "CC BY 2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Keihan_8000_series_2017-01-01.jpg"
+    }
   },
   {
     "id": "ktr8000-tango-no-umi",
@@ -865,7 +930,12 @@
       "normal": "丹後の海(京都丹後鉄道KTR8000形)"
     },
     "category": "express",
-    "image": "images/trains/ktr8000-tango-no-umi.webp"
+    "image": "images/trains/ktr8000-tango-no-umi.webp",
+    "credit": {
+      "author": "Rsa",
+      "license": "CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:KTR_8000_series_8014_20220327.jpg"
+    }
   },
   {
     "id": "273-yakumo",
@@ -874,7 +944,12 @@
       "normal": "やくも(273系)"
     },
     "category": "express",
-    "image": "images/trains/273-yakumo.webp"
+    "image": "images/trains/273-yakumo.webp",
+    "credit": {
+      "author": "MaedaAkihiko",
+      "license": "CC0",
+      "source": "https://commons.wikimedia.org/wiki/File:JRW_Series273-Y10.jpg"
+    }
   },
   {
     "id": "hot7000-super-hakuto",
@@ -883,7 +958,12 @@
       "normal": "スーパーはくと(HOT7000系)"
     },
     "category": "express",
-    "image": "images/trains/hot7000-super-hakuto.webp"
+    "image": "images/trains/hot7000-super-hakuto.webp",
+    "credit": {
+      "author": "Cheng-en Cheng from Taichung City, Taiwan",
+      "license": "CC BY-SA 2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:HOT7000_series_Super_Hakuto_2019-11-15_(49903641318).jpg"
+    }
   },
   {
     "id": "kiha187-super-oki",
@@ -892,7 +972,12 @@
       "normal": "スーパーおき(キハ187系)"
     },
     "category": "express",
-    "image": "images/trains/kiha187-super-oki.webp"
+    "image": "images/trains/kiha187-super-oki.webp",
+    "credit": {
+      "author": "MaedaAkihiko",
+      "license": "CC0",
+      "source": "https://commons.wikimedia.org/wiki/File:JRW_Kiha187-12_Super-Oki-3.jpg"
+    }
   },
   {
     "id": "2700-uzushio",
@@ -904,7 +989,12 @@
     "image": "images/trains/2700-uzushio.webp",
     "lookalikes": [
       "2700-nanpu"
-    ]
+    ],
+    "credit": {
+      "author": "Mitsuki-2368",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:JRS_2700_series_2706_uzushio_20220102.jpg"
+    }
   },
   {
     "id": "2700-nanpu",
@@ -916,7 +1006,12 @@
     "image": "images/trains/2700-nanpu.webp",
     "lookalikes": [
       "2700-uzushio"
-    ]
+    ],
+    "credit": {
+      "author": "MaedaAkihiko",
+      "license": "CC0",
+      "source": "https://commons.wikimedia.org/wiki/File:JRS_Series2700_Nanpu-4.jpg"
+    }
   },
   {
     "id": "8000-shiokaze",
@@ -925,7 +1020,12 @@
       "normal": "しおかぜ(8000系)"
     },
     "category": "express",
-    "image": "images/trains/8000-shiokaze.webp"
+    "image": "images/trains/8000-shiokaze.webp",
+    "credit": {
+      "author": "z tanuki",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Limites_Express_Shiokaze_,_%E7%89%B9%E6%80%A5_%E3%81%97%E3%81%8A%E3%81%8B%E3%81%9C_8000%E7%B3%BB_-_panoramio.jpg"
+    }
   },
   {
     "id": "8600-ishizuchi",
@@ -934,7 +1034,12 @@
       "normal": "いしづち(8600系)"
     },
     "category": "express",
-    "image": "images/trains/8600-ishizuchi.webp"
+    "image": "images/trains/8600-ishizuchi.webp",
+    "credit": {
+      "author": "Kaiso_Wakame",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:8600_isiduti.jpg"
+    }
   },
   {
     "id": "2000-uwakai",
@@ -943,7 +1048,12 @@
       "normal": "宇和海(2000系)"
     },
     "category": "express",
-    "image": "images/trains/2000-uwakai.webp"
+    "image": "images/trains/2000-uwakai.webp",
+    "credit": {
+      "author": "MaedaAkihiko",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Kiha2000_2157.jpg"
+    }
   },
   {
     "id": "kiha185-tsurugisan",
@@ -952,7 +1062,12 @@
       "normal": "剣山(キハ185系)"
     },
     "category": "express",
-    "image": "images/trains/kiha185-tsurugisan.webp"
+    "image": "images/trains/kiha185-tsurugisan.webp",
+    "credit": {
+      "author": "Huminosato1019",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:%E7%89%B9%E6%80%A5_%E5%89%A3%E5%B1%B1.jpg"
+    }
   },
   {
     "id": "883-sonic",
@@ -961,7 +1076,12 @@
       "normal": "ソニック(883系)"
     },
     "category": "express",
-    "image": "images/trains/883-sonic.webp"
+    "image": "images/trains/883-sonic.webp",
+    "credit": {
+      "author": "東風みるく",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:L_Kagoshima_883.jpg"
+    }
   },
   {
     "id": "885-kamome",
@@ -970,7 +1090,12 @@
       "normal": "かもめ(885系)"
     },
     "category": "express",
-    "image": "images/trains/885-kamome.webp"
+    "image": "images/trains/885-kamome.webp",
+    "credit": {
+      "author": "Kazokuda",
+      "license": "CC0",
+      "source": "https://commons.wikimedia.org/wiki/File:JR_Kyushu_885_series_set_SM2_at_Hakata_Station.jpg"
+    }
   },
   {
     "id": "787-kirameki",
@@ -979,7 +1104,12 @@
       "normal": "きらめき(787系)"
     },
     "category": "express",
-    "image": "images/trains/787-kirameki.webp"
+    "image": "images/trains/787-kirameki.webp",
+    "credit": {
+      "author": "JKT-c",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Kyushu_Railway_-_Series_787_-_01.JPG"
+    }
   },
   {
     "id": "783-huis-ten-bosch",
@@ -988,7 +1118,12 @@
       "normal": "ハウステンボス(783系)"
     },
     "category": "express",
-    "image": "images/trains/783-huis-ten-bosch.webp"
+    "image": "images/trains/783-huis-ten-bosch.webp",
+    "credit": {
+      "author": "MaedaAkihiko",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Series783-R-HuisTenBosch.jpg"
+    }
   },
   {
     "id": "kiha72-yufuin-no-mori",
@@ -997,7 +1132,12 @@
       "normal": "ゆふいんの森(キハ72系)"
     },
     "category": "express",
-    "image": "images/trains/kiha72-yufuin-no-mori.webp"
+    "image": "images/trains/kiha72-yufuin-no-mori.webp",
+    "credit": {
+      "author": "MaedaAkihiko",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Yufuin-no-Mori-72.jpg"
+    }
   },
   {
     "id": "kiha183-aso-boy",
@@ -1006,7 +1146,12 @@
       "normal": "あそぼーい!(キハ183系)"
     },
     "category": "express",
-    "image": "images/trains/kiha183-aso-boy.webp"
+    "image": "images/trains/kiha183-aso-boy.webp",
+    "credit": {
+      "author": "MaedaAkihiko",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:JRK_Kiha183-1000_Aso-Boy!.jpg"
+    }
   },
   {
     "id": "kiha185-kyushu-odan-tokkyu",
@@ -1015,7 +1160,12 @@
       "normal": "九州横断特急(キハ185系)"
     },
     "category": "express",
-    "image": "images/trains/kiha185-kyushu-odan-tokkyu.webp"
+    "image": "images/trains/kiha185-kyushu-odan-tokkyu.webp",
+    "credit": {
+      "author": "MaedaAkihiko",
+      "license": "CC0",
+      "source": "https://commons.wikimedia.org/wiki/File:JRK_Kiha185-2.jpg"
+    }
   },
   {
     "id": "kiha47-ibusuki-no-tamatebako",
@@ -1024,7 +1174,12 @@
       "normal": "指宿のたまて箱(キハ47形)"
     },
     "category": "express",
-    "image": "images/trains/kiha47-ibusuki-no-tamatebako.webp"
+    "image": "images/trains/kiha47-ibusuki-no-tamatebako.webp",
+    "credit": {
+      "author": "Rsa",
+      "license": "CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:JRK_DC_Kiha47-9079.jpg"
+    }
   },
   {
     "id": "kiha125-umisachi-yamasachi",
@@ -1033,7 +1188,12 @@
       "normal": "海幸山幸(キハ125形)"
     },
     "category": "express",
-    "image": "images/trains/kiha125-umisachi-yamasachi.webp"
+    "image": "images/trains/kiha125-umisachi-yamasachi.webp",
+    "credit": {
+      "author": "MaedaAkihiko",
+      "license": "CC0",
+      "source": "https://commons.wikimedia.org/wiki/File:JRK_Kiha125-401_Umisachi-Yamasachi.jpg"
+    }
   },
   {
     "id": "e235-yamanote-sen",
