@@ -280,7 +280,12 @@
     "lookalikes": [
       "kiha261-super-tokachi",
       "kiha261-ozora"
-    ]
+    ],
+    "credit": {
+      "author": "IRishikawa521",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:JRH_DMU261_SE-201_Soya.jpg"
+    }
   },
   {
     "id": "kiha261-super-tokachi",
@@ -293,7 +298,12 @@
     "lookalikes": [
       "kiha261-soya",
       "kiha261-ozora"
-    ]
+    ],
+    "credit": {
+      "author": "DD51612 at Japanese Wikipedia",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:JRH_kiha261-1000_super-tokachi_20080530.jpg"
+    }
   },
   {
     "id": "kiha183-taisetsu",
@@ -302,7 +312,12 @@
       "normal": "大雪(キハ183系)"
     },
     "category": "express",
-    "image": "images/trains/kiha183-taisetsu.webp"
+    "image": "images/trains/kiha183-taisetsu.webp",
+    "credit": {
+      "author": "ゆじゅこ",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:JNR-Kiha183_Taisetsu.jpg"
+    }
   },
   {
     "id": "kiha283-okhotsk",
@@ -314,7 +329,12 @@
     "image": "images/trains/kiha283-okhotsk.webp",
     "lookalikes": [
       "kiha283-super-ozora"
-    ]
+    ],
+    "credit": {
+      "author": "NORECH",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:JR_Hokkaido_Kiha_283_Okhotsk.jpg"
+    }
   },
   {
     "id": "kiha283-super-ozora",
@@ -326,7 +346,12 @@
     "image": "images/trains/kiha283-super-ozora.webp",
     "lookalikes": [
       "kiha283-okhotsk"
-    ]
+    ],
+    "credit": {
+      "author": "Suikotei",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Kiha_283-12_Limited_express_Super_%C5%8Czora_at_Kushiro_Station.jpg"
+    }
   },
   {
     "id": "kiha261-ozora",
@@ -339,7 +364,12 @@
     "lookalikes": [
       "kiha261-soya",
       "kiha261-super-tokachi"
-    ]
+    ],
+    "credit": {
+      "author": "上島さくら",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Ltd._Exp._Ozora_at_Tomamu_Sta._(Sekisho_Line).jpg"
+    }
   },
   {
     "id": "789-rairakku",
@@ -348,7 +378,12 @@
       "normal": "ライラック(789系)"
     },
     "category": "express",
-    "image": "images/trains/789-rairakku.webp"
+    "image": "images/trains/789-rairakku.webp",
+    "credit": {
+      "author": "MaedaAkihiko",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Series789-HE103_Lilac.jpg"
+    }
   },
   {
     "id": "789-kamui",
@@ -357,7 +392,12 @@
       "normal": "カムイ(789系)"
     },
     "category": "express",
-    "image": "images/trains/789-kamui.webp"
+    "image": "images/trains/789-kamui.webp",
+    "credit": {
+      "author": "MaedaAkihiko",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Series789-1000_Kamui-12.jpg"
+    }
   },
   {
     "id": "785-suzuran",
@@ -366,7 +406,12 @@
       "normal": "すずらん(785系)"
     },
     "category": "express",
-    "image": "images/trains/785-suzuran.webp"
+    "image": "images/trains/785-suzuran.webp",
+    "credit": {
+      "author": "Yuutann1123",
+      "license": "CC BY 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:785%E7%B3%BB_%E3%81%99%E3%81%9A%E3%82%89%E3%82%93.jpg"
+    }
   },
   {
     "id": "e653-inaho",
@@ -375,7 +420,12 @@
       "normal": "いなほ(E653系)"
     },
     "category": "express",
-    "image": "images/trains/e653-inaho.webp"
+    "image": "images/trains/e653-inaho.webp",
+    "credit": {
+      "author": "スミス1919",
+      "license": "CC BY 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:%E5%BA%9C%E5%B1%8B%E9%A7%85%E3%82%92%E7%99%BA%E8%BB%8A%E3%81%99%E3%82%8BE653%E7%B3%BB(%E7%91%A0%E7%92%83%E8%89%B2)%E3%81%AE%E7%89%B9%E6%80%A5%E3%81%84%E3%81%AA%E3%81%BB%E5%8F%B7.jpg"
+    }
   },
   {
     "id": "e653-shirayuki",
@@ -384,7 +434,12 @@
       "normal": "しらゆき(E653系)"
     },
     "category": "express",
-    "image": "images/trains/e653-shirayuki.webp"
+    "image": "images/trains/e653-shirayuki.webp",
+    "credit": {
+      "author": "スミス1919",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:%E6%9F%8F%E5%B4%8E%E9%A7%853%E7%95%AA%E7%B7%9A%E3%82%92%E7%99%BA%E8%BB%8A%E3%81%99%E3%82%8BE653%E7%B3%BB1100%E7%95%AA%E5%8F%B0%E3%81%AE%E7%89%B9%E6%80%A5%E3%81%97%E3%82%89%E3%82%86%E3%81%8D%E5%8F%B7.jpg"
+    }
   },
   {
     "id": "e751-tsugaru",
@@ -393,7 +448,12 @@
       "normal": "つがる(E751系)"
     },
     "category": "express",
-    "image": "images/trains/e751-tsugaru.webp"
+    "image": "images/trains/e751-tsugaru.webp",
+    "credit": {
+      "author": "Nee751",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:673A0771.jpg"
+    }
   },
   {
     "id": "e657-hitachi",
@@ -402,7 +462,12 @@
       "normal": "ひたち(E657系)"
     },
     "category": "express",
-    "image": "images/trains/e657-hitachi.webp"
+    "image": "images/trains/e657-hitachi.webp",
+    "credit": {
+      "author": "MaedaAkihiko",
+      "license": "CC0",
+      "source": "https://commons.wikimedia.org/wiki/File:JRE_Series-E657-K5_Hitachi-6.jpg"
+    }
   },
   {
     "id": "e257-wakashio",
@@ -411,7 +476,12 @@
       "normal": "わかしお(E257系)"
     },
     "category": "express",
-    "image": "images/trains/e257-wakashio.webp"
+    "image": "images/trains/e257-wakashio.webp",
+    "credit": {
+      "author": "MaedaAkihiko",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Series-E257-500-NB18.jpg"
+    }
   },
   {
     "id": "e259-narita-express",
@@ -420,7 +490,12 @@
       "normal": "成田エクスプレス(E259系)"
     },
     "category": "express",
-    "image": "images/trains/e259-narita-express.webp"
+    "image": "images/trains/e259-narita-express.webp",
+    "credit": {
+      "author": "MaedaAkihiko",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Series-E259-NE014_NEX.jpg"
+    }
   },
   {
     "id": "251-super-view-odoriko",
@@ -429,7 +504,12 @@
       "normal": "スーパービュー踊り子(251系)"
     },
     "category": "express",
-    "image": "images/trains/251-super-view-odoriko.webp"
+    "image": "images/trains/251-super-view-odoriko.webp",
+    "credit": {
+      "author": "Cheng-en Cheng",
+      "license": "CC BY-SA 2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:JR_East_251_%22Super_View_Odoriko%22_at_Yokohama_Station.jpg"
+    }
   },
   {
     "id": "e257-odoriko",
@@ -438,7 +518,12 @@
       "normal": "踊り子(E257系)"
     },
     "category": "express",
-    "image": "images/trains/e257-odoriko.webp"
+    "image": "images/trains/e257-odoriko.webp",
+    "credit": {
+      "author": "MaedaAkihiko",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Series-E257-NA11_Odoriko.jpg"
+    }
   },
   {
     "id": "e261-saphir-odoriko",
@@ -447,7 +532,12 @@
       "normal": "サフィール踊り子(E261系)"
     },
     "category": "express",
-    "image": "images/trains/e261-saphir-odoriko.webp"
+    "image": "images/trains/e261-saphir-odoriko.webp",
+    "credit": {
+      "author": "MaedaAkihiko",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:E261-RS1.jpg"
+    }
   },
   {
     "id": "e353-azusa",
@@ -459,7 +549,12 @@
     "image": "images/trains/e353-azusa.webp",
     "lookalikes": [
       "e353-kaiji"
-    ]
+    ],
+    "credit": {
+      "author": "007 Tanuki",
+      "license": "CC BY-SA 2.1 jp",
+      "source": "https://commons.wikimedia.org/wiki/File:Treinstellen_E353_S120_en_S209_als_de_exprestrein_%E2%80%98Azusa_33%E2%80%99_naar_Matsumoto_op_tijd_vertrekt_vanaf_spoor_9_te_station_Shinjuku,_-18_juli_2022_15%EF%BC%9A00.jpg"
+    }
   },
   {
     "id": "e351-super-azusa",
@@ -468,7 +563,12 @@
       "normal": "スーパーあずさ(E351系)"
     },
     "category": "express",
-    "image": "images/trains/e351-super-azusa.webp"
+    "image": "images/trains/e351-super-azusa.webp",
+    "credit": {
+      "author": "MaedaAkihiko",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:JRE-SeriesE351-S1-SuperAzusa.jpg"
+    }
   },
   {
     "id": "e353-kaiji",
@@ -480,7 +580,12 @@
     "image": "images/trains/e353-kaiji.webp",
     "lookalikes": [
       "e353-azusa"
-    ]
+    ],
+    "credit": {
+      "author": "MaedaAkihiko",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:SeriesE353-S108_Kaiji-43.jpg"
+    }
   },
   {
     "id": "ae-skyliner",
@@ -489,7 +594,12 @@
       "normal": "スカイライナー(京成AE形)"
     },
     "category": "express",
-    "image": "images/trains/ae-skyliner.webp"
+    "image": "images/trains/ae-skyliner.webp",
+    "credit": {
+      "author": "MaedaAkihiko",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Keisei-Type-AE.jpg"
+    }
   },
   {
     "id": "gse-romance-car",
@@ -498,7 +608,12 @@
       "normal": "ロマンスカー(小田急GSE)"
     },
     "category": "express",
-    "image": "images/trains/gse-romance-car.webp"
+    "image": "images/trains/gse-romance-car.webp",
+    "credit": {
+      "author": "MaedaAkihiko",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Odakyu-Series70000_GSE.jpg"
+    }
   },
   {
     "id": "100-spacia",
@@ -507,7 +622,12 @@
       "normal": "スペーシア(東武100系)"
     },
     "category": "express",
-    "image": "images/trains/100-spacia.webp"
+    "image": "images/trains/100-spacia.webp",
+    "credit": {
+      "author": "MaedaAkihiko",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Tobu-Series-100-Kinugawa-Line.jpg"
+    }
   },
   {
     "id": "n100-spacia-x",
@@ -516,7 +636,12 @@
       "normal": "スペーシアX(東武N100系)"
     },
     "category": "express",
-    "image": "images/trains/n100-spacia-x.webp"
+    "image": "images/trains/n100-spacia-x.webp",
+    "credit": {
+      "author": "Rsa",
+      "license": "CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Tobu_N100_series_N101-2_T%C5%8Dbu-Nikk%C5%8D_Station_20230812.jpg"
+    }
   },
   {
     "id": "500-liberty-kegon",
@@ -525,7 +650,12 @@
       "normal": "リバティけごん(東武500系)"
     },
     "category": "express",
-    "image": "images/trains/500-liberty-kegon.webp"
+    "image": "images/trains/500-liberty-kegon.webp",
+    "credit": {
+      "author": "MaedaAkihiko",
+      "license": "CC0",
+      "source": "https://commons.wikimedia.org/wiki/File:Tobu-Series500_Revaty-Kegon-34.jpg"
+    }
   },
   {
     "id": "10000-new-red-arrow",
@@ -534,7 +664,12 @@
       "normal": "ニューレッドアロー(西武10000系)"
     },
     "category": "express",
-    "image": "images/trains/10000-new-red-arrow.webp"
+    "image": "images/trains/10000-new-red-arrow.webp",
+    "credit": {
+      "author": "SEMISAYAMASHI",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Seibu_10000_series_10105F_haikai.jpg"
+    }
   },
   {
     "id": "001-laview",
@@ -543,7 +678,12 @@
       "normal": "Laview(西武001系)"
     },
     "category": "express",
-    "image": "images/trains/001-laview.webp"
+    "image": "images/trains/001-laview.webp",
+    "credit": {
+      "author": "Activeman2000",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Seibu-001kei-Laview-Train.jpg"
+    }
   },
   {
     "id": "8000-fujisan-tokkyu",
@@ -552,7 +692,12 @@
       "normal": "フジサン特急(富士急行8000系)"
     },
     "category": "express",
-    "image": "images/trains/8000-fujisan-tokkyu.webp"
+    "image": "images/trains/8000-fujisan-tokkyu.webp",
+    "credit": {
+      "author": "ウツダー (Udda)",
+      "license": "CC BY 2.1 jp",
+      "source": "https://commons.wikimedia.org/wiki/File:Fuji_kyuko_8000_series_20140830_001.jpg"
+    }
   },
   {
     "id": "383-wide-view-shinano",
@@ -561,7 +706,12 @@
       "normal": "ワイドビューしなの(383系)"
     },
     "category": "express",
-    "image": "images/trains/383-wide-view-shinano.webp"
+    "image": "images/trains/383-wide-view-shinano.webp",
+    "credit": {
+      "author": "博麗神華",
+      "license": "CC0",
+      "source": "https://commons.wikimedia.org/wiki/File:JR%E6%9D%B1%E6%B5%B7%E5%90%8D%E5%8F%A4%E5%B1%8B%E5%81%9C%E8%BB%8A%E4%B8%AD%E3%81%AEJR%E6%9D%B1%E6%B5%B7383%E7%B3%BB%E3%81%97%E3%81%AA%E3%81%AE.jpg"
+    }
   },
   {
     "id": "kiha85-wide-view-hida",
@@ -570,7 +720,12 @@
       "normal": "ワイドビューひだ(キハ85系)"
     },
     "category": "express",
-    "image": "images/trains/kiha85-wide-view-hida.webp"
+    "image": "images/trains/kiha85-wide-view-hida.webp",
+    "credit": {
+      "author": "シュポじ（ししまる）",
+      "license": "CC0",
+      "source": "https://commons.wikimedia.org/wiki/File:22D_%E3%83%AF%E3%82%A4%E3%83%89%E3%83%93%E3%83%A5%E3%83%BC%E3%81%B2%E3%81%A02%E5%8F%B7.jpg"
+    }
   },
   {
     "id": "1000-yukemuri",
@@ -579,7 +734,12 @@
       "normal": "ゆけむり(長野電鉄1000系)"
     },
     "category": "express",
-    "image": "images/trains/1000-yukemuri.webp"
+    "image": "images/trains/1000-yukemuri.webp",
+    "credit": {
+      "author": "Kznrhsd",
+      "license": "CC0",
+      "source": "https://commons.wikimedia.org/wiki/File:Panning_of_Nagaden_1000_series_%22Yukemuri%22_in_spring.jpg"
+    }
   },
   {
     "id": "16010-alps-express",
