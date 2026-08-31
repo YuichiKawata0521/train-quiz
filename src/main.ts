@@ -1,4 +1,7 @@
 import './styles.css';
 import { createApp } from './app';
+import { initAudio } from './audio';
 
-createApp(document.querySelector<HTMLElement>('#app')!).navigate('start');
+const root = document.querySelector<HTMLElement>('#app')!;
+const app = createApp(root, initAudio(() => app.settings));
+app.navigate('start');
