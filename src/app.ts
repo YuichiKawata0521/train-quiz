@@ -7,6 +7,7 @@ import { renderStart } from './screens/start';
 import { renderGameSelect } from './screens/gameSelect';
 import { renderModeSelect } from './screens/modeSelect';
 import { renderSettingsScreen } from './screens/settingsScreen';
+import { renderQuestion } from './screens/question';
 
 export type ScreenName =
   | 'start'
@@ -43,6 +44,7 @@ export const screens: Partial<Record<ScreenName, ScreenRenderer>> = {
   start: renderStart,
   gameSelect: renderGameSelect,
   modeSelect: renderModeSelect,
+  question: renderQuestion,
   settings: renderSettingsScreen,
 };
 
