@@ -113,3 +113,9 @@ body {
 .result-score { font-size: 52px; color: var(--blue-dark); }
 .hanamaru { font-size: 44px; color: var(--red); }
 .result-actions { display: flex; gap: 24px; }
+.screen-settings { justify-content: flex-start; padding-top: 48px; align-items: flex-start; max-width: 800px; margin: 0 auto; }
+.setting-row { display: flex; align-items: center; gap: 24px; font-size: 28px; }
+.setting-label { min-width: 220px; font-weight: bold; color: var(--blue-dark); }
+.setting-row input { width: 28px; height: 28px; }
+.credits { font-size: 18px; max-height: 30vh; overflow-y: auto; -webkit-user-select: text; user-select: text; }
+.credits li { margin: 6px 0; }
