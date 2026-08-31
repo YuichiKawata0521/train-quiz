@@ -882,7 +882,12 @@
       "normal": "山手線(E235系)"
     },
     "category": "local",
-    "image": "images/trains/e235-yamanote-sen.webp"
+    "image": "images/trains/e235-yamanote-sen.webp",
+    "credit": {
+      "author": "yagi-s",
+      "license": "CC BY 2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:JRE_E235_series_Yamanote_Line_train.jpg"
+    }
   },
   {
     "id": "e233-keihin-tohoku-sen",
@@ -891,7 +896,12 @@
       "normal": "京浜東北線(E233系)"
     },
     "category": "local",
-    "image": "images/trains/e233-keihin-tohoku-sen.webp"
+    "image": "images/trains/e233-keihin-tohoku-sen.webp",
+    "credit": {
+      "author": "MaedaAkihiko",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Keihin-tohoku_Negishi-Line_E233-1000series.jpg"
+    }
   },
   {
     "id": "e233-chuo-sen",
@@ -900,7 +910,12 @@
       "normal": "中央線(E233系)"
     },
     "category": "local",
-    "image": "images/trains/e233-chuo-sen.webp"
+    "image": "images/trains/e233-chuo-sen.webp",
+    "credit": {
+      "author": "銚電神",
+      "license": "CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:%E4%B8%AD%E5%A4%AE%E7%89%B9%E5%BF%ABE233%E7%B3%BB.JPG"
+    }
   },
   {
     "id": "e231-sobu-hon-sen",
@@ -909,7 +924,12 @@
       "normal": "総武本線(E231系・黄色)"
     },
     "category": "local",
-    "image": "images/trains/e231-sobu-hon-sen.webp"
+    "image": "images/trains/e231-sobu-hon-sen.webp",
+    "credit": {
+      "author": "Nickel 2 Train",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:E231-0_Series(For_Chuo-Soubu_Line).jpg"
+    }
   },
   {
     "id": "e235-yokosuka-sen",
@@ -918,7 +938,12 @@
       "normal": "横須賀線(E235系1000番台)"
     },
     "category": "local",
-    "image": "images/trains/e235-yokosuka-sen.webp"
+    "image": "images/trains/e235-yokosuka-sen.webp",
+    "credit": {
+      "author": "MaedaAkihiko",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Series-E235-1000_J10.jpg"
+    }
   },
   {
     "id": "e233-tokaido-sen",
@@ -927,7 +952,12 @@
       "normal": "東海道線(E233系)"
     },
     "category": "local",
-    "image": "images/trains/e233-tokaido-sen.webp"
+    "image": "images/trains/e233-tokaido-sen.webp",
+    "credit": {
+      "author": "Nagatsuma1437",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:JR_East_E233-3000_Series_U219%2BE-10_20200201.jpg"
+    }
   },
   {
     "id": "e233-saikyo-sen",
@@ -936,7 +966,12 @@
       "normal": "埼京線(E233系)"
     },
     "category": "local",
-    "image": "images/trains/e233-saikyo-sen.webp"
+    "image": "images/trains/e233-saikyo-sen.webp",
+    "credit": {
+      "author": "Hyper Maniac Man",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:JR_East_E233-7000_Series_Saiky%C5%8D_Line_Hae119.jpg"
+    }
   },
   {
     "id": "e233-keiyo-sen",
@@ -945,7 +980,12 @@
       "normal": "京葉線(E233系)"
     },
     "category": "local",
-    "image": "images/trains/e233-keiyo-sen.webp"
+    "image": "images/trains/e233-keiyo-sen.webp",
+    "credit": {
+      "author": "MaedaAkihiko",
+      "license": "CC0",
+      "source": "https://commons.wikimedia.org/wiki/File:JRE_Series-E233-5000_F54.jpg"
+    }
   },
   {
     "id": "e531-joban-sen",
@@ -954,7 +994,12 @@
       "normal": "常磐線(E531系)"
     },
     "category": "local",
-    "image": "images/trains/e531-joban-sen.webp"
+    "image": "images/trains/e531-joban-sen.webp",
+    "credit": {
+      "author": "MaedaAkihiko",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Series-E531-K418.jpg"
+    }
   },
   {
     "id": "metro1000-ginza-sen",
@@ -963,7 +1008,12 @@
       "normal": "銀座線(東京メトロ1000系)"
     },
     "category": "local",
-    "image": "images/trains/metro1000-ginza-sen.webp"
+    "image": "images/trains/metro1000-ginza-sen.webp",
+    "credit": {
+      "author": "Toshinori baba",
+      "license": "CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Tokyo_Metro_1000_ginza_line.JPG"
+    }
   },
   {
     "id": "metro2000-marunouchi-sen",
@@ -972,7 +1022,12 @@
       "normal": "丸ノ内線(東京メトロ2000系)"
     },
     "category": "local",
-    "image": "images/trains/metro2000-marunouchi-sen.webp"
+    "image": "images/trains/metro2000-marunouchi-sen.webp",
+    "credit": {
+      "author": "MaedaAkihiko",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Marunouchi-Line_Series2000-2025.jpg"
+    }
   },
   {
     "id": "keisei3000-keisei-sen",
@@ -981,7 +1036,12 @@
       "normal": "京成線(3000形)"
     },
     "category": "local",
-    "image": "images/trains/keisei3000-keisei-sen.webp"
+    "image": "images/trains/keisei3000-keisei-sen.webp",
+    "credit": {
+      "author": "MaedaAkihiko",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Keisei-Series3000-3042.jpg"
+    }
   },
   {
     "id": "keikyu2100-keikyu-sen",
@@ -990,7 +1050,12 @@
       "normal": "京急電車(2100形)"
     },
     "category": "local",
-    "image": "images/trains/keikyu2100-keikyu-sen.webp"
+    "image": "images/trains/keikyu2100-keikyu-sen.webp",
+    "credit": {
+      "author": "Cheng-en Cheng from Taichung City, Taiwan",
+      "license": "CC BY-SA 2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Keikyu_2100_series_at_Hatchonawate_Station_(47985559523).jpg"
+    }
   },
   {
     "id": "sotetsu20000-sotetsu-sen",
@@ -999,7 +1064,12 @@
       "normal": "相鉄線(20000系)"
     },
     "category": "local",
-    "image": "images/trains/sotetsu20000-sotetsu-sen.webp"
+    "image": "images/trains/sotetsu20000-sotetsu-sen.webp",
+    "credit": {
+      "author": "れぃ24",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:%E7%9B%B8%E9%89%8420000%E7%B3%BB.jpg"
+    }
   },
   {
     "id": "yokohama3000-blue-line",
@@ -1008,7 +1078,12 @@
       "normal": "ブルーライン(横浜市営地下鉄3000形)"
     },
     "category": "local",
-    "image": "images/trains/yokohama3000-blue-line.webp"
+    "image": "images/trains/yokohama3000-blue-line.webp",
+    "credit": {
+      "author": "MaedaAkihiko",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Yokohama-City-Subway_Type3000A_3000R.jpg"
+    }
   },
   {
     "id": "7300-yurikamome",
@@ -1017,7 +1092,12 @@
       "normal": "ゆりかもめ(7300系)"
     },
     "category": "local",
-    "image": "images/trains/7300-yurikamome.webp"
+    "image": "images/trains/7300-yurikamome.webp",
+    "credit": {
+      "author": "Cheng-en Cheng",
+      "license": "CC BY-SA 2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Yurikamome_7300_series_set_35_20140908.jpg"
+    }
   },
   {
     "id": "monorail10000-tokyo-monorail",
@@ -1026,7 +1106,12 @@
       "normal": "東京モノレール(10000形)"
     },
     "category": "local",
-    "image": "images/trains/monorail10000-tokyo-monorail.webp"
+    "image": "images/trains/monorail10000-tokyo-monorail.webp",
+    "credit": {
+      "author": "MaedaAkihiko",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Tokyo-Monorail-Type10000-10081F.jpg"
+    }
   },
   {
     "id": "toden8900-arakawa-sen",
@@ -1035,7 +1120,12 @@
       "normal": "都電荒川線(8900形)"
     },
     "category": "local",
-    "image": "images/trains/toden8900-arakawa-sen.webp"
+    "image": "images/trains/toden8900-arakawa-sen.webp",
+    "credit": {
+      "author": "茶紅の後午",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:%E9%83%BD%E9%9B%BB%E8%8D%92%E5%B7%9D%E7%B7%9A8900%E5%BD%A2.jpg"
+    }
   },
   {
     "id": "enoden300-enoden",
@@ -1044,7 +1134,12 @@
       "normal": "江ノ電(300形)"
     },
     "category": "local",
-    "image": "images/trains/enoden300-enoden.webp"
+    "image": "images/trains/enoden300-enoden.webp",
+    "credit": {
+      "author": "ume-y",
+      "license": "CC BY 2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Enoden_Type_300_at_Hase_Station_(Kanagawa).jpg"
+    }
   },
   {
     "id": "allegra-hakone-tozan-densha",
@@ -1053,7 +1148,12 @@
       "normal": "箱根登山電車(アレグラ号)"
     },
     "category": "local",
-    "image": "images/trains/allegra-hakone-tozan-densha.webp"
+    "image": "images/trains/allegra-hakone-tozan-densha.webp",
+    "credit": {
+      "author": "PekePON",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Hakone_Tozan_3000_2015-03-02-02.jpg"
+    }
   },
   {
     "id": "323-osaka-kanjo-sen",
@@ -1062,7 +1162,12 @@
       "normal": "大阪環状線(323系)"
     },
     "category": "local",
-    "image": "images/trains/323-osaka-kanjo-sen.webp"
+    "image": "images/trains/323-osaka-kanjo-sen.webp",
+    "credit": {
+      "author": "Jr223~commonswiki",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:JR_323_momodani.jpg"
+    }
   },
   {
     "id": "225-shin-kaisoku",
@@ -1074,7 +1179,12 @@
     "image": "images/trains/225-shin-kaisoku.webp",
     "lookalikes": [
       "225-hanwa-sen"
-    ]
+    ],
+    "credit": {
+      "author": "Toshinori baba",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Special_rapid_services_on_on_t%C5%8Dkaid%C5%8D_main_line_225_100.jpg"
+    }
   },
   {
     "id": "225-hanwa-sen",
@@ -1086,7 +1196,12 @@
     "image": "images/trains/225-hanwa-sen.webp",
     "lookalikes": [
       "225-shin-kaisoku"
-    ]
+    ],
+    "credit": {
+      "author": "日根野 (Hineno)",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:JRWseries225-5115.jpg"
+    }
   },
   {
     "id": "207-fukuchiyama-sen",
@@ -1095,7 +1210,12 @@
       "normal": "福知山線(207系)"
     },
     "category": "local",
-    "image": "images/trains/207-fukuchiyama-sen.webp"
+    "image": "images/trains/207-fukuchiyama-sen.webp",
+    "credit": {
+      "author": "Hideyuki KAMON",
+      "license": "CC BY-SA 2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:2005-11-30_JR_West_207.jpg"
+    }
   },
   {
     "id": "osakametro30000-midosuji-sen",
@@ -1104,7 +1224,12 @@
       "normal": "御堂筋線(大阪メトロ30000系)"
     },
     "category": "local",
-    "image": "images/trains/osakametro30000-midosuji-sen.webp"
+    "image": "images/trains/osakametro30000-midosuji-sen.webp",
+    "credit": {
+      "author": "NatsuTV",
+      "license": "CC0",
+      "source": "https://commons.wikimedia.org/wiki/File:%E5%A4%A7%E9%98%AA%E3%83%A1%E3%83%88%E3%83%AD%E5%BE%A1%E5%A0%82%E7%AD%8B%E7%B7%9A31007%E7%B3%BB.jpg"
+    }
   },
   {
     "id": "hankyu1000-hankyu-dentetsu",
@@ -1113,7 +1238,12 @@
       "normal": "阪急電鉄(1000系)"
     },
     "category": "local",
-    "image": "images/trains/hankyu1000-hankyu-dentetsu.webp"
+    "image": "images/trains/hankyu1000-hankyu-dentetsu.webp",
+    "credit": {
+      "author": "小田急4000系ファン",
+      "license": "CC0",
+      "source": "https://commons.wikimedia.org/wiki/File:%E9%98%AA%E6%80%A51001%E7%B3%BB.jpg"
+    }
   },
   {
     "id": "hanshin1000-hanshin-sen",
@@ -1122,7 +1252,12 @@
       "normal": "阪神線(1000系)"
     },
     "category": "local",
-    "image": "images/trains/hanshin1000-hanshin-sen.webp"
+    "image": "images/trains/hanshin1000-hanshin-sen.webp",
+    "credit": {
+      "author": "Cheng-en Cheng from Taichung City, Taiwan",
+      "license": "CC BY-SA 2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Hanshin_1000_series_1203F_(49904023131).jpg"
+    }
   },
   {
     "id": "nankai8300-nankai-sen",
@@ -1131,7 +1266,12 @@
       "normal": "南海線(8300系)"
     },
     "category": "local",
-    "image": "images/trains/nankai8300-nankai-sen.webp"
+    "image": "images/trains/nankai8300-nankai-sen.webp",
+    "credit": {
+      "author": "ゆう７",
+      "license": "CC BY 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:%E5%8D%97%E6%B5%B78300%E7%B3%BB_8312%E7%B7%A8%E6%88%90.jpg"
+    }
   },
   {
     "id": "mo161-hankai-densha",
@@ -1140,7 +1280,12 @@
       "normal": "阪堺電車(モ161形)"
     },
     "category": "local",
-    "image": "images/trains/mo161-hankai-densha.webp"
+    "image": "images/trains/mo161-hankai-densha.webp",
+    "credit": {
+      "author": "屋根裏の提督",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:%E9%98%AA%E5%A0%BA%E9%9B%BB%E6%B0%97%E8%BB%8C%E9%81%93%E3%83%A2%EF%BC%91%EF%BC%96%EF%BC%91%E5%BD%A2.JPG"
+    }
   },
   {
     "id": "kyoto20-karasuma-sen",
@@ -1149,7 +1294,12 @@
       "normal": "烏丸線(京都市営地下鉄20系)"
     },
     "category": "local",
-    "image": "images/trains/kyoto20-karasuma-sen.webp"
+    "image": "images/trains/kyoto20-karasuma-sen.webp",
+    "credit": {
+      "author": "MaedaAkihiko",
+      "license": "CC0",
+      "source": "https://commons.wikimedia.org/wiki/File:Kyoto-Subway_Series20-2131.jpg"
+    }
   },
   {
     "id": "kobe5000-kaigan-sen",
@@ -1158,7 +1308,12 @@
       "normal": "海岸線(神戸市営地下鉄5000形)"
     },
     "category": "local",
-    "image": "images/trains/kobe5000-kaigan-sen.webp"
+    "image": "images/trains/kobe5000-kaigan-sen.webp",
+    "credit": {
+      "author": "Niiryoku2910",
+      "license": "CC BY 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Kobe_subway_Series5000.jpg"
+    }
   },
   {
     "id": "2020-port-liner",
@@ -1167,7 +1322,12 @@
       "normal": "ポートライナー(神戸新交通2020形)"
     },
     "category": "local",
-    "image": "images/trains/2020-port-liner.webp"
+    "image": "images/trains/2020-port-liner.webp",
+    "credit": {
+      "author": "TRJN",
+      "license": "CC BY-SA 4.0",
+      "source": "https://commons.wikimedia.org/wiki/File:2016-10-30-Portliner2120.jpg"
+    }
   },
   {
     "id": "nishitetsu3000-tenjin-omuta-sen",
@@ -1176,7 +1336,12 @@
       "normal": "西鉄天神大牟田線(3000形)"
     },
     "category": "local",
-    "image": "images/trains/nishitetsu3000-tenjin-omuta-sen.webp"
+    "image": "images/trains/nishitetsu3000-tenjin-omuta-sen.webp",
+    "credit": {
+      "author": "MaedaAkihiko",
+      "license": "CC0",
+      "source": "https://commons.wikimedia.org/wiki/File:Nishitetsu_Series3000-3009.jpg"
+    }
   },
   {
     "id": "fukuoka3000-nanakuma-sen",
@@ -1185,7 +1350,12 @@
       "normal": "七隈線(福岡市地下鉄3000系)"
     },
     "category": "local",
-    "image": "images/trains/fukuoka3000-nanakuma-sen.webp"
+    "image": "images/trains/fukuoka3000-nanakuma-sen.webp",
+    "credit": {
+      "author": "Rsa",
+      "license": "CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:Fukuokasubway-3000.jpg"
+    }
   },
   {
     "id": "ef210-momotaro",
@@ -1194,7 +1364,12 @@
       "normal": "桃太郎(EF210形・貨物)"
     },
     "category": "local",
-    "image": "images/trains/ef210-momotaro.webp"
+    "image": "images/trains/ef210-momotaro.webp",
+    "credit": {
+      "author": "m-louis .®",
+      "license": "CC BY-SA 2.0",
+      "source": "https://commons.wikimedia.org/wiki/File:JRF_EF210_ECO-POWER_Momotaro_wrapping_(3926151272).jpg"
+    }
   },
   {
     "id": "eh500-kintaro",
@@ -1203,7 +1378,12 @@
       "normal": "金太郎(EH500形・貨物)"
     },
     "category": "local",
-    "image": "images/trains/eh500-kintaro.webp"
+    "image": "images/trains/eh500-kintaro.webp",
+    "credit": {
+      "author": "多摩川是政",
+      "license": "CC0",
+      "source": "https://commons.wikimedia.org/wiki/File:JR_Freight_EH500-40.jpg"
+    }
   },
   {
     "id": "d51-degoichi",
@@ -1212,6 +1392,11 @@
       "normal": "デゴイチ(D51形蒸気機関車)"
     },
     "category": "local",
-    "image": "images/trains/d51-degoichi.webp"
+    "image": "images/trains/d51-degoichi.webp",
+    "credit": {
+      "author": "Mamusi Taka",
+      "license": "CC BY-SA 3.0",
+      "source": "https://commons.wikimedia.org/wiki/File:%E4%B8%AD%E6%B4%A5%E5%B7%9D%E9%A7%85_%E8%BB%A2%E8%BB%8A%E5%8F%B0%E3%81%AB%E4%B9%97%E3%82%8BD51%E5%9E%8B%E8%92%B8%E6%B0%97%E6%A9%9F%E9%96%A2%E8%BB%8A_-_Panoramio_107772896.jpg"
+    }
   }
 ]
