@@ -40,9 +40,9 @@ train-quiz/
 │   ├── icon.svg / icons/*.png
 │   ├── images/
 │   │   ├── trains/*.webp    # 問題写真
-│   │   ├── conductor/{normal,happy,sad,celebrate}.png  # ユーザー支給(未着でも動く)
+│   │   ├── conductor/{normal,happy,sad,celebrate}.png  # ユーザー支給・配置済み
 │   │   ├── hero/{shinkansen,express,local,all}.svg     # 代表電車イラスト
-│   │   └── bg/platform.svg  # 駅ホーム背景
+│   │   └── bg/platform.webp # 駅ホーム背景(ユーザー支給・配置済み)
 │   └── sounds/*.wav
 ├── src/
 │   ├── main.ts              # 起動のみ
@@ -1194,8 +1194,9 @@ git commit -m "feat: add app shell, start/game/mode screens, hero SVGs"
 ### Task 6: 問題画面(正誤演出・再挑戦・進捗バー)+ ホーム背景
 
 **Files:**
-- Create: `src/screens/question.ts`, `public/images/bg/platform.svg`
+- Create: `src/screens/question.ts`
 - Modify: `src/app.ts`(screens に question を追加)、`src/styles.css`
+- 前提: `public/images/bg/platform.webp` と `public/images/conductor/*.png` はリポジトリに配置済み(ユーザー支給素材)
 - Test: `tests/question.test.ts`
 
 **Interfaces:**
@@ -1319,7 +1320,7 @@ export function renderQuestion(ctx: AppContext): void {
 
   ctx.root.innerHTML = `
     <section class="screen screen-question platform-bg"
-             style="background-image:url(${asset('images/bg/platform.svg')})">
+             style="background-image:url(${asset('images/bg/platform.webp')})">
       <div class="progress">
         ${Array.from({ length: total }, (_, i) => `<span class="station${i <= session.current ? ' passed' : ''}"></span>`).join('')}
         <img class="progress-train" style="left:${(session.current / Math.max(total - 1, 1)) * 88}%"
@@ -1388,24 +1389,9 @@ import { renderQuestion } from './screens/question';
 
 さらに、Task 7 まで通しで遊べるように `src/screens/modeSelect.ts` の `ctx.navigate('departure')` を一時的に `ctx.navigate('question')` に変更する(Task 7 で戻す)。
 
-- [ ] **Step 4: ホーム背景SVGとスタイルを追加**
+- [ ] **Step 4: スタイルを追加**
 
-`public/images/bg/platform.svg`:
-```svg
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMax slice">
-  <rect width="1600" height="900" fill="#cfe9f7"/>
-  <circle cx="1360" cy="120" r="60" fill="#ffd54d"/>
-  <rect y="180" width="1600" height="36" fill="#5f6a72"/>
-  <rect x="180" y="216" width="22" height="420" fill="#7c8790"/>
-  <rect x="700" y="216" width="22" height="420" fill="#7c8790"/>
-  <rect x="1220" y="216" width="22" height="420" fill="#7c8790"/>
-  <rect x="640" y="300" width="220" height="76" rx="10" fill="#fff" stroke="#3a4a55" stroke-width="4"/>
-  <text x="750" y="352" font-size="40" text-anchor="middle" fill="#3a4a55">えき</text>
-  <rect y="636" width="1600" height="20" fill="#f2c200"/>
-  <rect y="656" width="1600" height="60" fill="#b9bec4"/>
-  <rect y="716" width="1600" height="184" fill="#8d9298"/>
-</svg>
-```
+背景画像 `public/images/bg/platform.webp` は配置済み(新規作成不要)。
 
 `src/styles.css` に追記:
 ```css
@@ -1616,7 +1602,7 @@ interface TravelOptions {
 function playTravel(ctx: AppContext, opts: TravelOptions): void {
   ctx.root.innerHTML = `
     <section class="screen screen-travel travel-${opts.variant} platform-bg"
-             style="background-image:url(${asset('images/bg/platform.svg')})">
+             style="background-image:url(${asset('images/bg/platform.webp')})">
       ${opts.label ? `<div class="travel-label">${opts.label}</div>` : ''}
       <img class="travel-train" src="${asset(ctx.currentMode!.heroTrain)}" alt="">
     </section>`;
@@ -1661,7 +1647,7 @@ export function renderResult(ctx: AppContext): void {
   ctx.audio.play('fanfare');
   ctx.root.innerHTML = `
     <section class="screen screen-result platform-bg"
-             style="background-image:url(${asset('images/bg/platform.svg')})">
+             style="background-image:url(${asset('images/bg/platform.webp')})">
       <div class="doors"><div class="door door-left"></div><div class="door door-right"></div></div>
       <div class="result-body">
         <img class="conductor conductor-lg" src="${asset('images/conductor/celebrate.png')}" alt="" onerror="this.hidden=true">
@@ -2414,15 +2400,16 @@ Expected: クリーン
 
 ---
 
-## 補足: ユーザー支給素材の受け入れ
+## 補足: ユーザー支給素材
 
-犬の車掌さん画像(ユーザーが生成AIで用意)は、届き次第 `public/images/conductor/` に以下の名前で配置するだけで表示される(未配置でも `onerror` で非表示になりアプリは動く):
+犬の車掌さん4ポーズ(透過PNG)と駅ホーム背景は受領・処理済みで、以下に配置済み:
 
-| ファイル名 | ポーズ |
+| ファイル | 用途 |
 |---|---|
-| `normal.png` | 通常(スタート画面) |
-| `happy.png` | 喜び(正解時) |
-| `sad.png` | 困り顔(不正解時) |
-| `celebrate.png` | 祝福(結果画面) |
+| `public/images/conductor/normal.png` | 通常(スタート画面) |
+| `public/images/conductor/happy.png` | 喜び(正解時) |
+| `public/images/conductor/sad.png` | 困り顔(不正解時) |
+| `public/images/conductor/celebrate.png` | 祝福(結果画面) |
+| `public/images/bg/platform.webp` | 駅ホーム背景(問題・演出・結果画面) |
 
-配置後に `npm run build` して再デプロイ(push)すれば反映される。
+原本は `assets-src/conductor/` にあり(車掌は偽チェッカーボード背景をBFS除去して透過化済み)。差し替え時は同名で上書きするだけでよい。
