@@ -91,6 +91,7 @@ body {
   justify-content: center;
   z-index: 10;
 }
+.overlay[hidden] { display: none; }
 .mark { font-size: 200px; line-height: 1; font-weight: bold; }
 .mark-correct { color: var(--red); }
 .mark-wrong { color: var(--blue); }

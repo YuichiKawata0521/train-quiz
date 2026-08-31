@@ -1,8 +1,14 @@
 import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
+import { readFileSync } from 'node:fs';
 import { renderQuestion } from '../src/screens/question';
 import { createSession } from '../src/logic/quiz';
 import type { AppContext } from '../src/app';
 import type { Train, Mode } from '../src/logic/types';
+
+// Vitest replaces `.css` imports (even with `?raw`) with an empty string
+// by default (perf optimization), so read the file directly with node:fs
+// to inspect its actual contents. Vitest's cwd is the project root.
+const css = readFileSync('src/styles.css', 'utf-8');
 
 function train(id: string, hiragana: string): Train {
   return {
@@ -101,5 +107,12 @@ describe('renderQuestion', () => {
     const progressTrain = ctx.root.querySelector<HTMLImageElement>('.progress-train')!;
     expect(progressTrain).not.toBeNull();
     expect(progressTrain.src).toContain('images/hero/local.svg');
+  });
+
+  it('CSS: hidden属性のときオーバーレイが非表示になるルールがある', () => {
+    // .overlay { display: flex; ... } だけだと HTML の hidden 属性による
+    // UAスタイル(display:none)を上書きし、常時表示・クリック遮断のバグになる。
+    // .overlay[hidden] { display: none; } で明示的に打ち消す必要がある。
+    expect(css).toContain('.overlay[hidden]');
   });
 });
