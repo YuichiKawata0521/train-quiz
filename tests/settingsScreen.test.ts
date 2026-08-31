@@ -60,4 +60,13 @@ describe('renderSettingsScreen', () => {
     expect(ctx.settings.sound).toBe(false);
     expect(loadSettings().sound).toBe(false);
   });
+  it('おとなモードを変更すると即保存される', () => {
+    const ctx = fixtureCtx();
+    renderSettingsScreen(ctx);
+    const checkbox = ctx.root.querySelector<HTMLInputElement>('input[name=adultMode]')!;
+    checkbox.checked = true;
+    checkbox.dispatchEvent(new Event('change', { bubbles: true }));
+    expect(ctx.settings.adultMode).toBe(true);
+    expect(loadSettings().adultMode).toBe(true);
+  });
 });

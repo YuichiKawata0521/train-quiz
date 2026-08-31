@@ -127,6 +127,9 @@ body {
 .result-score { font-size: 52px; color: var(--blue-dark); }
 .hanamaru { font-size: 44px; color: var(--red); }
 .result-actions { display: flex; gap: 24px; }
+.screen-locked { background: #e7f5ff; }
+.locked-title { font-size: 48px; color: var(--blue-dark); text-align: center; }
+.locked-message { font-size: 32px; color: #555; }
 .screen-settings { justify-content: flex-start; padding-top: 48px; align-items: flex-start; max-width: 800px; margin: 0 auto; }
 .setting-row { display: flex; align-items: center; gap: 24px; font-size: 28px; }
 .setting-label { min-width: 220px; font-weight: bold; color: var(--blue-dark); }

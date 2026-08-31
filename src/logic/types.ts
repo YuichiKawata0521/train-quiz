@@ -33,4 +33,6 @@ export interface Settings {
   notation: Notation;
   questionCount: 5 | 7 | 10;
   sound: boolean;
+  /** おとなモード: 1日のプレイ時間制限を無効化する */
+  adultMode: boolean;
 }

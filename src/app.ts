@@ -10,6 +10,8 @@ import { renderSettingsScreen } from './screens/settingsScreen';
 import { renderQuestion } from './screens/question';
 import { renderDeparture, renderInterlude, renderArrival } from './screens/travel';
 import { renderResult } from './screens/result';
+import { renderLocked } from './screens/locked';
+import { isTimeUp } from './logic/playTimer';
 
 export type ScreenName =
   | 'start'
@@ -20,7 +22,17 @@ export type ScreenName =
   | 'interlude'
   | 'arrival'
   | 'result'
-  | 'settings';
+  | 'settings'
+  | 'locked';
+
+// 時間切れ時にロック画面へ差し替える画面。ゲーム中(question〜result)は
+// その回の結果発表まで見せるため含めない。settings は親用なので常に開ける。
+const LOCKABLE: ReadonlySet<ScreenName> = new Set([
+  'start',
+  'gameSelect',
+  'modeSelect',
+  'departure',
+]);
 
 export type SoundName = 'tap' | 'horn' | 'wrong' | 'depart' | 'arrive' | 'fanfare' | 'run';
 
@@ -53,6 +65,7 @@ export const screens: Partial<Record<ScreenName, ScreenRenderer>> = {
   arrival: renderArrival,
   result: renderResult,
   settings: renderSettingsScreen,
+  locked: renderLocked,
 };
 
 export function createApp(
@@ -68,8 +81,10 @@ export function createApp(
     currentMode: null,
     session: null,
     navigate(screen) {
-      const render = screens[screen];
-      if (!render) throw new Error(`画面が未登録: ${screen}`);
+      const target =
+        !ctx.settings.adultMode && isTimeUp() && LOCKABLE.has(screen) ? 'locked' : screen;
+      const render = screens[target];
+      if (!render) throw new Error(`画面が未登録: ${target}`);
       root.innerHTML = '';
       render(ctx);
     },

@@ -6,6 +6,7 @@ export const DEFAULT_SETTINGS: Settings = {
   notation: 'hiragana',
   questionCount: 5,
   sound: true,
+  adultMode: false,
 };
 
 export function loadSettings(): Settings {

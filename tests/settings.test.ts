@@ -14,8 +14,13 @@ describe('loadSettings', () => {
     expect(loadSettings()).toEqual(DEFAULT_SETTINGS);
   });
   it('保存した値を復元する', () => {
-    saveSettings({ notation: 'normal', questionCount: 10, sound: false });
-    expect(loadSettings()).toEqual({ notation: 'normal', questionCount: 10, sound: false });
+    saveSettings({ notation: 'normal', questionCount: 10, sound: false, adultMode: true });
+    expect(loadSettings()).toEqual({
+      notation: 'normal',
+      questionCount: 10,
+      sound: false,
+      adultMode: true,
+    });
   });
   it('壊れたJSONならデフォルトを返す', () => {
     localStorage.setItem('train-quiz-settings', '{oops');

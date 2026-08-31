@@ -16,7 +16,7 @@ class FakeAudio {
 }
 
 function makeSettings(sound: boolean): Settings {
-  return { notation: 'hiragana', questionCount: 5, sound };
+  return { notation: 'hiragana', questionCount: 5, sound, adultMode: false };
 }
 
 describe('initAudio', () => {

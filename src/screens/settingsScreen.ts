@@ -25,6 +25,10 @@ export function renderSettingsScreen(ctx: AppContext): void {
         <span class="setting-label">おと</span>
         <label><input type="checkbox" name="sound" ${s.sound ? 'checked' : ''}> オン</label>
       </div>
+      <div class="setting-row">
+        <span class="setting-label">おとなモード</span>
+        <label><input type="checkbox" name="adultMode" ${s.adultMode ? 'checked' : ''}> じかんせいげんなし</label>
+      </div>
       <details class="credits">
         <summary>しゃしんのクレジット(${credits.length}けん)</summary>
         <ul>
@@ -44,6 +48,7 @@ export function renderSettingsScreen(ctx: AppContext): void {
     if (input.name === 'notation') ctx.settings.notation = input.value as 'hiragana' | 'normal';
     if (input.name === 'count') ctx.settings.questionCount = Number(input.value) as 5 | 7 | 10;
     if (input.name === 'sound') ctx.settings.sound = input.checked;
+    if (input.name === 'adultMode') ctx.settings.adultMode = input.checked;
     saveSettings(ctx.settings);
   });
   ctx.root.querySelector<HTMLButtonElement>('[data-action=back]')!.addEventListener('click', () => {
