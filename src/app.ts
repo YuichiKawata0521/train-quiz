@@ -8,6 +8,8 @@ import { renderGameSelect } from './screens/gameSelect';
 import { renderModeSelect } from './screens/modeSelect';
 import { renderSettingsScreen } from './screens/settingsScreen';
 import { renderQuestion } from './screens/question';
+import { renderDeparture, renderInterlude, renderArrival } from './screens/travel';
+import { renderResult } from './screens/result';
 
 export type ScreenName =
   | 'start'
@@ -44,7 +46,11 @@ export const screens: Partial<Record<ScreenName, ScreenRenderer>> = {
   start: renderStart,
   gameSelect: renderGameSelect,
   modeSelect: renderModeSelect,
+  departure: renderDeparture,
   question: renderQuestion,
+  interlude: renderInterlude,
+  arrival: renderArrival,
+  result: renderResult,
   settings: renderSettingsScreen,
 };
 

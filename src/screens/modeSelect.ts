@@ -31,7 +31,7 @@ export function renderModeSelect(ctx: AppContext): void {
         undefined,
         ctx.trains,
       );
-      ctx.navigate('question'); // TODO(Task 7): departure 画面実装後に 'departure' へ戻す
+      ctx.navigate('departure');
     });
   }
   ctx.root.querySelector<HTMLButtonElement>('[data-action=back]')!.addEventListener('click', () => {
