@@ -11,13 +11,15 @@
     "test:watch": "vitest",
     "sounds": "node scripts/make-sounds.mjs",
     "images": "node scripts/convert-images.mjs",
-    "validate": "node scripts/validate-data.mjs"
+    "validate": "node scripts/validate-data.mjs",
+    "icons": "node scripts/make-icons.mjs"
   },
   "devDependencies": {
     "happy-dom": "^20.12.0",
     "sharp": "^0.35.4",
     "typescript": "^7.0.2",
     "vite": "^8.2.2",
+    "vite-plugin-pwa": "^1.3.0",
     "vitest": "^4.1.11"
   }
 }
