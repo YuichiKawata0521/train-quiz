@@ -23,7 +23,7 @@ const mode: Mode = {
   id: 'local',
   label: { hiragana: 'ふつうでんしゃ', normal: '普通電車' },
   categories: ['local'],
-  heroTrain: 'images/hero/local.svg',
+  heroTrain: 'images/hero/local.webp',
 };
 
 function fixtureCtx(questionCount: number): AppContext {
@@ -106,7 +106,7 @@ describe('renderQuestion', () => {
     expect(stations[2].classList.contains('passed')).toBe(false);
     const progressTrain = ctx.root.querySelector<HTMLImageElement>('.progress-train')!;
     expect(progressTrain).not.toBeNull();
-    expect(progressTrain.src).toContain('images/hero/local.svg');
+    expect(progressTrain.src).toContain('images/hero/local.webp');
   });
 
   it('CSS: hidden属性のときオーバーレイが非表示になるルールがある', () => {

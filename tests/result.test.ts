@@ -17,7 +17,7 @@ const mode: Mode = {
   id: 'local',
   label: { hiragana: 'ふつうでんしゃ', normal: '普通電車' },
   categories: ['local'],
-  heroTrain: 'images/hero/local.svg',
+  heroTrain: 'images/hero/local.webp',
 };
 
 function fixtureCtx(): AppContext {

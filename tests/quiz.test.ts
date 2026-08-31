@@ -157,7 +157,7 @@ describe('poolForMode', () => {
     id: 'express',
     label: { hiragana: 'とっきゅう', normal: '特急' },
     categories: ['express'],
-    heroTrain: 'images/hero/express.svg',
+    heroTrain: 'images/hero/express.webp',
   };
   it('モードのカテゴリだけを返す', () => {
     expect(poolForMode(mode, mixedPool).every((t) => t.category === 'express')).toBe(true);

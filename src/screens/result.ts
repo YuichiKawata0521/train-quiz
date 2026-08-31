@@ -9,8 +9,11 @@ export function renderResult(ctx: AppContext): void {
   ctx.audio.play('fanfare');
   ctx.root.innerHTML = `
     <section class="screen screen-result platform-bg"
-             style="background-image:url(${asset('images/bg/platform.webp')})">
-      <div class="doors"><div class="door door-left"></div><div class="door door-right"></div></div>
+             style="background-image:url(${asset('images/bg/result.webp')})">
+      <div class="doors">
+        <div class="door door-left"><img src="${asset('images/bg/doors.webp')}" alt=""></div>
+        <div class="door door-right"><img src="${asset('images/bg/doors.webp')}" alt=""></div>
+      </div>
       <div class="result-body">
         <img class="conductor conductor-lg" src="${asset('images/conductor/celebrate.png')}" alt="" onerror="this.hidden=true">
         <p class="result-score">${total}もんちゅう ${session.score}もん せいかい!</p>
@@ -21,7 +24,12 @@ export function renderResult(ctx: AppContext): void {
         </div>
       </div>
     </section>`;
-  requestAnimationFrame(() => ctx.root.querySelector('.doors')!.classList.add('open'));
+  // 閉じた状態のフレームを一度確定させてから open を付けないと transition が発火しない
+  const doors = ctx.root.querySelector<HTMLElement>('.doors')!;
+  requestAnimationFrame(() => {
+    void doors.offsetWidth;
+    requestAnimationFrame(() => doors.classList.add('open'));
+  });
   ctx.root.querySelector<HTMLButtonElement>('[data-action=retry]')!.addEventListener('click', () => {
     ctx.audio.play('tap');
     ctx.session = createSession(

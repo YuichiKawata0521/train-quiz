@@ -108,10 +108,22 @@ body {
 @keyframes travel-run { from { left: -30%; } to { left: 120%; } }
 @keyframes travel-arrive { from { left: -30%; } to { left: 25%; } }
 .doors { position: fixed; inset: 0; display: flex; z-index: 5; pointer-events: none; }
-.door { flex: 1; background: #74b0d8; border: 6px solid #4a90b8; transition: transform 1s ease 0.3s; }
+.door { flex: 1; overflow: hidden; position: relative; transition: transform 2.4s ease-in-out 0.6s; }
+.door img { position: absolute; top: 0; height: 100%; width: 100vw; max-width: none; object-fit: cover; }
+.door-left img { left: 0; }
+.door-right img { right: 0; }
 .doors.open .door-left { transform: translateX(-105%); }
 .doors.open .door-right { transform: translateX(105%); }
-.result-body { display: flex; flex-direction: column; align-items: center; gap: 16px; }
+.result-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  background: rgba(255, 255, 255, 0.88);
+  border-radius: 24px;
+  padding: 24px 48px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
 .result-score { font-size: 52px; color: var(--blue-dark); }
 .hanamaru { font-size: 44px; color: var(--red); }
 .result-actions { display: flex; gap: 24px; }

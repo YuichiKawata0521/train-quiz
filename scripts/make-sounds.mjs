@@ -32,19 +32,13 @@ function tone(freqs, dur, { gain = 0.5, decay = 4 } = {}) {
 
 const silence = (dur) => new Array(Math.floor(RATE * dur)).fill(0);
 
+// horn/wrong/depart/fanfare/run はユーザー選定のmp3(効果音ラボ)に差し替え済み。
+// ここでは合成音のまま使う tap / arrive のみ生成する。
 const sounds = {
   tap: tone([880], 0.08, { decay: 20 }),
-  horn: tone([311, 415], 0.8, { decay: 1.2, gain: 0.6 }),
-  wrong: [...tone([220], 0.15, { decay: 6 }), ...silence(0.05), ...tone([180], 0.3, { decay: 6 })],
-  depart: [...tone([660], 0.12, { decay: 8 }), ...tone([784], 0.12, { decay: 8 }), ...tone([880], 0.3, { decay: 4 })],
   arrive: [...tone([880], 0.15, { decay: 6 }), ...tone([660], 0.35, { decay: 4 })],
-  fanfare: [
-    ...tone([523], 0.15, { decay: 5 }),
-    ...tone([659], 0.15, { decay: 5 }),
-    ...tone([784], 0.15, { decay: 5 }),
-    ...tone([1047, 784], 0.5, { decay: 3 }),
-  ],
 };
+void silence;
 
 mkdirSync('public/sounds', { recursive: true });
 for (const [name, samples] of Object.entries(sounds)) {

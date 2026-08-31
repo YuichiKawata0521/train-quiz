@@ -22,10 +22,11 @@ export type ScreenName =
   | 'result'
   | 'settings';
 
-export type SoundName = 'tap' | 'horn' | 'wrong' | 'depart' | 'arrive' | 'fanfare';
+export type SoundName = 'tap' | 'horn' | 'wrong' | 'depart' | 'arrive' | 'fanfare' | 'run';
 
 export interface AudioPlayer {
   play(name: SoundName): void;
+  stop(name: SoundName): void;
 }
 
 export interface AppContext {
@@ -56,7 +57,7 @@ export const screens: Partial<Record<ScreenName, ScreenRenderer>> = {
 
 export function createApp(
   root: HTMLElement,
-  audio: AudioPlayer = { play: () => {} },
+  audio: AudioPlayer = { play: () => {}, stop: () => {} },
 ): AppContext {
   const ctx: AppContext = {
     root,

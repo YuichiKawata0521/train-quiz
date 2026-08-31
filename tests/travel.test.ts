@@ -7,7 +7,7 @@ const mode: Mode = {
   id: 'shinkansen',
   label: { hiragana: 'しんかんせん', normal: '新幹線' },
   categories: ['shinkansen'],
-  heroTrain: 'images/hero/shinkansen.svg',
+  heroTrain: 'images/hero/shinkansen.webp',
 };
 
 function fixtureCtx(): AppContext {
@@ -16,7 +16,7 @@ function fixtureCtx(): AppContext {
     trains: [],
     modes: [mode],
     settings: { notation: 'hiragana', questionCount: 5, sound: false },
-    audio: { play: vi.fn() },
+    audio: { play: vi.fn(), stop: vi.fn() },
     currentMode: mode,
     session: null,
     navigate: vi.fn(),
@@ -27,10 +27,12 @@ beforeEach(() => vi.useFakeTimers());
 afterEach(() => vi.useRealTimers());
 
 describe('travel screens', () => {
-  it('interlude は2秒後に question へ', () => {
+  it('interlude は走行音を鳴らし、2秒後に止めて question へ', () => {
     const ctx = fixtureCtx();
     renderInterlude(ctx);
+    expect(ctx.audio.play).toHaveBeenCalledWith('run');
     vi.advanceTimersByTime(2000);
+    expect(ctx.audio.stop).toHaveBeenCalledWith('run');
     expect(ctx.navigate).toHaveBeenCalledWith('question');
   });
   it('タップでスキップでき、二重遷移しない', () => {

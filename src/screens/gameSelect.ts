@@ -1,7 +1,7 @@
 import type { AppContext } from '../app';
 import { asset } from '../ui/asset';
 
-const GAMES = [{ id: 'train-quiz', label: 'でんしゃクイズ', icon: 'images/hero/shinkansen.svg' }];
+const GAMES = [{ id: 'train-quiz', label: 'でんしゃクイズ', icon: 'images/hero/shinkansen.webp' }];
 
 export function renderGameSelect(ctx: AppContext): void {
   ctx.root.innerHTML = `

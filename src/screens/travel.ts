@@ -20,6 +20,7 @@ function playTravel(ctx: AppContext, opts: TravelOptions): void {
     if (done) return;
     done = true;
     clearTimeout(timer);
+    if (opts.variant === 'run') ctx.audio.stop('run');
     ctx.navigate(opts.next);
   };
   const timer = setTimeout(finish, opts.durationMs);
@@ -32,6 +33,7 @@ export function renderDeparture(ctx: AppContext): void {
 }
 
 export function renderInterlude(ctx: AppContext): void {
+  ctx.audio.play('run');
   playTravel(ctx, { variant: 'run', label: '', durationMs: 2000, next: 'question' });
 }
 
