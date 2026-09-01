@@ -3,6 +3,7 @@ import { answer, isFinished } from '../logic/quiz';
 import { displayName } from '../logic/settings';
 import { asset } from '../ui/asset';
 import { stationBg } from '../ui/backgrounds';
+import { recordFirstTryCorrect } from '../logic/zukan';
 
 const FEEDBACK_MS = 1500;
 
@@ -42,10 +43,12 @@ export function renderQuestion(ctx: AppContext): void {
 
   for (const btn of buttons) {
     btn.addEventListener('click', () => {
+      const firstTry = !session.failedThisQuestion;
       const result = answer(session, Number(btn.dataset.index));
       for (const b of buttons) b.disabled = true;
       conductor.hidden = false;
       if (result === 'correct') {
+        if (firstTry) recordFirstTryCorrect(q.train.id);
         ctx.audio.play('horn');
         mark.textContent = '◯';
         mark.className = 'mark mark-correct';

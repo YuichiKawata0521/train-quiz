@@ -2,6 +2,7 @@ import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { renderQuestion } from '../src/screens/question';
 import { createSession } from '../src/logic/quiz';
+import { countFor } from '../src/logic/zukan';
 import type { AppContext } from '../src/app';
 import type { Train, Mode } from '../src/logic/types';
 
@@ -49,7 +50,10 @@ function fixtureCtx(questionCount: number): AppContext {
   return ctx;
 }
 
-beforeEach(() => vi.useFakeTimers());
+beforeEach(() => {
+  vi.useFakeTimers();
+  localStorage.clear();
+});
 afterEach(() => {
   vi.useRealTimers();
   document.body.innerHTML = '';
@@ -115,5 +119,25 @@ describe('renderQuestion', () => {
     // UAスタイル(display:none)を上書きし、常時表示・クリック遮断のバグになる。
     // .overlay[hidden] { display: none; } で明示的に打ち消す必要がある。
     expect(css).toContain('.overlay[hidden]');
+  });
+
+  it('1発正解で図鑑カウントが1増える', () => {
+    const ctx = fixtureCtx(2);
+    renderQuestion(ctx);
+    const q = ctx.session!.questions[0];
+    const buttons = [...ctx.root.querySelectorAll<HTMLButtonElement>('.choice')];
+    buttons[q.correctIndex].click();
+    expect(countFor(q.train.id)).toBe(1);
+  });
+
+  it('まちがえたあとの正解では図鑑カウントが増えない', () => {
+    const ctx = fixtureCtx(2);
+    renderQuestion(ctx);
+    const q = ctx.session!.questions[0];
+    const buttons = [...ctx.root.querySelectorAll<HTMLButtonElement>('.choice')];
+    buttons[q.correctIndex === 0 ? 1 : 0].click();
+    vi.advanceTimersByTime(1500);
+    buttons[q.correctIndex].click();
+    expect(countFor(q.train.id)).toBe(0);
   });
 });
