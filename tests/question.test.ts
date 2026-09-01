@@ -142,6 +142,17 @@ describe('renderQuestion', () => {
     expect(countFor(q.train.id)).toBe(0);
   });
 
+  it('れんが遊んでいるときは1発正解でも図鑑カウントが増えない', () => {
+    const ctx = fixtureCtx(2);
+    ctx.player = 'ren';
+    renderQuestion(ctx);
+    const q = ctx.session!.questions[0];
+    for (let i = 0; i < UNLOCK_COUNT - 1; i++) recordFirstTryCorrect(q.train.id);
+    [...ctx.root.querySelectorAll<HTMLButtonElement>('.choice')][q.correctIndex].click();
+    expect(countFor(q.train.id)).toBe(UNLOCK_COUNT - 1);
+    expect(ctx.newUnlocks).toEqual([]);
+  });
+
   it('5回目の1発正解で newUnlocks に積まれる(4回目までは積まれない)', () => {
     const ctx = fixtureCtx(2);
     renderQuestion(ctx);

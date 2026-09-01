@@ -4,6 +4,7 @@ import { loadSettings } from './logic/settings';
 import trainsJson from './data/trains.json';
 import modesJson from './data/modes.json';
 import { renderStart } from './screens/start';
+import { renderPlayerSelect } from './screens/playerSelect';
 import { renderGameSelect } from './screens/gameSelect';
 import { renderModeSelect } from './screens/modeSelect';
 import { renderSettingsScreen } from './screens/settingsScreen';
@@ -16,6 +17,7 @@ import { isTimeUp } from './logic/playTimer';
 
 export type ScreenName =
   | 'start'
+  | 'playerSelect'
   | 'gameSelect'
   | 'modeSelect'
   | 'departure'
@@ -31,11 +33,15 @@ export type ScreenName =
 // その回の結果発表まで見せるため含めない。settings は親用なので常に開ける。
 const LOCKABLE: ReadonlySet<ScreenName> = new Set([
   'start',
+  'playerSelect',
   'gameSelect',
   'modeSelect',
   'departure',
   'zukan',
 ]);
+
+/** 遊んでいる子。れん は図鑑カウントを増やさない(ひろとのコレクションを守る) */
+export type Player = 'hiroto' | 'ren';
 
 export type SoundName = 'tap' | 'horn' | 'wrong' | 'depart' | 'arrive' | 'fanfare' | 'run';
 
@@ -54,6 +60,7 @@ export interface AppContext {
   session: SessionState | null;
   /** このセッション中に図鑑へ新しく登録された電車id(結果画面でお祝いする) */
   newUnlocks: string[];
+  player: Player;
   navigate(screen: ScreenName): void;
 }
 
@@ -62,6 +69,7 @@ type ScreenRenderer = (ctx: AppContext) => void;
 // 後続タスクの画面はここに追記していく
 export const screens: Partial<Record<ScreenName, ScreenRenderer>> = {
   start: renderStart,
+  playerSelect: renderPlayerSelect,
   gameSelect: renderGameSelect,
   modeSelect: renderModeSelect,
   departure: renderDeparture,
@@ -87,6 +95,7 @@ export function createApp(
     currentMode: null,
     session: null,
     newUnlocks: [],
+    player: 'hiroto',
     navigate(screen) {
       const target =
         !ctx.settings.adultMode && isTimeUp() && LOCKABLE.has(screen) ? 'locked' : screen;

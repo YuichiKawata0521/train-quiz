@@ -49,7 +49,8 @@ export function renderQuestion(ctx: AppContext): void {
       for (const b of buttons) b.disabled = true;
       conductor.hidden = false;
       if (result === 'correct') {
-        if (firstTry && recordFirstTryCorrect(q.train.id) === UNLOCK_COUNT) {
+        // れん(文字が読めない下の子)の正解は図鑑カウントに入れない
+        if (firstTry && ctx.player !== 'ren' && recordFirstTryCorrect(q.train.id) === UNLOCK_COUNT) {
           ctx.newUnlocks.push(q.train.id);
         }
         ctx.audio.play('horn');

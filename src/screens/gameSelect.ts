@@ -37,6 +37,6 @@ export function renderGameSelect(ctx: AppContext): void {
   }
   ctx.root.querySelector<HTMLButtonElement>('[data-action=back]')!.addEventListener('click', () => {
     ctx.audio.play('tap');
-    ctx.navigate('start');
+    ctx.navigate('playerSelect');
   });
 }

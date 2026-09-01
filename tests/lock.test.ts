@@ -23,6 +23,8 @@ describe('時間切れロック', () => {
     const app = createApp(root());
     app.navigate('start');
     expect(root().querySelector('.screen-locked')).not.toBeNull();
+    app.navigate('playerSelect');
+    expect(root().querySelector('.screen-locked')).not.toBeNull();
     app.navigate('modeSelect');
     expect(root().querySelector('.screen-locked')).not.toBeNull();
   });

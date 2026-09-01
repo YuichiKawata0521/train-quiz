@@ -16,7 +16,7 @@ export function renderStart(ctx: AppContext): void {
     </section>`;
   ctx.root.querySelector<HTMLButtonElement>('[data-action=start]')!.addEventListener('click', () => {
     ctx.audio.play('tap');
-    ctx.navigate('gameSelect');
+    ctx.navigate('playerSelect');
   });
   onLongPress(
     ctx.root.querySelector<HTMLButtonElement>('[data-action=settings]')!,
