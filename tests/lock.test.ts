@@ -47,4 +47,11 @@ describe('時間切れロック', () => {
     expect(root().textContent).toContain('おしまい');
     expect(root().textContent).toContain('あした');
   });
+
+  it('制限到達後は図鑑もロック画面になる', () => {
+    addPlayTime(DAILY_LIMIT_SECONDS);
+    const app = createApp(root());
+    app.navigate('zukan');
+    expect(root().querySelector('.screen-locked')).not.toBeNull();
+  });
 });

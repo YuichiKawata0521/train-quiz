@@ -11,6 +11,7 @@ import { renderQuestion } from './screens/question';
 import { renderDeparture, renderInterlude, renderArrival } from './screens/travel';
 import { renderResult } from './screens/result';
 import { renderLocked } from './screens/locked';
+import { renderZukan } from './screens/zukan';
 import { isTimeUp } from './logic/playTimer';
 
 export type ScreenName =
@@ -23,7 +24,8 @@ export type ScreenName =
   | 'arrival'
   | 'result'
   | 'settings'
-  | 'locked';
+  | 'locked'
+  | 'zukan';
 
 // 時間切れ時にロック画面へ差し替える画面。ゲーム中(question〜result)は
 // その回の結果発表まで見せるため含めない。settings は親用なので常に開ける。
@@ -32,6 +34,7 @@ const LOCKABLE: ReadonlySet<ScreenName> = new Set([
   'gameSelect',
   'modeSelect',
   'departure',
+  'zukan',
 ]);
 
 export type SoundName = 'tap' | 'horn' | 'wrong' | 'depart' | 'arrive' | 'fanfare' | 'run';
@@ -66,6 +69,7 @@ export const screens: Partial<Record<ScreenName, ScreenRenderer>> = {
   result: renderResult,
   settings: renderSettingsScreen,
   locked: renderLocked,
+  zukan: renderZukan,
 };
 
 export function createApp(
