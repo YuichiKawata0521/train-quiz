@@ -10,6 +10,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "sounds": "node scripts/make-sounds.mjs",
+    "voices": "node scripts/make-voices.mjs",
     "images": "node scripts/convert-images.mjs",
     "validate": "node scripts/validate-data.mjs",
     "icons": "node scripts/make-icons.mjs"

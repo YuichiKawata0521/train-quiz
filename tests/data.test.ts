@@ -1,4 +1,5 @@
 import { describe, it, expect } from 'vitest';
+import { readdirSync } from 'node:fs';
 import trainsJson from '../src/data/trains.json';
 import modesJson from '../src/data/modes.json';
 import { validateTrains } from '../src/logic/validate';
@@ -15,6 +16,11 @@ describe('trains.json', () => {
     for (const cat of ['shinkansen', 'express', 'local'] as const) {
       expect(trains.filter((t) => t.category === cat).length).toBeGreaterThanOrEqual(4);
     }
+  });
+  it('全車両にせつめい音声ファイルがある', () => {
+    const files = new Set(readdirSync('public/voices'));
+    const missing = trains.filter((t) => !files.has(`${t.id}.m4a`)).map((t) => t.id);
+    expect(missing).toEqual([]);
   });
 });
 

@@ -1,7 +1,8 @@
 // VOICEVOX Engine (http://127.0.0.1:50021) で図鑑のせつめい音声を生成する。
 //   1. docker run --rm -p 50021:50021 voicevox/voicevox_engine:cpu-latest
-//   2. node scripts/make-voices.mjs [--only id1,id2]
+//   2. node scripts/make-voices.mjs [--only id1,id2] [--report-only]
 // 出力: public/voices/<trainId>.m4a(なまえ→せつめい を ずんだもん が読む)
+// --report-only: 合成せず読みレポートだけ全件更新する(検証ベースライン用)
 //
 // 読み方の検証: 説明文はひらがな(=ほぼ読みそのもの)なので、エンジンの
 // 解析結果(kana)を期待読みと突き合わせ、助詞(は/へ)以外の差分を警告する。
@@ -30,6 +31,7 @@ const READING_FIXES = [
 const only = process.argv.includes('--only')
   ? new Set(process.argv[process.argv.indexOf('--only') + 1].split(','))
   : null;
+const reportOnly = process.argv.includes('--report-only');
 
 const trains = JSON.parse(readFileSync('src/data/trains.json', 'utf8'));
 mkdirSync(OUT_DIR, { recursive: true });
@@ -55,6 +57,10 @@ for (const train of trains) {
   if (!queryRes.ok) throw new Error(`audio_query失敗: ${train.id} ${queryRes.status}`);
   const query = await queryRes.json();
   readingReport.push(`${train.id}\n  text: ${text}\n  kana: ${query.kana}`);
+  if (reportOnly) {
+    done++;
+    continue;
+  }
 
   query.speedScale = 0.95; // 子ども向けに少しゆっくり
   query.outputSamplingRate = 24000;
@@ -76,6 +82,11 @@ for (const train of trains) {
   if (done % 10 === 0) console.log(`${done}件…`);
 }
 
-console.log(`生成完了: ${done}件 → ${OUT_DIR}/`);
-writeFileSync('voices-reading-report.txt', readingReport.join('\n') + '\n');
-console.log('読みレポート: voices-reading-report.txt(目視確認し、誤読は READING_FIXES へ)');
+console.log(reportOnly ? `読み取得: ${done}件` : `生成完了: ${done}件 → ${OUT_DIR}/`);
+if (only) {
+  // 部分実行で全件の検証ベースラインを壊さない
+  console.log('(--only のためレポートは更新しない。全件更新は --report-only で)');
+} else {
+  writeFileSync('voices-reading-report.txt', readingReport.join('\n') + '\n');
+  console.log('読みレポート: voices-reading-report.txt(目視確認し、誤読は READING_FIXES へ)');
+}

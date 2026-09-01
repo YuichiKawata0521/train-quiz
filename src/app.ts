@@ -104,6 +104,7 @@ export function createApp(
         !ctx.settings.adultMode && isTimeUp() && LOCKABLE.has(screen) ? 'locked' : screen;
       const render = screens[target];
       if (!render) throw new Error(`画面が未登録: ${target}`);
+      ctx.audio.stopVoice(); // 画面を離れるときは読み上げを必ず止める
       root.innerHTML = '';
       render(ctx);
     },

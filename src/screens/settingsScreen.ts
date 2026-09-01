@@ -30,7 +30,7 @@ export function renderSettingsScreen(ctx: AppContext): void {
         <label><input type="checkbox" name="adultMode" ${s.adultMode ? 'checked' : ''}> じかんせいげんなし</label>
       </div>
       <details class="credits">
-        <summary>しゃしんのクレジット(${credits.length}けん)</summary>
+        <summary>クレジット(しゃしん${credits.length}けん・おんせい)</summary>
         <ul>
           ${credits
             .map(

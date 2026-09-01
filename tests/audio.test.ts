@@ -158,6 +158,24 @@ describe('playVoice(せつめい音声)', () => {
     expect(context.sources[0].stop).toHaveBeenCalled();
   });
 
+  it('キャッシュは直近ぶんだけ保持し、あふれた音声は再フェッチする', async () => {
+    const context = new FakeAudioContext();
+    const fetchFn = fakeFetch();
+    const player = initAudio(() => makeSettings(true), { context: asCtx(context), fetchFn });
+    await flush();
+    for (const id of ['a', 'b', 'c', 'd', 'e']) {
+      player.playVoice(id);
+      await flush();
+    }
+    expect(voiceCalls(fetchFn)).toHaveLength(5);
+    player.playVoice('a'); // 上限4を超えて追い出されているはず
+    await flush();
+    expect(voiceCalls(fetchFn)).toHaveLength(6);
+    player.playVoice('e'); // 直近ぶんはキャッシュから
+    await flush();
+    expect(voiceCalls(fetchFn).filter((u) => u.includes('voices/e.m4a'))).toHaveLength(1);
+  });
+
   it('音声ファイルがない(404)場合も落ちない', async () => {
     const context = new FakeAudioContext();
     const fetchFn = vi.fn((url: string) =>

@@ -57,6 +57,9 @@ export function initAudio(getSettings: () => Settings, deps: AudioDeps = {}): Au
 
   // せつめい音声(VOICEVOXで事前生成した voices/<trainId>.m4a)。
   // 119本あるため起動時に全ロードせず、初回再生時に取得してキャッシュする。
+  // デコード済みPCMは1本あたり約1.4MBありiPadのメモリを食うため、直近数本だけ保持。
+  // ファイル自体はSWのprecacheにあるので、キャッシュ落ちしても再取得は速い。
+  const VOICE_CACHE_MAX = 4;
   const voiceBuffers = new Map<string, AudioBuffer>();
   let voiceSource: AudioBufferSourceNode | null = null;
   let voiceToken = 0; // 停止/再再生後に、遅れて届いた古いデコード結果を捨てる
@@ -122,6 +125,11 @@ export function initAudio(getSettings: () => Settings, deps: AudioDeps = {}): Au
         .then((data) => context.decodeAudioData(data))
         .then((buffer) => {
           voiceBuffers.set(trainId, buffer);
+          while (voiceBuffers.size > VOICE_CACHE_MAX) {
+            const oldest = voiceBuffers.keys().next().value;
+            if (oldest === undefined) break;
+            voiceBuffers.delete(oldest);
+          }
           startVoice(buffer, token);
         })
         .catch(() => {

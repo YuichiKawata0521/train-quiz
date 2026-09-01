@@ -1,6 +1,7 @@
 import { describe, it, expect, beforeEach, vi } from 'vitest';
-import { openTrainCard } from '../src/ui/trainCard';
+import { openTrainCard, trainVoice } from '../src/ui/trainCard';
 import type { Train } from '../src/logic/types';
+import type { AppContext } from '../src/app';
 
 const train: Train = {
   id: 'e5-hayabusa',
@@ -76,5 +77,27 @@ describe('openTrainCard', () => {
   it('voiceなしなら🔊ボタンを出さない', () => {
     openTrainCard(host(), { train, closeLabel: 'とじる', onClose: vi.fn() });
     expect(host().querySelector('[data-action=speak]')).toBeNull();
+  });
+});
+
+describe('trainVoice', () => {
+  function voiceCtx(sound: boolean) {
+    const audio = { play: vi.fn(), stop: vi.fn(), playVoice: vi.fn(), stopVoice: vi.fn() };
+    const ctx = { settings: { sound }, audio } as unknown as AppContext;
+    return { ctx, audio };
+  }
+
+  it('おとONなら ctx.audio.playVoice / stopVoice に電車idで配線される', () => {
+    const { ctx, audio } = voiceCtx(true);
+    const voice = trainVoice(ctx, train)!;
+    voice.play();
+    expect(audio.playVoice).toHaveBeenCalledWith('e5-hayabusa');
+    voice.stop();
+    expect(audio.stopVoice).toHaveBeenCalledTimes(1);
+  });
+
+  it('おとOFFなら undefined(カードに🔊が出ない)', () => {
+    const { ctx } = voiceCtx(false);
+    expect(trainVoice(ctx, train)).toBeUndefined();
   });
 });
