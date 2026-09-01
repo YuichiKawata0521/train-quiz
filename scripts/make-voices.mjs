@@ -13,10 +13,18 @@ const ENGINE = 'http://127.0.0.1:50021';
 const SPEAKER = 3; // ずんだもん(ノーマル)
 const OUT_DIR = 'public/voices';
 
-// 誤読の修正マップ(ひらがな→カタカナ表記で読みを固定する)。
-// カタカナは音読みそのままになるため、助詞を含まない語にのみ使うこと。
+// 誤読の修正マップ(カタカナ表記等で読みを固定する)。
+// カタカナは表記どおり読まれるため、助詞(は/へ/を)を含む範囲には使わないこと。
+// 全件の読みは voices-reading-report.txt で目視検証済み(2026-09-01)。
 const READING_FIXES = [
-  ['はかた', 'ハカタ'],
+  ['はかた', 'ハカタ'], // ワカタ と誤読
+  ['しんはこだて', 'シンハコダテ'], // シンワコダテ と誤読
+  ['はこね', 'ハコネ'], // ワコネ と誤読
+  ['ちちぶまで', 'チチブマデ'], // 「まで+はしる」が「までは+しる」に誤分割
+  ['1ぽん', 'いっぽん'], // イチポン と誤読
+  ['40ぷん', 'ヨンジュップン'], // ヨンジュウ・プン と誤読(かな指定だと更に分断されるためカタカナ一語)
+  ['まるのうち', 'マルノウチ'], // マルノオチ と長音化
+  ['あそぼーい', 'アソボーイ'], // ア・ソ・ボー・イ と分断
 ];
 
 const only = process.argv.includes('--only')
@@ -33,31 +41,9 @@ function speechText(train) {
   return text;
 }
 
-/** ひらがな→カタカナ(検証用の素朴な期待読み) */
-function toKatakana(s) {
-  return s.replace(/[ぁ-ゖ]/g, (c) => String.fromCharCode(c.charCodeAt(0) + 0x60));
-}
-
-/** エンジンの読み(kana)と期待読みの差分を返す。助詞由来の ハ→ワ / ヘ→エ は許容 */
-function checkReading(text, kana) {
-  const expected = toKatakana(text).replace(/[^ァ-ヶー]/g, '');
-  const actual = kana.replace(/[^ァ-ヶー]/g, '');
-  if (expected === actual) return null;
-  // 許容差分: 位置ごとに ハ↔ワ / ヘ↔エ / ヲ↔オ のみなら助詞の読みとして正しい
-  if (expected.length === actual.length) {
-    const diffs = [];
-    for (let i = 0; i < expected.length; i++) {
-      if (expected[i] !== actual[i]) diffs.push(`${i}:${expected[i]}→${actual[i]}`);
-    }
-    const particleOnly = diffs.every(
-      (d) => /→ワ$/.test(d) && /:ハ/.test(d) || /→エ$/.test(d) && /:ヘ/.test(d) || /→オ$/.test(d) && /:ヲ/.test(d),
-    );
-    return { diffs, particleOnly };
-  }
-  return { diffs: [`長さ違い: 期待${expected.length} 実際${actual.length}`, expected, actual], particleOnly: false };
-}
-
-const warnings = [];
+// 読みの機械照合は長音正規化(トウ→トオ)や数字展開(320→サンビャクニジュッ)で
+// 誤検知だらけになるため、全件の読み(kana)をレポートに書き出して人が確認する。
+const readingReport = [];
 let done = 0;
 for (const train of trains) {
   if (only && !only.has(train.id)) continue;
@@ -68,11 +54,7 @@ for (const train of trains) {
   );
   if (!queryRes.ok) throw new Error(`audio_query失敗: ${train.id} ${queryRes.status}`);
   const query = await queryRes.json();
-
-  const check = checkReading(text, query.kana ?? '');
-  if (check && !check.particleOnly) {
-    warnings.push(`${train.id}: ${check.diffs.join(' / ')}\n  text: ${text}\n  kana: ${query.kana}`);
-  }
+  readingReport.push(`${train.id}\n  text: ${text}\n  kana: ${query.kana}`);
 
   query.speedScale = 0.95; // 子ども向けに少しゆっくり
   query.outputSamplingRate = 24000;
@@ -95,9 +77,5 @@ for (const train of trains) {
 }
 
 console.log(`生成完了: ${done}件 → ${OUT_DIR}/`);
-if (warnings.length) {
-  console.log(`\n⚠ 読みの要確認 ${warnings.length}件(READING_FIXES での修正を検討):`);
-  for (const w of warnings) console.log(w);
-} else {
-  console.log('読みの検証: 助詞以外の差分なし');
-}
+writeFileSync('voices-reading-report.txt', readingReport.join('\n') + '\n');
+console.log('読みレポート: voices-reading-report.txt(目視確認し、誤読は READING_FIXES へ)');
