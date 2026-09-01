@@ -39,8 +39,12 @@ export function renderResult(ctx: AppContext): void {
 
   // このセッションで図鑑に新しく登録された電車をお祝い(複数なら順番に)
   function celebrateUnlock(index: number): void {
+    if (index >= ctx.newUnlocks.length) return;
     const train = ctx.trains.find((t) => t.id === ctx.newUnlocks[index]);
-    if (!train) return;
+    if (!train) {
+      celebrateUnlock(index + 1); // 不明idは飛ばして残りを祝う
+      return;
+    }
     ctx.audio.play('horn');
     openTrainCard(ctx.root, {
       train,
@@ -48,16 +52,18 @@ export function renderResult(ctx: AppContext): void {
       closeLabel: index + 1 < ctx.newUnlocks.length ? 'つぎへ' : 'とじる',
       speech: ctx.settings.sound,
       onTap: () => ctx.audio.play('tap'),
-      onClose: () => {
-        if (index + 1 < ctx.newUnlocks.length) celebrateUnlock(index + 1);
-      },
+      onClose: () => celebrateUnlock(index + 1),
     });
   }
+  // ドア演出中もボタンは押せる(doors は pointer-events:none)ため、
+  // 画面を離れるときは必ずタイマーを止めないと次の画面に幽霊カードが出る
+  let celebrationTimer: ReturnType<typeof setTimeout> | undefined;
   if (ctx.newUnlocks.length > 0) {
-    setTimeout(() => celebrateUnlock(0), UNLOCK_CELEBRATION_DELAY_MS);
+    celebrationTimer = setTimeout(() => celebrateUnlock(0), UNLOCK_CELEBRATION_DELAY_MS);
   }
   ctx.root.querySelector<HTMLButtonElement>('[data-action=retry]')!.addEventListener('click', () => {
     ctx.audio.play('tap');
+    clearTimeout(celebrationTimer);
     ctx.newUnlocks = [];
     ctx.session = createSession(
       poolForMode(ctx.currentMode!, ctx.trains),
@@ -70,6 +76,8 @@ export function renderResult(ctx: AppContext): void {
   });
   ctx.root.querySelector<HTMLButtonElement>('[data-action=back]')!.addEventListener('click', () => {
     ctx.audio.play('tap');
+    clearTimeout(celebrationTimer);
+    ctx.newUnlocks = [];
     ctx.navigate('modeSelect');
   });
 }

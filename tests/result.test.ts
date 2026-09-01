@@ -131,4 +131,25 @@ describe('renderResult: 解禁のお祝い', () => {
     ctx.root.querySelector<HTMLButtonElement>('[data-action=retry]')!.click();
     expect(ctx.newUnlocks).toEqual([]);
   });
+
+  it('カードが出る前に「もどる」で画面を離れたら、次の画面に幽霊カードが出ない', () => {
+    const ctx = fixtureCtx();
+    ctx.newUnlocks = ['a'];
+    renderResult(ctx);
+    ctx.root.querySelector<HTMLButtonElement>('[data-action=back]')!.click();
+    expect(ctx.newUnlocks).toEqual([]);
+    ctx.root.innerHTML = '<section class="screen screen-mode-select"></section>';
+    vi.advanceTimersByTime(10000);
+    expect(ctx.root.querySelector('.train-card')).toBeNull();
+  });
+
+  it('カードが出る前に「もういちど」でも幽霊カードが出ない', () => {
+    const ctx = fixtureCtx();
+    ctx.newUnlocks = ['a'];
+    renderResult(ctx);
+    ctx.root.querySelector<HTMLButtonElement>('[data-action=retry]')!.click();
+    ctx.root.innerHTML = '<section class="screen screen-travel"></section>';
+    vi.advanceTimersByTime(10000);
+    expect(ctx.root.querySelector('.train-card')).toBeNull();
+  });
 });

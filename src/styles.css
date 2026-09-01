@@ -633,9 +633,11 @@ body {
 /* ---- 電車カード(図鑑の詳細・学習・お祝いで共用) ---- */
 .train-card {
   gap: 12px;
+  overflow-y: auto; /* 見出し+長文でも「つぎへ」が画面外に出ないように */
+  padding: 16px 0;
 }
 .train-card .photo-card img {
-  max-height: 38vh;
+  max-height: 34vh; /* 見出しぶんの高さを確保 */
 }
 .train-card-title {
   font-size: 40px;
