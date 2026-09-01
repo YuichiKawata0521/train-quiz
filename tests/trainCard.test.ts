@@ -10,31 +10,7 @@ const train: Train = {
   description: 'みどりの しんかんせんだよ。',
 };
 
-function installFakeSynth() {
-  const speak = vi.fn();
-  const cancel = vi.fn();
-  vi.stubGlobal(
-    'SpeechSynthesisUtterance',
-    class {
-      text: string;
-      lang = '';
-      rate = 1;
-      voice: unknown = null;
-      constructor(text: string) {
-        this.text = text;
-      }
-    },
-  );
-  Object.defineProperty(window, 'speechSynthesis', {
-    value: { speak, cancel, getVoices: () => [] },
-    configurable: true,
-  });
-  return { speak, cancel };
-}
-
 beforeEach(() => {
-  vi.unstubAllGlobals();
-  Object.defineProperty(window, 'speechSynthesis', { value: undefined, configurable: true });
   document.body.innerHTML = '<div id="host"></div>';
 });
 
@@ -47,7 +23,6 @@ describe('openTrainCard', () => {
     openTrainCard(host(), {
       train,
       closeLabel: 'とじる',
-      speech: false,
       onClose: vi.fn(),
     });
     const card = host().querySelector<HTMLElement>('.train-card')!;
@@ -69,7 +44,6 @@ describe('openTrainCard', () => {
       train,
       title: 'あたらしい でんしゃを げっと!',
       closeLabel: 'つぎへ',
-      speech: false,
       onClose: vi.fn(),
     });
     expect(host().querySelector('.train-card-title')!.textContent).toBe(
@@ -80,35 +54,27 @@ describe('openTrainCard', () => {
   it('とじるでカードが消え、onClose が呼ばれる', () => {
     const onClose = vi.fn();
     const onTap = vi.fn();
-    openTrainCard(host(), { train, closeLabel: 'とじる', speech: false, onClose, onTap });
+    openTrainCard(host(), { train, closeLabel: 'とじる', onClose, onTap });
     host().querySelector<HTMLButtonElement>('[data-action=close]')!.click();
     expect(host().querySelector('.train-card')).toBeNull();
     expect(onClose).toHaveBeenCalledTimes(1);
     expect(onTap).toHaveBeenCalled();
   });
 
-  it('speech有効なら開いたとき自動読み上げ+🔊でもう一回、とじるで停止', () => {
-    const { speak, cancel } = installFakeSynth();
-    openTrainCard(host(), { train, closeLabel: 'とじる', speech: true, onClose: vi.fn() });
-    expect(speak).toHaveBeenCalledTimes(1);
+  it('voice付きなら開いたとき自動再生+🔊でもう一回、とじるで停止', () => {
+    const voice = { play: vi.fn(), stop: vi.fn() };
+    openTrainCard(host(), { train, closeLabel: 'とじる', voice, onClose: vi.fn() });
+    expect(voice.play).toHaveBeenCalledTimes(1);
     const speakBtn = host().querySelector<HTMLButtonElement>('[data-action=speak]')!;
     expect(speakBtn).not.toBeNull();
     speakBtn.click();
-    expect(speak).toHaveBeenCalledTimes(2);
+    expect(voice.play).toHaveBeenCalledTimes(2);
     host().querySelector<HTMLButtonElement>('[data-action=close]')!.click();
-    expect(cancel).toHaveBeenCalled();
+    expect(voice.stop).toHaveBeenCalledTimes(1);
   });
 
-  it('speech無効なら🔊ボタンなし・読み上げなし', () => {
-    const { speak } = installFakeSynth();
-    openTrainCard(host(), { train, closeLabel: 'とじる', speech: false, onClose: vi.fn() });
-    expect(host().querySelector('[data-action=speak]')).toBeNull();
-    expect(speak).not.toHaveBeenCalled();
-  });
-
-  it('speechSynthesis非対応環境では speech:true でも🔊を出さず落ちない', () => {
-    openTrainCard(host(), { train, closeLabel: 'とじる', speech: true, onClose: vi.fn() });
-    expect(host().querySelector('.train-card')).not.toBeNull();
+  it('voiceなしなら🔊ボタンを出さない', () => {
+    openTrainCard(host(), { train, closeLabel: 'とじる', onClose: vi.fn() });
     expect(host().querySelector('[data-action=speak]')).toBeNull();
   });
 });

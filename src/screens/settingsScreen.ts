@@ -39,6 +39,7 @@ export function renderSettingsScreen(ctx: AppContext): void {
             )
             .join('')}
         </ul>
+        <p>おんせい: VOICEVOX:ずんだもん</p>
       </details>
       <button class="btn btn-back" data-action="back">もどる</button>
     </section>`;

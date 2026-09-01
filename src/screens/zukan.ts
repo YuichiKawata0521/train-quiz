@@ -3,7 +3,7 @@ import type { Category } from '../logic/types';
 import { asset } from '../ui/asset';
 import { buildAlbum, CATEGORY_ORDER, type Slot } from '../logic/zukanAlbum';
 import { loadZukanCounts, UNLOCK_COUNT, unlockedCount, loadSeen, markSeen } from '../logic/zukan';
-import { openTrainCard } from '../ui/trainCard';
+import { openTrainCard, trainVoice } from '../ui/trainCard';
 
 const TAB_LABELS: Record<Category, string> = {
   shinkansen: 'しんかんせん',
@@ -109,7 +109,7 @@ export function renderZukan(ctx: AppContext): void {
     openTrainCard(ctx.root, {
       train: t,
       closeLabel: 'とじる',
-      speech: ctx.settings.sound,
+      voice: trainVoice(ctx, t),
       onTap: () => ctx.audio.play('tap'),
       onClose: () => {},
     });

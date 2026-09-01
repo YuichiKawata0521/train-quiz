@@ -1,7 +1,7 @@
 import type { AppContext } from '../app';
 import { createSession, poolForMode } from '../logic/quiz';
 import { asset } from '../ui/asset';
-import { openTrainCard } from '../ui/trainCard';
+import { openTrainCard, trainVoice } from '../ui/trainCard';
 
 // ドアが開き切る(delay 0.6s + transition 2.4s)のを待ってからお祝いを出す
 const UNLOCK_CELEBRATION_DELAY_MS = 3400;
@@ -50,7 +50,7 @@ export function renderResult(ctx: AppContext): void {
       train,
       title: 'あたらしい でんしゃを げっと!',
       closeLabel: index + 1 < ctx.newUnlocks.length ? 'つぎへ' : 'とじる',
-      speech: ctx.settings.sound,
+      voice: trainVoice(ctx, train),
       onTap: () => ctx.audio.play('tap'),
       onClose: () => celebrateUnlock(index + 1),
     });

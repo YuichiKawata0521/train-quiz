@@ -55,6 +55,33 @@ export function initAudio(getSettings: () => Settings, deps: AudioDeps = {}): Au
   document.addEventListener('pointerup', unlock);
   document.addEventListener('touchend', unlock);
 
+  // せつめい音声(VOICEVOXで事前生成した voices/<trainId>.m4a)。
+  // 119本あるため起動時に全ロードせず、初回再生時に取得してキャッシュする。
+  const voiceBuffers = new Map<string, AudioBuffer>();
+  let voiceSource: AudioBufferSourceNode | null = null;
+  let voiceToken = 0; // 停止/再再生後に、遅れて届いた古いデコード結果を捨てる
+
+  const stopVoice = (): void => {
+    voiceToken++;
+    if (!voiceSource) return;
+    try {
+      voiceSource.stop();
+    } catch {
+      // 既に停止済みなら無視
+    }
+    voiceSource = null;
+  };
+
+  const startVoice = (buffer: AudioBuffer, token: number): void => {
+    if (token !== voiceToken) return;
+    if (context.state !== 'running') void context.resume().catch(() => {});
+    const source = context.createBufferSource();
+    source.buffer = buffer;
+    source.connect(context.destination as AudioNode);
+    source.start();
+    voiceSource = source;
+  };
+
   return {
     play(name) {
       if (!getSettings().sound) return;
@@ -78,5 +105,29 @@ export function initAudio(getSettings: () => Settings, deps: AudioDeps = {}): Au
       }
       playing.delete(name);
     },
+    playVoice(trainId) {
+      if (!getSettings().sound) return;
+      stopVoice();
+      const token = voiceToken;
+      const cached = voiceBuffers.get(trainId);
+      if (cached) {
+        startVoice(cached, token);
+        return;
+      }
+      fetchFn(asset(`voices/${trainId}.m4a`))
+        .then((res) => {
+          if (!res.ok) throw new Error('voice not found');
+          return res.arrayBuffer();
+        })
+        .then((data) => context.decodeAudioData(data))
+        .then((buffer) => {
+          voiceBuffers.set(trainId, buffer);
+          startVoice(buffer, token);
+        })
+        .catch(() => {
+          // 音声がない/壊れていても無音で続行
+        });
+    },
+    stopVoice,
   };
 }

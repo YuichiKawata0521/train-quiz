@@ -4,7 +4,7 @@ import { displayName } from '../logic/settings';
 import { asset } from '../ui/asset';
 import { stationBg } from '../ui/backgrounds';
 import { recordFirstTryCorrect, UNLOCK_COUNT } from '../logic/zukan';
-import { openTrainCard } from '../ui/trainCard';
+import { openTrainCard, trainVoice } from '../ui/trainCard';
 
 const FEEDBACK_MS = 1500;
 
@@ -75,7 +75,7 @@ export function renderQuestion(ctx: AppContext): void {
             train: q.train,
             title: 'おぼえよう!',
             closeLabel: 'つぎへ',
-            speech: ctx.settings.sound,
+            voice: trainVoice(ctx, q.train),
             onTap: () => ctx.audio.play('tap'),
             onClose: () => ctx.navigate(next),
           });

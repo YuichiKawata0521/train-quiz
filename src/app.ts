@@ -48,6 +48,9 @@ export type SoundName = 'tap' | 'horn' | 'wrong' | 'depart' | 'arrive' | 'fanfar
 export interface AudioPlayer {
   play(name: SoundName): void;
   stop(name: SoundName): void;
+  /** せつめい音声(voices/<trainId>.m4a)を再生。前の音声は止まる */
+  playVoice(trainId: string): void;
+  stopVoice(): void;
 }
 
 export interface AppContext {
@@ -84,7 +87,7 @@ export const screens: Partial<Record<ScreenName, ScreenRenderer>> = {
 
 export function createApp(
   root: HTMLElement,
-  audio: AudioPlayer = { play: () => {}, stop: () => {} },
+  audio: AudioPlayer = { play: () => {}, stop: () => {}, playVoice: () => {}, stopVoice: () => {} },
 ): AppContext {
   const ctx: AppContext = {
     root,
