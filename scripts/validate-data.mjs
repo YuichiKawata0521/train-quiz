@@ -9,6 +9,8 @@ for (const t of trains) {
   if (!existsSync(`public/${t.image}`)) errors.push(`画像なし: ${t.id} (${t.image})`);
   if (!t.credit?.author || !t.credit?.license || !t.credit?.source)
     errors.push(`クレジット不備: ${t.id}`);
+  if (!t.description || /[一-鿿]/.test(t.description) || t.description.length > 80)
+    errors.push(`せつめい不備: ${t.id}`);
 }
 for (const t of trains) {
   for (const l of t.lookalikes ?? []) {

@@ -7,6 +7,7 @@
     },
     "category": "shinkansen",
     "image": "images/trains/h5-hayabusa.webp",
+    "description": "しんあおもりから しんはこだてほくとまで はしる みどりの しんかんせん。ほっかいどうの なかまだよ。",
     "credit": {
       "author": "MaedaAkihiko",
       "license": "CC BY-SA 4.0",
@@ -24,6 +25,7 @@
     },
     "category": "shinkansen",
     "image": "images/trains/e5-hayabusa.webp",
+    "description": "とうきょうから しんあおもりまで はしる みどりの しんかんせん。じそく320キロで にほんで いちばん はやいよ。",
     "credit": {
       "author": "MaedaAkihiko",
       "license": "CC BY-SA 4.0",
@@ -41,6 +43,7 @@
     },
     "category": "shinkansen",
     "image": "images/trains/e2-hayate.webp",
+    "description": "とうきょうから もりおかの あたりを はしる しんかんせん。しろい からだに ピンクの ラインが あるよ。",
     "credit": {
       "author": "DAJF",
       "license": "CC BY-SA 3.0",
@@ -58,6 +61,7 @@
     },
     "category": "shinkansen",
     "image": "images/trains/e6-komachi.webp",
+    "description": "とうきょうから あきたまで はしる あかい しんかんせん。はやぶさと くっついて はしることが あるよ。",
     "credit": {
       "author": "掬茶",
       "license": "CC BY-SA 4.0",
@@ -72,6 +76,7 @@
     },
     "category": "shinkansen",
     "image": "images/trains/e3-tsubasa.webp",
+    "description": "とうきょうから やまがたの しんじょうまで はしる しんかんせん。とちゅうから ふつうの せんろを はしるよ。",
     "credit": {
       "author": "掬茶",
       "license": "CC BY-SA 4.0",
@@ -86,6 +91,7 @@
     },
     "category": "shinkansen",
     "image": "images/trains/e3-toreiyu-tsubasa.webp",
+    "description": "やまがたしんかんせんを はしって いた たのしい しんかんせん。なかに あしゆが あって あしを つけられたよ。",
     "credit": {
       "author": "Cheng-en Cheng from Taipei City, Taiwan",
       "license": "CC BY-SA 2.0",
@@ -100,6 +106,7 @@
     },
     "category": "shinkansen",
     "image": "images/trains/e2-toki.webp",
+    "description": "とうきょうから にいがたまで はしる しんかんせん。ゆきの おおい ところを とおって いくよ。",
     "credit": {
       "author": "MaedaAkihiko",
       "license": "CC BY-SA 4.0",
@@ -117,6 +124,7 @@
     },
     "category": "shinkansen",
     "image": "images/trains/e3-genbi-shinkansen.webp",
+    "description": "にいがたの あたりを はしって いた びじゅつかんみたいな しんかんせん。えが かざって あったよ。",
     "credit": {
       "author": "ひでわく",
       "license": "CC BY-SA 2.5",
@@ -131,6 +139,7 @@
     },
     "category": "shinkansen",
     "image": "images/trains/e7-kagayaki.webp",
+    "description": "とうきょうから かなざわの ほうへ はしる ほくりくしんかんせん。あおと きんいろの からだが かっこいいよ。",
     "credit": {
       "author": "Meitetu1380",
       "license": "CC BY-SA 3.0",
@@ -145,6 +154,7 @@
     },
     "category": "shinkansen",
     "image": "images/trains/n700s-nozomi.webp",
+    "description": "とうきょうから はかたまで はしる とうかいどうしんかんせんの エース。とまる えきが すくなくて はやいよ。",
     "credit": {
       "author": "Takeshi Aida",
       "license": "CC BY-SA 2.0",
@@ -159,6 +169,7 @@
     },
     "category": "shinkansen",
     "image": "images/trains/500-kodama.webp",
+    "description": "しんおおさかから はかたまで はしる まるい かおの しんかんせん。むかしは いちばん はやかったよ。",
     "credit": {
       "author": "MaedaAkihiko",
       "license": "CC BY-SA 4.0",
@@ -173,6 +184,7 @@
     },
     "category": "shinkansen",
     "image": "images/trains/700-hikari-rail-star.webp",
+    "description": "しんおおさかから はかたまで はしる しんかんせん。くろっぽい からだに きいろい ラインが あるよ。",
     "credit": {
       "author": "MaedaAkihiko",
       "license": "CC BY-SA 4.0",
@@ -187,6 +199,7 @@
     },
     "category": "shinkansen",
     "image": "images/trains/n700-mizuho.webp",
+    "description": "しんおおさかから かごしまちゅうおうまで はしる しんかんせん。きゅうしゅうまで いちばん はやく いけるよ。",
     "credit": {
       "author": "Cheng-en Cheng",
       "license": "CC BY-SA 2.0",
@@ -204,6 +217,7 @@
     },
     "category": "shinkansen",
     "image": "images/trains/800-tsubame.webp",
+    "description": "はかたから かごしまちゅうおうまで はしる きゅうしゅうしんかんせん。なかに きの いすが あって すてきだよ。",
     "credit": {
       "author": "MaedaAkihiko",
       "license": "CC BY-SA 4.0",
@@ -218,6 +232,7 @@
     },
     "category": "shinkansen",
     "image": "images/trains/class923-doctor-yellow.webp",
+    "description": "きいろい けんさようの しんかんせん。せんろが あんぜんか しらべながら はしるよ。みられたら ラッキーだよ。",
     "credit": {
       "author": "MaedaAkihiko",
       "license": "CC BY-SA 4.0",
@@ -232,6 +247,7 @@
     },
     "category": "shinkansen",
     "image": "images/trains/jreast-east-i.webp",
+    "description": "とうほくや じょうえつの せんろを しらべる けんさようの しんかんせん。あかい ラインが めじるしだよ。",
     "credit": {
       "author": "MaedaAkihiko",
       "license": "CC BY-SA 4.0",
@@ -246,6 +262,7 @@
     },
     "category": "shinkansen",
     "image": "images/trains/n700-sakura.webp",
+    "description": "しんおおさかから かごしまちゅうおうまで はしる しんかんせん。よこ4れつの ひろい いすが あるよ。",
     "credit": {
       "author": "z tanuki",
       "license": "CC BY 3.0",
@@ -263,6 +280,7 @@
     },
     "category": "shinkansen",
     "image": "images/trains/e956-alfa-x.webp",
+    "description": "つぎの しんかんせんの ための じっけんの でんしゃ。はなが とても ながくて じそく360キロを めざしたよ。",
     "credit": {
       "author": "N100teda",
       "license": "CC BY-SA 4.0",
@@ -277,6 +295,7 @@
     },
     "category": "express",
     "image": "images/trains/kiha261-soya.webp",
+    "description": "さっぽろから わっかないまで はしる ほっかいどうの とっきゅう。にほんで いちばん きたの えきへ いくよ。",
     "lookalikes": [
       "kiha261-super-tokachi",
       "kiha261-ozora"
@@ -295,6 +314,7 @@
     },
     "category": "express",
     "image": "images/trains/kiha261-super-tokachi.webp",
+    "description": "さっぽろから おびひろまで はしる とっきゅう。いまは とかちと いう なまえに かわったよ。",
     "lookalikes": [
       "kiha261-soya",
       "kiha261-ozora"
@@ -313,6 +333,7 @@
     },
     "category": "express",
     "image": "images/trains/kiha183-taisetsu.webp",
+    "description": "あさひかわから あばしりまで はしる とっきゅう。ほっかいどうの ゆきの なかを はしって いくよ。",
     "credit": {
       "author": "ゆじゅこ",
       "license": "CC BY-SA 4.0",
@@ -327,6 +348,7 @@
     },
     "category": "express",
     "image": "images/trains/kiha283-okhotsk.webp",
+    "description": "さっぽろから あばしりまで はしる とっきゅう。りゅうひょうで ゆうめいな うみの ちかくを いくよ。",
     "lookalikes": [
       "kiha283-super-ozora"
     ],
@@ -344,6 +366,7 @@
     },
     "category": "express",
     "image": "images/trains/kiha283-super-ozora.webp",
+    "description": "さっぽろから くしろまで はしって いた とっきゅう。カーブでも スピードを おとさず はしれたよ。",
     "lookalikes": [
       "kiha283-okhotsk"
     ],
@@ -361,6 +384,7 @@
     },
     "category": "express",
     "image": "images/trains/kiha261-ozora.webp",
+    "description": "さっぽろから くしろまで はしる とっきゅう。ひろい ほっかいどうを 4じかんぐらい かけて いくよ。",
     "lookalikes": [
       "kiha261-soya",
       "kiha261-super-tokachi"
@@ -379,6 +403,7 @@
     },
     "category": "express",
     "image": "images/trains/789-rairakku.webp",
+    "description": "さっぽろから あさひかわまで はしる とっきゅう。むらさきいろの はなの なまえが ついているよ。",
     "credit": {
       "author": "MaedaAkihiko",
       "license": "CC BY-SA 4.0",
@@ -393,6 +418,7 @@
     },
     "category": "express",
     "image": "images/trains/789-kamui.webp",
+    "description": "さっぽろから あさひかわまで はしる とっきゅう。ライラックと おなじ なかまの でんしゃだよ。",
     "credit": {
       "author": "MaedaAkihiko",
       "license": "CC BY-SA 4.0",
@@ -407,6 +433,7 @@
     },
     "category": "express",
     "image": "images/trains/785-suzuran.webp",
+    "description": "さっぽろから むろらんまで はしる とっきゅう。しろい はなの なまえが ついた でんしゃだよ。",
     "credit": {
       "author": "Yuutann1123",
       "license": "CC BY 4.0",
@@ -421,6 +448,7 @@
     },
     "category": "express",
     "image": "images/trains/e653-inaho.webp",
+    "description": "にいがたから あきたまで はしる とっきゅう。にほんかいの うみを みながら はしれるよ。",
     "credit": {
       "author": "スミス1919",
       "license": "CC BY 4.0",
@@ -435,6 +463,7 @@
     },
     "category": "express",
     "image": "images/trains/e653-shirayuki.webp",
+    "description": "にいがたから じょうえつみょうこうまで はしる とっきゅう。ゆきの おおい ところを はしるよ。",
     "credit": {
       "author": "スミス1919",
       "license": "CC BY-SA 4.0",
@@ -449,6 +478,7 @@
     },
     "category": "express",
     "image": "images/trains/e751-tsugaru.webp",
+    "description": "あきたから あおもりまで はしる とっきゅう。とうほくの きたの ほうを はしって いくよ。",
     "credit": {
       "author": "Nee751",
       "license": "CC BY-SA 4.0",
@@ -463,6 +493,7 @@
     },
     "category": "express",
     "image": "images/trains/e657-hitachi.webp",
+    "description": "うえのから せんだいの ほうまで はしる とっきゅう。じょうばんせんを はしる でんしゃだよ。",
     "credit": {
       "author": "MaedaAkihiko",
       "license": "CC0",
@@ -477,6 +508,7 @@
     },
     "category": "express",
     "image": "images/trains/e257-wakashio.webp",
+    "description": "とうきょうから ちばの あわかもがわまで はしる とっきゅう。うみの ちかくを はしって いくよ。",
     "credit": {
       "author": "MaedaAkihiko",
       "license": "CC BY-SA 4.0",
@@ -491,6 +523,7 @@
     },
     "category": "express",
     "image": "images/trains/e259-narita-express.webp",
+    "description": "とうきょうから なりたくうこうまで はしる とっきゅう。ひこうきに のる ひとを はこぶ あかと しろの でんしゃだよ。",
     "credit": {
       "author": "MaedaAkihiko",
       "license": "CC BY-SA 4.0",
@@ -505,6 +538,7 @@
     },
     "category": "express",
     "image": "images/trains/251-super-view-odoriko.webp",
+    "description": "とうきょうから いずまで はしって いた とっきゅう。まどが おおきくて うみが よく みえたよ。",
     "credit": {
       "author": "Cheng-en Cheng",
       "license": "CC BY-SA 2.0",
@@ -519,6 +553,7 @@
     },
     "category": "express",
     "image": "images/trains/e257-odoriko.webp",
+    "description": "とうきょうから いずきゅうしもだまで はしる とっきゅう。あたたかい いずの うみへ つれて いって くれるよ。",
     "credit": {
       "author": "MaedaAkihiko",
       "license": "CC BY-SA 4.0",
@@ -533,6 +568,7 @@
     },
     "category": "express",
     "image": "images/trains/e261-saphir-odoriko.webp",
+    "description": "とうきょうから いずまで はしる あおくて ぴかぴかの とっきゅう。ぜんぶ グリーンしゃの ごうかな でんしゃだよ。",
     "credit": {
       "author": "MaedaAkihiko",
       "license": "CC BY-SA 4.0",
@@ -547,6 +583,7 @@
     },
     "category": "express",
     "image": "images/trains/e353-azusa.webp",
+    "description": "しんじゅくから まつもとまで はしる とっきゅう。むらさきいろの ラインが めじるしだよ。",
     "lookalikes": [
       "e353-kaiji"
     ],
@@ -564,6 +601,7 @@
     },
     "category": "express",
     "image": "images/trains/e351-super-azusa.webp",
+    "description": "しんじゅくから まつもとまで はしって いた とっきゅう。カーブで からだを かたむけて はやく はしったよ。",
     "credit": {
       "author": "MaedaAkihiko",
       "license": "CC BY-SA 4.0",
@@ -578,6 +616,7 @@
     },
     "category": "express",
     "image": "images/trains/e353-kaiji.webp",
+    "description": "しんじゅくから こうふまで はしる とっきゅう。あずさと おなじ かたちの でんしゃだよ。",
     "lookalikes": [
       "e353-azusa"
     ],
@@ -595,6 +634,7 @@
     },
     "category": "express",
     "image": "images/trains/ae-skyliner.webp",
+    "description": "けいせいうえのから なりたくうこうまで はしる しろと あおの とっきゅう。じそく160キロで びゅーんと はしるよ。",
     "credit": {
       "author": "MaedaAkihiko",
       "license": "CC BY-SA 4.0",
@@ -609,6 +649,7 @@
     },
     "category": "express",
     "image": "images/trains/gse-romance-car.webp",
+    "description": "しんじゅくから はこねまで はしる あかい ロマンスカー。いちばんまえの せきから まえが よく みえるよ。",
     "credit": {
       "author": "MaedaAkihiko",
       "license": "CC BY-SA 4.0",
@@ -623,6 +664,7 @@
     },
     "category": "express",
     "image": "images/trains/100-spacia.webp",
+    "description": "あさくさから にっこうや きぬがわおんせんまで はしる とっきゅう。まどが おおきくて けしきが きれいだよ。",
     "credit": {
       "author": "MaedaAkihiko",
       "license": "CC BY-SA 4.0",
@@ -637,6 +679,7 @@
     },
     "category": "express",
     "image": "images/trains/n100-spacia-x.webp",
+    "description": "あさくさから にっこうまで はしる しろくて あたらしい とっきゅう。ラウンジみたいな せきが あるよ。",
     "credit": {
       "author": "Rsa",
       "license": "CC BY-SA 3.0",
@@ -651,6 +694,7 @@
     },
     "category": "express",
     "image": "images/trains/500-liberty-kegon.webp",
+    "description": "あさくさから にっこうまで はしる とっきゅう。3りょうずつ わかれたり くっついたり できるよ。",
     "credit": {
       "author": "MaedaAkihiko",
       "license": "CC0",
@@ -665,6 +709,7 @@
     },
     "category": "express",
     "image": "images/trains/10000-new-red-arrow.webp",
+    "description": "いけぶくろから ちちぶまで はしって いた とっきゅう。しろい からだに あかい ラインが あったよ。",
     "credit": {
       "author": "SEMISAYAMASHI",
       "license": "CC BY-SA 4.0",
@@ -679,6 +724,7 @@
     },
     "category": "express",
     "image": "images/trains/001-laview.webp",
+    "description": "いけぶくろから ちちぶまで はしる とっきゅう。まるくて おおきな まどが とても めずらしいよ。",
     "credit": {
       "author": "Activeman2000",
       "license": "CC BY-SA 4.0",
@@ -693,6 +739,7 @@
     },
     "category": "express",
     "image": "images/trains/8000-fujisan-tokkyu.webp",
+    "description": "おおつきから かわぐちこまで はしる とっきゅう。ふじさんの かおの えが たくさん かいて あるよ。",
     "credit": {
       "author": "ウツダー (Udda)",
       "license": "CC BY 2.1 jp",
@@ -707,6 +754,7 @@
     },
     "category": "express",
     "image": "images/trains/383-wide-view-shinano.webp",
+    "description": "なごやから ながのまで はしる とっきゅう。やまの なかの カーブを かたむきながら はしるよ。",
     "credit": {
       "author": "博麗神華",
       "license": "CC0",
@@ -721,6 +769,7 @@
     },
     "category": "express",
     "image": "images/trains/kiha85-wide-view-hida.webp",
+    "description": "なごやから たかやまの ほうへ はしって いた とっきゅう。まどが おおきくて やまが よく みえたよ。",
     "credit": {
       "author": "シュポじ（ししまる）",
       "license": "CC0",
@@ -735,6 +784,7 @@
     },
     "category": "express",
     "image": "images/trains/1000-yukemuri.webp",
+    "description": "ながのから ゆだなかまで はしる とっきゅう。まえは ロマンスカーとして はしって いた でんしゃだよ。",
     "credit": {
       "author": "Kznrhsd",
       "license": "CC0",
@@ -749,6 +799,7 @@
     },
     "category": "express",
     "image": "images/trains/16010-alps-express.webp",
+    "description": "とやまの あたりを はしる とっきゅう。まえは せいぶの レッドアローとして はしって いたよ。",
     "credit": {
       "author": "Rsa",
       "license": "CC BY-SA 3.0",
@@ -763,6 +814,7 @@
     },
     "category": "express",
     "image": "images/trains/2000-mu-sky.webp",
+    "description": "なごやから ちゅうぶこくさいくうこうまで はしる とっきゅう。ひこうきに のる ひとを はこぶ でんしゃだよ。",
     "credit": {
       "author": "Alpsdake",
       "license": "CC BY-SA 4.0",
@@ -777,6 +829,7 @@
     },
     "category": "express",
     "image": "images/trains/683-thunderbird.webp",
+    "description": "おおさかから ほくりくの ほうへ はしる とっきゅう。あおと しろの からだが すずしそうだよ。",
     "credit": {
       "author": "さりと",
       "license": "CC BY-SA 4.0",
@@ -791,6 +844,7 @@
     },
     "category": "express",
     "image": "images/trains/281-haruka.webp",
+    "description": "きょうとから かんさいくうこうまで はしる とっきゅう。ひこうきに のる ひとを はこぶ でんしゃだよ。",
     "credit": {
       "author": "kazokuda",
       "license": "CC0",
@@ -805,6 +859,7 @@
     },
     "category": "express",
     "image": "images/trains/287-kuroshio.webp",
+    "description": "しんおおさかから しらはまの ほうへ はしる とっきゅう。うみの ちかくを はしる しろと あおの でんしゃだよ。",
     "credit": {
       "author": "Mr.ちゅらさん",
       "license": "CC BY 4.0",
@@ -819,6 +874,7 @@
     },
     "category": "express",
     "image": "images/trains/jrwest-panda-kuroshio.webp",
+    "description": "しらはまの ほうへ はしる とっきゅう。パンダの えが からだじゅうに かいて あって かわいいよ。",
     "credit": {
       "author": "MaedaAkihiko",
       "license": "CC0",
@@ -833,6 +889,7 @@
     },
     "category": "express",
     "image": "images/trains/289-kounotori.webp",
+    "description": "おおさかから きのさきおんせんの ほうへ はしる とっきゅう。とりの なまえが ついた でんしゃだよ。",
     "credit": {
       "author": "にぶさま",
       "license": "CC BY-SA 4.0",
@@ -847,6 +904,7 @@
     },
     "category": "express",
     "image": "images/trains/kiha189-hamakaze.webp",
+    "description": "おおさかから ひょうごの きたの ほうへ はしる とっきゅう。うみの ちかくを はしる ディーゼルの でんしゃだよ。",
     "credit": {
       "author": "MaedaAkihiko",
       "license": "CC0",
@@ -861,6 +919,7 @@
     },
     "category": "express",
     "image": "images/trains/50000-rapit.webp",
+    "description": "なんばから かんさいくうこうまで はしる こい あおの とっきゅう。まるい かおが ロボットみたいだよ。",
     "credit": {
       "author": "Rsa",
       "license": "CC BY-SA 3.0",
@@ -875,6 +934,7 @@
     },
     "category": "express",
     "image": "images/trains/21000-urban-liner.webp",
+    "description": "おおさかから なごやまで はしる きんてつの とっきゅう。しろい からだに オレンジの ラインが あるよ。",
     "credit": {
       "author": "Cheng-en Cheng from Taichung City, Taiwan",
       "license": "CC BY-SA 2.0",
@@ -889,6 +949,7 @@
     },
     "category": "express",
     "image": "images/trains/80000-hinotori.webp",
+    "description": "おおさかから なごやまで はしる まっかな とっきゅう。せきが ゆったりして いて とても きもちいいよ。",
     "credit": {
       "author": "六人目の審査員",
       "license": "CC BY-SA 4.0",
@@ -903,6 +964,7 @@
     },
     "category": "express",
     "image": "images/trains/50000-shimakaze.webp",
+    "description": "おおさかや きょうとから かしこじままで はしる とっきゅう。カフェの しゃりょうも ある ごうかな でんしゃだよ。",
     "credit": {
       "author": "Cheng-en Cheng from Taichung City, Taiwan",
       "license": "CC BY-SA 2.0",
@@ -917,6 +979,7 @@
     },
     "category": "express",
     "image": "images/trains/8000-elegant-saloon.webp",
+    "description": "おおさかから きょうとまで はしる けいはんの でんしゃ。2かいだての しゃりょうが ついているよ。",
     "credit": {
       "author": "yagi-s",
       "license": "CC BY 2.0",
@@ -931,6 +994,7 @@
     },
     "category": "express",
     "image": "images/trains/ktr8000-tango-no-umi.webp",
+    "description": "きょうとの きたの あまのはしだての ほうへ はしる でんしゃ。ふかい あおいろの からだが きれいだよ。",
     "credit": {
       "author": "Rsa",
       "license": "CC BY-SA 3.0",
@@ -945,6 +1009,7 @@
     },
     "category": "express",
     "image": "images/trains/273-yakumo.webp",
+    "description": "おかやまから いずもしまで はしる とっきゅう。2024ねんに でてきた あたらしい でんしゃだよ。",
     "credit": {
       "author": "MaedaAkihiko",
       "license": "CC0",
@@ -959,6 +1024,7 @@
     },
     "category": "express",
     "image": "images/trains/hot7000-super-hakuto.webp",
+    "description": "きょうとから とっとりまで はしる とっきゅう。でんきの ない せんろも はしれる ディーゼルだよ。",
     "credit": {
       "author": "Cheng-en Cheng from Taichung City, Taiwan",
       "license": "CC BY-SA 2.0",
@@ -973,6 +1039,7 @@
     },
     "category": "express",
     "image": "images/trains/kiha187-super-oki.webp",
+    "description": "とっとりから やまぐちの ほうへ はしる とっきゅう。にほんかいの ちかくを はしって いくよ。",
     "credit": {
       "author": "MaedaAkihiko",
       "license": "CC0",
@@ -987,6 +1054,7 @@
     },
     "category": "express",
     "image": "images/trains/2700-uzushio.webp",
+    "description": "たかまつから とくしままで はしる とっきゅう。なるとの うずしおの なまえが ついているよ。",
     "lookalikes": [
       "2700-nanpu"
     ],
@@ -1004,6 +1072,7 @@
     },
     "category": "express",
     "image": "images/trains/2700-nanpu.webp",
+    "description": "おかやまから こうちまで はしる とっきゅう。アンパンマンの えが かかれた しゃりょうも あるよ。",
     "lookalikes": [
       "2700-uzushio"
     ],
@@ -1021,6 +1090,7 @@
     },
     "category": "express",
     "image": "images/trains/8000-shiokaze.webp",
+    "description": "おかやまから まつやままで はしる とっきゅう。せとおおはしを わたって しこくへ いくよ。",
     "credit": {
       "author": "z tanuki",
       "license": "CC BY 3.0",
@@ -1035,6 +1105,7 @@
     },
     "category": "express",
     "image": "images/trains/8600-ishizuchi.webp",
+    "description": "たかまつから まつやままで はしる とっきゅう。しこくで いちばん たかい やまの なまえだよ。",
     "credit": {
       "author": "Kaiso_Wakame",
       "license": "CC BY-SA 4.0",
@@ -1049,6 +1120,7 @@
     },
     "category": "express",
     "image": "images/trains/2000-uwakai.webp",
+    "description": "まつやまから うわじままで はしる とっきゅう。えひめの うみの なまえが ついているよ。",
     "credit": {
       "author": "MaedaAkihiko",
       "license": "CC BY-SA 4.0",
@@ -1063,6 +1135,7 @@
     },
     "category": "express",
     "image": "images/trains/kiha185-tsurugisan.webp",
+    "description": "とくしまから あわいけだまで はしる とっきゅう。とくしまの たかい やまの なまえが ついているよ。",
     "credit": {
       "author": "Huminosato1019",
       "license": "CC BY-SA 4.0",
@@ -1077,6 +1150,7 @@
     },
     "category": "express",
     "image": "images/trains/883-sonic.webp",
+    "description": "はかたから おおいたまで はしる あおい とっきゅう。みみみたいな かざりが ついているよ。",
     "credit": {
       "author": "東風みるく",
       "license": "CC BY-SA 4.0",
@@ -1091,6 +1165,7 @@
     },
     "category": "express",
     "image": "images/trains/885-kamome.webp",
+    "description": "はかたから ながさきの ほうへ はしる しろい とっきゅう。とりの なまえが ついているよ。",
     "credit": {
       "author": "Kazokuda",
       "license": "CC0",
@@ -1105,6 +1180,7 @@
     },
     "category": "express",
     "image": "images/trains/787-kirameki.webp",
+    "description": "はかたから こくらまで はしる とっきゅう。ぎんいろっぽい からだが かっこいい でんしゃだよ。",
     "credit": {
       "author": "JKT-c",
       "license": "CC BY 3.0",
@@ -1119,6 +1195,7 @@
     },
     "category": "express",
     "image": "images/trains/783-huis-ten-bosch.webp",
+    "description": "はかたから ハウステンボスまで はしる とっきゅう。カラフルな いろの からだが たのしいよ。",
     "credit": {
       "author": "MaedaAkihiko",
       "license": "CC BY-SA 4.0",
@@ -1133,6 +1210,7 @@
     },
     "category": "express",
     "image": "images/trains/kiha72-yufuin-no-mori.webp",
+    "description": "はかたから ゆふいんまで はしる みどりいろの とっきゅう。おんせんの まちへ つれて いって くれるよ。",
     "credit": {
       "author": "MaedaAkihiko",
       "license": "CC BY-SA 4.0",
@@ -1147,6 +1225,7 @@
     },
     "category": "express",
     "image": "images/trains/kiha183-aso-boy.webp",
+    "description": "くまもとから あそまで はしる たのしい とっきゅう。しろと くろの いぬの えが たくさん あるよ。",
     "credit": {
       "author": "MaedaAkihiko",
       "license": "CC BY-SA 4.0",
@@ -1161,6 +1240,7 @@
     },
     "category": "express",
     "image": "images/trains/kiha185-kyushu-odan-tokkyu.webp",
+    "description": "きゅうしゅうを ひがしから にしへ よこぎる とっきゅう。あかい からだが めだつ でんしゃだよ。",
     "credit": {
       "author": "MaedaAkihiko",
       "license": "CC0",
@@ -1175,6 +1255,7 @@
     },
     "category": "express",
     "image": "images/trains/kiha47-ibusuki-no-tamatebako.webp",
+    "description": "かごしまちゅうおうから いぶすきまで はしる でんしゃ。はんぶん しろで はんぶん くろの ふしぎな いろだよ。",
     "credit": {
       "author": "Rsa",
       "license": "CC BY-SA 3.0",
@@ -1189,6 +1270,7 @@
     },
     "category": "express",
     "image": "images/trains/kiha125-umisachi-yamasachi.webp",
+    "description": "みやざきの うみの ちかくを はしる でんしゃ。そとがわに きが つかわれて いて めずらしいよ。",
     "credit": {
       "author": "MaedaAkihiko",
       "license": "CC0",
@@ -1203,6 +1285,7 @@
     },
     "category": "local",
     "image": "images/trains/e235-yamanote-sen.webp",
+    "description": "とうきょうの まちを ぐるぐる まわる みどりの でんしゃ。ひとまわり やく1じかんだよ。",
     "credit": {
       "author": "yagi-s",
       "license": "CC BY 2.0",
@@ -1217,6 +1300,7 @@
     },
     "category": "local",
     "image": "images/trains/e233-keihin-tohoku-sen.webp",
+    "description": "おおみやから よこはまの ほうまで はしる みずいろの でんしゃ。やまのてせんと ならんで はしるよ。",
     "credit": {
       "author": "MaedaAkihiko",
       "license": "CC BY-SA 4.0",
@@ -1231,6 +1315,7 @@
     },
     "category": "local",
     "image": "images/trains/e233-chuo-sen.webp",
+    "description": "とうきょうから たかおまで はしる オレンジいろの でんしゃ。まっすぐな せんろが つづいて いるよ。",
     "credit": {
       "author": "銚電神",
       "license": "CC BY-SA 3.0",
@@ -1245,6 +1330,7 @@
     },
     "category": "local",
     "image": "images/trains/e231-sobu-hon-sen.webp",
+    "description": "ちばから みたかまで はしる きいろい でんしゃ。まちの えきに こまめに とまって いくよ。",
     "credit": {
       "author": "Nickel 2 Train",
       "license": "CC BY-SA 4.0",
@@ -1259,6 +1345,7 @@
     },
     "category": "local",
     "image": "images/trains/e235-yokosuka-sen.webp",
+    "description": "とうきょうから よこすかの ほうへ はしる あおと しろの でんしゃ。うみの ちかくを とおって いくよ。",
     "credit": {
       "author": "MaedaAkihiko",
       "license": "CC BY-SA 4.0",
@@ -1273,6 +1360,7 @@
     },
     "category": "local",
     "image": "images/trains/e233-tokaido-sen.webp",
+    "description": "とうきょうから あたみの ほうへ はしる でんしゃ。オレンジと みどりの ラインが めじるしだよ。",
     "credit": {
       "author": "Nagatsuma1437",
       "license": "CC BY-SA 4.0",
@@ -1287,6 +1375,7 @@
     },
     "category": "local",
     "image": "images/trains/e233-saikyo-sen.webp",
+    "description": "おおさきから おおみやまで はしる でんしゃ。みどりの ラインが めじるしだよ。さいたまと とうきょうを むすんで いるよ。",
     "credit": {
       "author": "Hyper Maniac Man",
       "license": "CC BY-SA 4.0",
@@ -1301,6 +1390,7 @@
     },
     "category": "local",
     "image": "images/trains/e233-keiyo-sen.webp",
+    "description": "とうきょうから そがまで はしる あかい ラインの でんしゃ。まいはまの ゆうえんちへ いくのに べんりだよ。",
     "credit": {
       "author": "MaedaAkihiko",
       "license": "CC0",
@@ -1315,6 +1405,7 @@
     },
     "category": "local",
     "image": "images/trains/e531-joban-sen.webp",
+    "description": "うえのから みとや いわきの ほうへ はしる でんしゃ。あおい ラインが めじるしだよ。",
     "credit": {
       "author": "MaedaAkihiko",
       "license": "CC BY-SA 4.0",
@@ -1329,6 +1420,7 @@
     },
     "category": "local",
     "image": "images/trains/metro1000-ginza-sen.webp",
+    "description": "しぶやから あさくさまで はしる オレンジいろの ちかてつ。にほんで いちばん ふるい ちかてつだよ。",
     "credit": {
       "author": "Toshinori baba",
       "license": "CC BY-SA 3.0",
@@ -1343,6 +1435,7 @@
     },
     "category": "local",
     "image": "images/trains/metro2000-marunouchi-sen.webp",
+    "description": "おぎくぼから いけぶくろまで はしる まっかな ちかてつ。しろい なみもようが ついているよ。",
     "credit": {
       "author": "MaedaAkihiko",
       "license": "CC BY-SA 4.0",
@@ -1357,6 +1450,7 @@
     },
     "category": "local",
     "image": "images/trains/keisei3000-keisei-sen.webp",
+    "description": "けいせいうえのから なりたの ほうへ はしる でんしゃ。あおと あかの ラインが めじるしだよ。",
     "credit": {
       "author": "MaedaAkihiko",
       "license": "CC BY-SA 4.0",
@@ -1371,6 +1465,7 @@
     },
     "category": "local",
     "image": "images/trains/keikyu2100-keikyu-sen.webp",
+    "description": "しながわから よこはまを とおって みうらの ほうへ はしる でんしゃ。あかい からだが かっこいいよ。",
     "credit": {
       "author": "Cheng-en Cheng from Taichung City, Taiwan",
       "license": "CC BY-SA 2.0",
@@ -1385,6 +1480,7 @@
     },
     "category": "local",
     "image": "images/trains/sotetsu20000-sotetsu-sen.webp",
+    "description": "よこはまから えびなの ほうへ はしる こんいろの でんしゃ。とうきょうまで のりいれる ことも あるよ。",
     "credit": {
       "author": "れぃ24",
       "license": "CC BY-SA 4.0",
@@ -1399,6 +1495,7 @@
     },
     "category": "local",
     "image": "images/trains/yokohama3000-blue-line.webp",
+    "description": "よこはまの まちの したを はしる ちかてつ。あおい ラインが めじるしの でんしゃだよ。",
     "credit": {
       "author": "MaedaAkihiko",
       "license": "CC BY-SA 4.0",
@@ -1413,6 +1510,7 @@
     },
     "category": "local",
     "image": "images/trains/7300-yurikamome.webp",
+    "description": "しんばしから とよすまで はしる あたらしい のりもの。うんてんしゅさんが いなくても はしれるよ。",
     "credit": {
       "author": "Cheng-en Cheng",
       "license": "CC BY-SA 2.0",
@@ -1427,6 +1525,7 @@
     },
     "category": "local",
     "image": "images/trains/monorail10000-tokyo-monorail.webp",
+    "description": "はままつちょうから はねだくうこうまで はしる モノレール。1ぽんの レールに またがって すすむよ。",
     "credit": {
       "author": "MaedaAkihiko",
       "license": "CC BY-SA 4.0",
@@ -1441,6 +1540,7 @@
     },
     "category": "local",
     "image": "images/trains/toden8900-arakawa-sen.webp",
+    "description": "みのわばしから わせだまで はしる とうきょうの ろめんでんしゃ。1りょうで まちの なかを ゆっくり すすむよ。",
     "credit": {
       "author": "茶紅の後午",
       "license": "CC BY-SA 4.0",
@@ -1455,6 +1555,7 @@
     },
     "category": "local",
     "image": "images/trains/enoden300-enoden.webp",
+    "description": "かまくらから ふじさわまで はしる ちいさな でんしゃ。うみの すぐ よこや いえの あいだを とおるよ。",
     "credit": {
       "author": "ume-y",
       "license": "CC BY 2.0",
@@ -1469,6 +1570,7 @@
     },
     "category": "local",
     "image": "images/trains/allegra-hakone-tozan-densha.webp",
+    "description": "はこねゆもとから ごうらまで やまを のぼる でんしゃ。ジグザグに すすむ スイッチバックが あるよ。",
     "credit": {
       "author": "PekePON",
       "license": "CC BY-SA 4.0",
@@ -1483,6 +1585,7 @@
     },
     "category": "local",
     "image": "images/trains/323-osaka-kanjo-sen.webp",
+    "description": "おおさかの まちを ぐるぐる まわる オレンジいろの でんしゃ。ひとまわり やく40ぷんだよ。",
     "credit": {
       "author": "Jr223~commonswiki",
       "license": "CC BY-SA 4.0",
@@ -1497,6 +1600,7 @@
     },
     "category": "local",
     "image": "images/trains/225-shin-kaisoku.webp",
+    "description": "きょうとや おおさかを とおって はしる とても はやい でんしゃ。じそく130キロで とばすよ。",
     "lookalikes": [
       "225-hanwa-sen"
     ],
@@ -1514,6 +1618,7 @@
     },
     "category": "local",
     "image": "images/trains/225-hanwa-sen.webp",
+    "description": "てんのうじから わかやままで はしる でんしゃ。かんさいくうこうへ いく でんしゃも あるよ。",
     "lookalikes": [
       "225-shin-kaisoku"
     ],
@@ -1531,6 +1636,7 @@
     },
     "category": "local",
     "image": "images/trains/207-fukuchiyama-sen.webp",
+    "description": "おおさかから たからづかを とおって はしる でんしゃ。たからづかせんとも よばれて いるよ。",
     "credit": {
       "author": "Hideyuki KAMON",
       "license": "CC BY-SA 2.0",
@@ -1545,6 +1651,7 @@
     },
     "category": "local",
     "image": "images/trains/osakametro30000-midosuji-sen.webp",
+    "description": "えさかから なかもずまで はしる おおさかの ちかてつ。あかい いろが めじるしで いつも にぎやかだよ。",
     "credit": {
       "author": "NatsuTV",
       "license": "CC0",
@@ -1559,6 +1666,7 @@
     },
     "category": "local",
     "image": "images/trains/hankyu1000-hankyu-dentetsu.webp",
+    "description": "おおさかうめだから きょうとや こうべへ はしる でんしゃ。あずきいろの からだが ぴかぴかだよ。",
     "credit": {
       "author": "小田急4000系ファン",
       "license": "CC0",
@@ -1573,6 +1681,7 @@
     },
     "category": "local",
     "image": "images/trains/hanshin1000-hanshin-sen.webp",
+    "description": "おおさかうめだから こうべまで はしる でんしゃ。ならまで のりいれる ことも あるよ。オレンジの ラインだよ。",
     "credit": {
       "author": "Cheng-en Cheng from Taichung City, Taiwan",
       "license": "CC BY-SA 2.0",
@@ -1587,6 +1696,7 @@
     },
     "category": "local",
     "image": "images/trains/nankai8300-nankai-sen.webp",
+    "description": "なんばから わかやまの ほうへ はしる でんしゃ。かんさいくうこうへ いく でんしゃも あるよ。",
     "credit": {
       "author": "ゆう７",
       "license": "CC BY 3.0",
@@ -1601,6 +1711,7 @@
     },
     "category": "local",
     "image": "images/trains/mo161-hankai-densha.webp",
+    "description": "おおさかから さかいまで はしる ろめんでんしゃ。とても ふるい しゃりょうで たいせつに つかわれて いるよ。",
     "credit": {
       "author": "屋根裏の提督",
       "license": "CC BY-SA 4.0",
@@ -1615,6 +1726,7 @@
     },
     "category": "local",
     "image": "images/trains/kyoto20-karasuma-sen.webp",
+    "description": "きょうとの したを みなみきたに はしる ちかてつ。みどりいろが めじるしの でんしゃだよ。",
     "credit": {
       "author": "MaedaAkihiko",
       "license": "CC0",
@@ -1629,6 +1741,7 @@
     },
     "category": "local",
     "image": "images/trains/kobe5000-kaigan-sen.webp",
+    "description": "こうべの うみの ちかくの したを はしる ちかてつ。ちいさな トンネルを とおる でんしゃだよ。",
     "credit": {
       "author": "Niiryoku2910",
       "license": "CC BY 4.0",
@@ -1643,6 +1756,7 @@
     },
     "category": "local",
     "image": "images/trains/2020-port-liner.webp",
+    "description": "さんのみやから こうべくうこうまで はしる のりもの。うんてんしゅさんが いなくても はしれるよ。",
     "credit": {
       "author": "TRJN",
       "license": "CC BY-SA 4.0",
@@ -1657,6 +1771,7 @@
     },
     "category": "local",
     "image": "images/trains/nishitetsu3000-tenjin-omuta-sen.webp",
+    "description": "ふくおかの てんじんから おおむたまで はしる でんしゃ。ふくおかけんを みなみへ ながく はしるよ。",
     "credit": {
       "author": "MaedaAkihiko",
       "license": "CC0",
@@ -1671,6 +1786,7 @@
     },
     "category": "local",
     "image": "images/trains/fukuoka3000-nanakuma-sen.webp",
+    "description": "ふくおかの したを はしる ちかてつ。はかたえきまで つながって いて みどりいろが めじるしだよ。",
     "credit": {
       "author": "Rsa",
       "license": "CC BY-SA 3.0",
@@ -1685,6 +1801,7 @@
     },
     "category": "local",
     "image": "images/trains/ef210-momotaro.webp",
+    "description": "にもつを のせた かしゃを ひっぱる でんきかんしゃ。ももたろうと いう ニックネームが あるよ。",
     "credit": {
       "author": "m-louis .®",
       "license": "CC BY-SA 2.0",
@@ -1699,6 +1816,7 @@
     },
     "category": "local",
     "image": "images/trains/eh500-kintaro.webp",
+    "description": "ながい かしゃを ひっぱる ちからもちの でんきかんしゃ。からだが 2つに つながって いるよ。",
     "credit": {
       "author": "多摩川是政",
       "license": "CC0",
@@ -1713,6 +1831,7 @@
     },
     "category": "local",
     "image": "images/trains/d51-degoichi.webp",
+    "description": "せきたんを もやして けむりを だしながら はしる きかんしゃ。まっくろで デゴイチと よばれて いるよ。",
     "credit": {
       "author": "Mamusi Taka",
       "license": "CC BY-SA 3.0",

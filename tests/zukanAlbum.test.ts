@@ -11,6 +11,7 @@ function train(id: string, category: Category): Train {
     name: { hiragana: 'てすと', normal: 'テスト' },
     category,
     image: `images/trains/${id}.webp`,
+    description: 'てすとの せつめいだよ。',
   };
 }
 

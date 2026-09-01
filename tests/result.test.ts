@@ -10,6 +10,7 @@ function train(id: string, hiragana: string): Train {
     name: { hiragana, normal: hiragana },
     category: 'local',
     image: `images/trains/${id}.webp`,
+    description: 'てすとの せつめいだよ。',
   };
 }
 

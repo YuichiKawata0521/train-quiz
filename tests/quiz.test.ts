@@ -27,6 +27,7 @@ function train(id: string, hiragana: string, category: Train['category'], lookal
     name: { hiragana, normal: hiragana.toUpperCase() },
     category,
     image: `images/trains/${id}.webp`,
+    description: 'てすとの せつめいだよ。',
     ...(lookalikes ? { lookalikes } : {}),
   };
 }

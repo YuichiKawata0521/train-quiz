@@ -16,6 +16,8 @@ export interface Train {
   name: TrainName;
   category: Category;
   image: string;
+  /** 図鑑用のせつめい(ひらがな中心・漢字なし・80文字以内・2〜3文) */
+  description: string;
   credit?: Credit;
   lookalikes?: string[];
 }

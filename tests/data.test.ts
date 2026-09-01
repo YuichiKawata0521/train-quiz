@@ -24,6 +24,7 @@ describe('validateTrains', () => {
     name: { hiragana: 'あ', normal: 'A' },
     category: 'local',
     image: 'images/trains/a.webp',
+    description: 'てすとの せつめいだよ。',
   };
   it('重複idを検出する', () => {
     expect(validateTrains([base, { ...base }])).toContain('重複id: a');
@@ -39,6 +40,16 @@ describe('validateTrains', () => {
   it('存在しないlookalike先を検出する', () => {
     const b: Train = { ...base, id: 'b', lookalikes: ['zzz'] };
     expect(validateTrains([b])).toContain('lookalike先なし: b -> zzz');
+  });
+  it('せつめいの欠落・漢字・長すぎを検出する', () => {
+    expect(validateTrains([{ ...base, description: '' }])).toContain('せつめいなし: a');
+    expect(validateTrains([{ ...base, description: '電車だよ。' }])).toContain(
+      'せつめいに漢字: a',
+    );
+    expect(validateTrains([{ ...base, description: 'あ'.repeat(81) }])).toContain(
+      'せつめいが長すぎ: a',
+    );
+    expect(validateTrains([base])).toEqual([]);
   });
 });
 

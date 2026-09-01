@@ -38,6 +38,7 @@ describe('displayName', () => {
     name: { hiragana: 'はやぶさ', normal: 'はやぶさ(E5系)' },
     category: 'shinkansen',
     image: 'images/trains/e5-hayabusa.webp',
+    description: 'てすとの せつめいだよ。',
   };
   it('表記設定に応じた名前を返す', () => {
     expect(displayName(train, 'hiragana')).toBe('はやぶさ');
