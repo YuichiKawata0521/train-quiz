@@ -445,7 +445,6 @@ body {
   background: #f6efe0; /* album.webp 受領までのフォールバック */
   background-size: cover;
   background-position: center;
-  border: 10px solid #6b4a2b;
   border-radius: 14px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
 }
