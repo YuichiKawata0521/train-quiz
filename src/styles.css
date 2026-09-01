@@ -25,6 +25,35 @@ body {
   position: relative;
 }
 .title { font-size: 64px; color: var(--blue-dark); }
+.screen-start { background-size: cover; background-position: center; overflow: hidden; }
+.start-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  background: rgba(255, 255, 255, 0.82);
+  border-radius: 28px;
+  padding: 24px 56px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
+  z-index: 2;
+}
+.start-panel .conductor-lg { height: 22vh; }
+.start-train {
+  position: absolute;
+  bottom: 13%;
+  left: -90%;
+  width: min(68vw, 900px);
+  z-index: 1;
+  animation: start-train-cycle 22s linear infinite;
+}
+.start-train-2 { animation-delay: -11s; }
+@keyframes start-train-cycle {
+  0% { left: -90%; animation-timing-function: ease-out; }
+  16% { left: 16%; }
+  40% { left: 16%; animation-timing-function: ease-in; }
+  58% { left: 115%; }
+  100% { left: 115%; }
+}
 .heading { font-size: 40px; color: var(--blue-dark); }
 .btn {
   font-family: inherit;

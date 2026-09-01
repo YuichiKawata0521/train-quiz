@@ -2,6 +2,7 @@ import type { AppContext } from '../app';
 import { answer, isFinished } from '../logic/quiz';
 import { displayName } from '../logic/settings';
 import { asset } from '../ui/asset';
+import { stationBg } from '../ui/backgrounds';
 
 const FEEDBACK_MS = 1500;
 
@@ -12,7 +13,7 @@ export function renderQuestion(ctx: AppContext): void {
 
   ctx.root.innerHTML = `
     <section class="screen screen-question platform-bg"
-             style="background-image:url(${asset('images/bg/platform.webp')})">
+             style="background-image:url(${stationBg(session.current)})">
       <div class="progress">
         ${Array.from({ length: total }, (_, i) => `<span class="station${i <= session.current ? ' passed' : ''}"></span>`).join('')}
         <img class="progress-train" style="left:${(session.current / Math.max(total - 1, 1)) * 88}%"
