@@ -394,3 +394,181 @@ body {
 .credits li {
   margin: 6px 0;
 }
+
+/* ---- でんしゃずかん ---- */
+.screen-zukan {
+  gap: 8px;
+  padding: 16px;
+}
+.zukan-album {
+  position: relative;
+  width: min(94vw, 1100px);
+  height: min(72vh, 680px);
+  display: flex;
+  background: #f6efe0; /* album.webp 受領までのフォールバック */
+  background-size: cover;
+  background-position: center;
+  border: 10px solid #6b4a2b;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+.zukan-album::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 26px;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0.16) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  pointer-events: none;
+}
+.zukan-page {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  gap: 12px;
+  padding: 5% 6%;
+}
+.zukan-slot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+}
+.zukan-unlocked {
+  cursor: pointer;
+}
+.zukan-unlocked:active {
+  transform: scale(0.96);
+}
+.zukan-photo {
+  width: 100%;
+  height: 68%;
+  background: #fff;
+  padding: 6px;
+  border-radius: 4px;
+  box-shadow: 2px 3px 8px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+.zukan-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.zukan-locked .zukan-photo img {
+  filter: blur(10px) brightness(0.35) grayscale(1);
+}
+.zukan-name {
+  font-size: 20px;
+  color: #4a3b28;
+}
+.zukan-stamps {
+  display: flex;
+  gap: 3px;
+  font-size: 18px;
+}
+.stamp {
+  color: #cfc5ad;
+}
+.stamp.on {
+  color: #f5a623;
+}
+.zukan-tabs {
+  position: absolute;
+  right: 0;
+  top: 5%;
+  transform: translateX(72%);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.zukan-tab {
+  font-family: inherit;
+  font-size: 17px;
+  writing-mode: vertical-rl;
+  padding: 14px 5px;
+  border: 2px solid #b89a6a;
+  border-left: none;
+  border-radius: 0 10px 10px 0;
+  background: #fff6df;
+  color: #6b4a2b;
+}
+.zukan-tab.active {
+  background: #ffd43b;
+  font-weight: bold;
+}
+.zukan-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 72px;
+  height: 72px;
+  font-size: 36px;
+  border-radius: 50%;
+  border: 3px solid var(--blue-dark);
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--blue-dark);
+  z-index: 3;
+}
+.zukan-prev {
+  left: 10px;
+}
+.zukan-next {
+  right: 10px;
+}
+.zukan-nav:disabled {
+  opacity: 0.25;
+}
+.zukan-counter {
+  position: absolute;
+  right: 24px;
+  bottom: 24px;
+  font-size: 22px;
+  color: var(--blue-dark);
+  background: rgba(255, 255, 255, 0.8);
+  padding: 6px 14px;
+  border-radius: 12px;
+}
+.zukan-turning .zukan-page {
+  animation: zukan-flip 0.25s ease;
+}
+@keyframes zukan-flip {
+  from {
+    opacity: 0;
+    transform: translateX(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.zukan-detail .photo-card img {
+  max-height: 40vh;
+}
+.zukan-detail-name {
+  font-size: 44px;
+  color: var(--blue-dark);
+}
+.zukan-detail-formal {
+  font-size: 20px;
+  color: #777;
+}
+.zukan-detail-desc {
+  font-size: 26px;
+  line-height: 1.7;
+  max-width: 78vw;
+  color: #333;
+  text-align: center;
+}
