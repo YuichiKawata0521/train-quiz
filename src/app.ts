@@ -52,6 +52,8 @@ export interface AppContext {
   audio: AudioPlayer;
   currentMode: Mode | null;
   session: SessionState | null;
+  /** このセッション中に図鑑へ新しく登録された電車id(結果画面でお祝いする) */
+  newUnlocks: string[];
   navigate(screen: ScreenName): void;
 }
 
@@ -84,6 +86,7 @@ export function createApp(
     audio,
     currentMode: null,
     session: null,
+    newUnlocks: [],
     navigate(screen) {
       const target =
         !ctx.settings.adultMode && isTimeUp() && LOCKABLE.has(screen) ? 'locked' : screen;

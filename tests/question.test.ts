@@ -2,7 +2,7 @@ import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { readFileSync } from 'node:fs';
 import { renderQuestion } from '../src/screens/question';
 import { createSession } from '../src/logic/quiz';
-import { countFor } from '../src/logic/zukan';
+import { countFor, recordFirstTryCorrect, UNLOCK_COUNT } from '../src/logic/zukan';
 import type { AppContext } from '../src/app';
 import type { Train, Mode } from '../src/logic/types';
 
@@ -44,6 +44,7 @@ function fixtureCtx(questionCount: number): AppContext {
     audio: { play: vi.fn() },
     currentMode: mode,
     session: createSession(trains, questionCount, 'hiragana', () => 0.42),
+    newUnlocks: [],
     navigate: vi.fn(),
   } as unknown as AppContext;
   document.body.appendChild(ctx.root);
@@ -139,5 +140,47 @@ describe('renderQuestion', () => {
     vi.advanceTimersByTime(1500);
     buttons[q.correctIndex].click();
     expect(countFor(q.train.id)).toBe(0);
+  });
+
+  it('5回目の1発正解で newUnlocks に積まれる(4回目までは積まれない)', () => {
+    const ctx = fixtureCtx(2);
+    renderQuestion(ctx);
+    const q = ctx.session!.questions[0];
+    for (let i = 0; i < UNLOCK_COUNT - 1; i++) recordFirstTryCorrect(q.train.id);
+    const buttons = [...ctx.root.querySelectorAll<HTMLButtonElement>('.choice')];
+    buttons[q.correctIndex].click();
+    expect(ctx.newUnlocks).toEqual([q.train.id]);
+  });
+
+  it('まちがえた問題は、正解後に学習カードが出て「つぎへ」で進む', () => {
+    const ctx = fixtureCtx(2);
+    renderQuestion(ctx);
+    const q = ctx.session!.questions[0];
+    const buttons = [...ctx.root.querySelectorAll<HTMLButtonElement>('.choice')];
+    buttons[q.correctIndex === 0 ? 1 : 0].click();
+    vi.advanceTimersByTime(1500);
+    buttons[q.correctIndex].click();
+    // ◯の表示のあいだはまだカードは出ない
+    expect(ctx.root.querySelector('.train-card')).toBeNull();
+    vi.advanceTimersByTime(1500);
+    expect(ctx.navigate).not.toHaveBeenCalled();
+    const card = ctx.root.querySelector<HTMLElement>('.train-card')!;
+    expect(card).not.toBeNull();
+    expect(card.querySelector('.train-card-title')!.textContent).toBe('おぼえよう!');
+    expect(card.querySelector('.train-card-name')!.textContent).toBe(q.train.name.hiragana);
+    expect(card.querySelector('.train-card-desc')!.textContent).toBe(q.train.description);
+    card.querySelector<HTMLButtonElement>('[data-action=close]')!.click();
+    expect(ctx.root.querySelector('.train-card')).toBeNull();
+    expect(ctx.navigate).toHaveBeenCalledWith('interlude');
+  });
+
+  it('1発正解のときは学習カードなしでそのまま進む', () => {
+    const ctx = fixtureCtx(2);
+    renderQuestion(ctx);
+    const q = ctx.session!.questions[0];
+    [...ctx.root.querySelectorAll<HTMLButtonElement>('.choice')][q.correctIndex].click();
+    vi.advanceTimersByTime(1500);
+    expect(ctx.root.querySelector('.train-card')).toBeNull();
+    expect(ctx.navigate).toHaveBeenCalledWith('interlude');
   });
 });

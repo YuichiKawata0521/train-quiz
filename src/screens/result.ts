@@ -1,6 +1,10 @@
 import type { AppContext } from '../app';
 import { createSession, poolForMode } from '../logic/quiz';
 import { asset } from '../ui/asset';
+import { openTrainCard } from '../ui/trainCard';
+
+// ドアが開き切る(delay 0.6s + transition 2.4s)のを待ってからお祝いを出す
+const UNLOCK_CELEBRATION_DELAY_MS = 3400;
 
 export function renderResult(ctx: AppContext): void {
   const session = ctx.session!;
@@ -32,8 +36,29 @@ export function renderResult(ctx: AppContext): void {
     void doors.offsetWidth;
     requestAnimationFrame(() => doors.classList.add('open'));
   });
+
+  // このセッションで図鑑に新しく登録された電車をお祝い(複数なら順番に)
+  function celebrateUnlock(index: number): void {
+    const train = ctx.trains.find((t) => t.id === ctx.newUnlocks[index]);
+    if (!train) return;
+    ctx.audio.play('horn');
+    openTrainCard(ctx.root, {
+      train,
+      title: 'あたらしい でんしゃを げっと!',
+      closeLabel: index + 1 < ctx.newUnlocks.length ? 'つぎへ' : 'とじる',
+      speech: ctx.settings.sound,
+      onTap: () => ctx.audio.play('tap'),
+      onClose: () => {
+        if (index + 1 < ctx.newUnlocks.length) celebrateUnlock(index + 1);
+      },
+    });
+  }
+  if (ctx.newUnlocks.length > 0) {
+    setTimeout(() => celebrateUnlock(0), UNLOCK_CELEBRATION_DELAY_MS);
+  }
   ctx.root.querySelector<HTMLButtonElement>('[data-action=retry]')!.addEventListener('click', () => {
     ctx.audio.play('tap');
+    ctx.newUnlocks = [];
     ctx.session = createSession(
       poolForMode(ctx.currentMode!, ctx.trains),
       ctx.settings.questionCount,

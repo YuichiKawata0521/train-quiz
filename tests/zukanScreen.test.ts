@@ -144,20 +144,60 @@ describe('renderZukan: 拡大カード', () => {
     const ctx = fixtureCtx();
     renderZukan(ctx);
     ctx.root.querySelector<HTMLButtonElement>('.zukan-unlocked')!.click();
-    const detail = ctx.root.querySelector<HTMLElement>('.zukan-detail')!;
-    expect(detail.hidden).toBe(false);
-    expect(detail.querySelector('.zukan-detail-name')!.textContent).toBe('でんしゃs1');
-    expect(detail.querySelector('.zukan-detail-formal')!.textContent).toBe('電車s1');
-    expect(detail.querySelector('.zukan-detail-desc')!.textContent).toBe('s1の せつめいだよ。');
-    detail.querySelector<HTMLButtonElement>('[data-action=close]')!.click();
-    expect(detail.hidden).toBe(true);
+    const card = ctx.root.querySelector<HTMLElement>('.train-card')!;
+    expect(card).not.toBeNull();
+    expect(card.querySelector('.train-card-name')!.textContent).toBe('でんしゃs1');
+    expect(card.querySelector('.train-card-formal')!.textContent).toBe('電車s1');
+    expect(card.querySelector('.train-card-desc')!.textContent).toBe('s1の せつめいだよ。');
+    card.querySelector<HTMLButtonElement>('[data-action=close]')!.click();
+    expect(ctx.root.querySelector('.train-card')).toBeNull();
   });
 
   it('未解禁スロットをタップしても何も開かない', () => {
     const ctx = fixtureCtx();
     renderZukan(ctx);
     (ctx.root.querySelector<HTMLElement>('.zukan-locked')!).click();
-    expect(ctx.root.querySelector<HTMLElement>('.zukan-detail')!.hidden).toBe(true);
+    expect(ctx.root.querySelector('.train-card')).toBeNull();
+  });
+});
+
+describe('renderZukan: 新入りのお披露目', () => {
+  it('未お披露目の解禁車両はキラキラ表示になり、その見開きを自動で開く', () => {
+    for (let i = 0; i < UNLOCK_COUNT; i++) recordFirstTryCorrect('l1'); // 見開き3(local)
+    const ctx = fixtureCtx();
+    renderZukan(ctx);
+    // local の見開きが自動で開き、l1 がキラキラ
+    const freshSlot = ctx.root.querySelector<HTMLElement>('.zukan-fresh')!;
+    expect(freshSlot).not.toBeNull();
+    expect(freshSlot.dataset.train).toBe('l1');
+    expect(
+      ctx.root.querySelector<HTMLElement>('[data-cat=local]')!.classList.contains('active'),
+    ).toBe(true);
+  });
+
+  it('お披露目済みになると次回はキラキラも自動ジャンプもしない', () => {
+    for (let i = 0; i < UNLOCK_COUNT; i++) recordFirstTryCorrect('l1');
+    const ctx = fixtureCtx();
+    renderZukan(ctx); // 1回目の表示でお披露目済みになる
+    document.body.innerHTML = '';
+    const ctx2 = fixtureCtx();
+    renderZukan(ctx2);
+    expect(ctx2.root.querySelector('.zukan-fresh')).toBeNull();
+    // 先頭(しんかんせん)の見開きに戻っている
+    expect(
+      ctx2.root.querySelector<HTMLElement>('[data-cat=shinkansen]')!.classList.contains('active'),
+    ).toBe(true);
+    expect(ctx2.root.querySelector<HTMLButtonElement>('.zukan-prev')!.disabled).toBe(true);
+  });
+
+  it('同じ訪問中はページを行き来してもキラキラが消えない', () => {
+    for (let i = 0; i < UNLOCK_COUNT; i++) recordFirstTryCorrect('s1'); // 見開き0
+    const ctx = fixtureCtx();
+    renderZukan(ctx);
+    expect(ctx.root.querySelector('.zukan-fresh')).not.toBeNull();
+    ctx.root.querySelector<HTMLButtonElement>('.zukan-next')!.click();
+    ctx.root.querySelector<HTMLButtonElement>('.zukan-prev')!.click();
+    expect(ctx.root.querySelector('.zukan-fresh')).not.toBeNull();
   });
 });
 

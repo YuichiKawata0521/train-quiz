@@ -7,6 +7,9 @@ import {
   unlockedCount,
   UNLOCK_COUNT,
   STORAGE_KEY,
+  loadSeen,
+  markSeen,
+  SEEN_KEY,
 } from '../src/logic/zukan';
 import type { Train } from '../src/logic/types';
 
@@ -69,5 +72,31 @@ describe('図鑑の進捗', () => {
     for (let i = 0; i < UNLOCK_COUNT; i++) recordFirstTryCorrect('a');
     for (let i = 0; i < UNLOCK_COUNT - 1; i++) recordFirstTryCorrect('b');
     expect(unlockedCount(trains)).toBe(1);
+  });
+});
+
+describe('解禁の瞬間と おひろめ記録', () => {
+  it('recordFirstTryCorrect は新しいカウントを返す(UNLOCK_COUNTちょうどで解禁の瞬間)', () => {
+    for (let i = 1; i < UNLOCK_COUNT; i++) {
+      expect(recordFirstTryCorrect('e5-hayabusa')).toBe(i);
+    }
+    expect(recordFirstTryCorrect('e5-hayabusa')).toBe(UNLOCK_COUNT);
+    expect(recordFirstTryCorrect('e5-hayabusa')).toBe(UNLOCK_COUNT + 1);
+  });
+
+  it('markSeen/loadSeen: 記録した id が積み上がる', () => {
+    expect(loadSeen().size).toBe(0);
+    markSeen(['a', 'b']);
+    markSeen(['b', 'c']);
+    expect([...loadSeen()].sort()).toEqual(['a', 'b', 'c']);
+  });
+
+  it('壊れた seen データは空として扱う', () => {
+    localStorage.setItem(SEEN_KEY, '{broken');
+    expect(loadSeen().size).toBe(0);
+    localStorage.setItem(SEEN_KEY, JSON.stringify({ not: 'array' }));
+    expect(loadSeen().size).toBe(0);
+    localStorage.setItem(SEEN_KEY, JSON.stringify(['ok', 42, null]));
+    expect([...loadSeen()]).toEqual(['ok']);
   });
 });

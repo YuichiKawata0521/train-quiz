@@ -1,4 +1,4 @@
-import { describe, it, expect, vi } from 'vitest';
+import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
 import { renderResult } from '../src/screens/result';
 import { createSession, answer } from '../src/logic/quiz';
 import type { AppContext } from '../src/app';
@@ -40,6 +40,7 @@ function fixtureCtx(): AppContext {
     audio: { play: vi.fn() },
     currentMode: mode,
     session,
+    newUnlocks: [],
     navigate: vi.fn(),
   } as unknown as AppContext;
 }
@@ -80,5 +81,54 @@ describe('renderResult', () => {
     expect(ctx.root.querySelector<HTMLImageElement>('.door img')!.src).toContain(
       'images/bg/doors-all.webp',
     );
+  });
+});
+
+describe('renderResult: 解禁のお祝い', () => {
+  beforeEach(() => vi.useFakeTimers());
+  afterEach(() => vi.useRealTimers());
+
+  it('新しい解禁があると、ドアが開いたあとお祝いカードが出る', () => {
+    const ctx = fixtureCtx();
+    ctx.newUnlocks = ['a'];
+    renderResult(ctx);
+    expect(ctx.root.querySelector('.train-card')).toBeNull();
+    vi.advanceTimersByTime(3400);
+    const card = ctx.root.querySelector<HTMLElement>('.train-card')!;
+    expect(card).not.toBeNull();
+    expect(card.querySelector('.train-card-title')!.textContent).toBe(
+      'あたらしい でんしゃを げっと!',
+    );
+    expect(card.querySelector('.train-card-name')!.textContent).toBe('やまのてせん');
+    card.querySelector<HTMLButtonElement>('[data-action=close]')!.click();
+    expect(ctx.root.querySelector('.train-card')).toBeNull();
+  });
+
+  it('複数解禁なら「つぎへ」で順番にお祝いする', () => {
+    const ctx = fixtureCtx();
+    ctx.newUnlocks = ['a', 'b'];
+    renderResult(ctx);
+    vi.advanceTimersByTime(3400);
+    const first = ctx.root.querySelector<HTMLElement>('.train-card')!;
+    expect(first.querySelector('[data-action=close]')!.textContent).toBe('つぎへ');
+    first.querySelector<HTMLButtonElement>('[data-action=close]')!.click();
+    const second = ctx.root.querySelector<HTMLElement>('.train-card')!;
+    expect(second.querySelector('.train-card-name')!.textContent).toBe('ちゅうおうせん');
+    expect(second.querySelector('[data-action=close]')!.textContent).toBe('とじる');
+  });
+
+  it('解禁がなければお祝いカードは出ない', () => {
+    const ctx = fixtureCtx();
+    renderResult(ctx);
+    vi.advanceTimersByTime(5000);
+    expect(ctx.root.querySelector('.train-card')).toBeNull();
+  });
+
+  it('「もういちど」で newUnlocks がリセットされる', () => {
+    const ctx = fixtureCtx();
+    ctx.newUnlocks = ['a'];
+    renderResult(ctx);
+    ctx.root.querySelector<HTMLButtonElement>('[data-action=retry]')!.click();
+    expect(ctx.newUnlocks).toEqual([]);
   });
 });

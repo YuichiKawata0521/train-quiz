@@ -24,6 +24,7 @@ export function renderModeSelect(ctx: AppContext): void {
       ctx.audio.play('tap');
       const mode = ctx.modes.find((m) => m.id === btn.dataset.mode)!;
       ctx.currentMode = mode;
+      ctx.newUnlocks = [];
       ctx.session = createSession(
         poolForMode(mode, ctx.trains),
         ctx.settings.questionCount,

@@ -30,10 +30,13 @@ function save(counts: Counts): void {
   }
 }
 
-export function recordFirstTryCorrect(trainId: string): void {
+/** 1発正解を記録し、その電車の新しいカウントを返す(UNLOCK_COUNT ちょうどなら解禁の瞬間) */
+export function recordFirstTryCorrect(trainId: string): number {
   const counts = loadZukanCounts();
-  counts[trainId] = (counts[trainId] ?? 0) + 1;
+  const next = (counts[trainId] ?? 0) + 1;
+  counts[trainId] = next;
   save(counts);
+  return next;
 }
 
 export function countFor(trainId: string): number {
@@ -47,4 +50,30 @@ export function isUnlocked(trainId: string): boolean {
 export function unlockedCount(trains: Train[]): number {
   const counts = loadZukanCounts();
   return trains.filter((t) => (counts[t.id] ?? 0) >= UNLOCK_COUNT).length;
+}
+
+/** 図鑑で一度でも表示した(=お披露目済みの)解禁車両の記録 */
+export const SEEN_KEY = 'train-quiz-zukan-seen';
+
+export function loadSeen(): Set<string> {
+  try {
+    const raw = localStorage.getItem(SEEN_KEY);
+    if (!raw) return new Set();
+    const data: unknown = JSON.parse(raw);
+    if (!Array.isArray(data)) return new Set();
+    return new Set(data.filter((v): v is string => typeof v === 'string'));
+  } catch {
+    return new Set();
+  }
+}
+
+export function markSeen(trainIds: string[]): void {
+  if (trainIds.length === 0) return;
+  const seen = loadSeen();
+  for (const id of trainIds) seen.add(id);
+  try {
+    localStorage.setItem(SEEN_KEY, JSON.stringify([...seen]));
+  } catch {
+    // 保存失敗は無視(次回もキラキラが出るだけ)
+  }
 }

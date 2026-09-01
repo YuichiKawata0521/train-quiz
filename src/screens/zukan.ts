@@ -2,7 +2,8 @@ import type { AppContext } from '../app';
 import type { Category } from '../logic/types';
 import { asset } from '../ui/asset';
 import { buildAlbum, CATEGORY_ORDER, type Slot } from '../logic/zukanAlbum';
-import { loadZukanCounts, UNLOCK_COUNT, unlockedCount } from '../logic/zukan';
+import { loadZukanCounts, UNLOCK_COUNT, unlockedCount, loadSeen, markSeen } from '../logic/zukan';
+import { openTrainCard } from '../ui/trainCard';
 
 const TAB_LABELS: Record<Category, string> = {
   shinkansen: 'しんかんせん',
@@ -13,7 +14,21 @@ const TAB_LABELS: Record<Category, string> = {
 export function renderZukan(ctx: AppContext): void {
   const album = buildAlbum(ctx.trains);
   const counts = loadZukanCounts();
+  // 解禁済みだがまだ図鑑でお披露目していない電車(この訪問中はキラキラし続ける)
+  const seen = loadSeen();
+  const fresh = new Set(
+    ctx.trains
+      .filter((t) => (counts[t.id] ?? 0) >= UNLOCK_COUNT && !seen.has(t.id))
+      .map((t) => t.id),
+  );
+  // 新入りがいれば、最初の新入りが載っている見開きを自動で開く
   let current = 0;
+  if (fresh.size > 0) {
+    const found = album.spreads.findIndex((s) =>
+      [...s.left, ...s.right].some((t) => t !== null && fresh.has(t.id)),
+    );
+    if (found >= 0) current = found;
+  }
 
   ctx.root.innerHTML = `
     <section class="screen screen-zukan">
@@ -31,13 +46,6 @@ export function renderZukan(ctx: AppContext): void {
       <button class="zukan-nav zukan-next" aria-label="つぎのページ">▶</button>
       <div class="zukan-counter">あつめた ${unlockedCount(ctx.trains)}/${ctx.trains.length}</div>
       <button class="btn btn-back" data-action="back">もどる</button>
-      <div class="overlay zukan-detail" hidden>
-        <figure class="photo-card"><img class="zukan-detail-photo" src="" alt=""></figure>
-        <div class="zukan-detail-name"></div>
-        <div class="zukan-detail-formal"></div>
-        <p class="zukan-detail-desc"></p>
-        <button class="btn" data-action="close">とじる</button>
-      </div>
     </section>`;
 
   const albumEl = ctx.root.querySelector<HTMLElement>('.zukan-album')!;
@@ -46,14 +54,13 @@ export function renderZukan(ctx: AppContext): void {
   const prevBtn = ctx.root.querySelector<HTMLButtonElement>('.zukan-prev')!;
   const nextBtn = ctx.root.querySelector<HTMLButtonElement>('.zukan-next')!;
   const tabs = [...ctx.root.querySelectorAll<HTMLButtonElement>('.zukan-tab')];
-  const detail = ctx.root.querySelector<HTMLElement>('.zukan-detail')!;
 
   function slotHtml(slot: Slot): string {
     if (!slot) return '<div class="zukan-slot zukan-empty"></div>';
     const count = counts[slot.id] ?? 0;
     if (count >= UNLOCK_COUNT) {
       return `
-        <button class="zukan-slot zukan-unlocked" data-train="${slot.id}">
+        <button class="zukan-slot zukan-unlocked${fresh.has(slot.id) ? ' zukan-fresh' : ''}" data-train="${slot.id}">
           <span class="zukan-photo"><img src="${asset(slot.image)}" alt=""></span>
           <span class="zukan-name">${slot.name.hiragana}</span>
         </button>`;
@@ -87,19 +94,27 @@ export function renderZukan(ctx: AppContext): void {
     for (const el of ctx.root.querySelectorAll<HTMLButtonElement>('.zukan-unlocked')) {
       el.addEventListener('click', () => openDetail(el.dataset.train!));
     }
+    // この見開きに載った新入りはお披露目済みにする(キラキラは次の訪問から消える)
+    markSeen(
+      [...spread.left, ...spread.right]
+        .filter((t): t is NonNullable<Slot> => t !== null)
+        .map((t) => t.id)
+        .filter((id) => fresh.has(id)),
+    );
   }
 
   function openDetail(id: string): void {
     const t = ctx.trains.find((tr) => tr.id === id)!;
-    detail.querySelector<HTMLImageElement>('.zukan-detail-photo')!.src = asset(t.image);
-    detail.querySelector<HTMLElement>('.zukan-detail-name')!.textContent = t.name.hiragana;
-    detail.querySelector<HTMLElement>('.zukan-detail-formal')!.textContent = t.name.normal;
-    detail.querySelector<HTMLElement>('.zukan-detail-desc')!.textContent = t.description;
     ctx.audio.play('tap');
-    detail.hidden = false;
+    openTrainCard(ctx.root, {
+      train: t,
+      closeLabel: 'とじる',
+      speech: ctx.settings.sound,
+      onTap: () => ctx.audio.play('tap'),
+      onClose: () => {},
+    });
   }
 
-  // ページ送り・タブ・とじる(Task 6 でテストする対話も配線はここで済ませる)
   function turnTo(index: number): void {
     ctx.audio.play('tap');
     current = index;
@@ -117,10 +132,6 @@ export function renderZukan(ctx: AppContext): void {
   for (const tab of tabs) {
     tab.addEventListener('click', () => turnTo(album.categoryStart[tab.dataset.cat as Category]));
   }
-  detail.querySelector<HTMLButtonElement>('[data-action=close]')!.addEventListener('click', () => {
-    ctx.audio.play('tap');
-    detail.hidden = true;
-  });
   ctx.root.querySelector<HTMLButtonElement>('[data-action=back]')!.addEventListener('click', () => {
     ctx.audio.play('tap');
     ctx.navigate('gameSelect');

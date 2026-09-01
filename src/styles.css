@@ -473,6 +473,7 @@ body {
   padding: 5% 6%;
 }
 .zukan-slot {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -482,6 +483,45 @@ body {
   border: none;
   padding: 0;
   font-family: inherit;
+}
+/* 新しく図鑑に載った電車のお披露目(次の訪問からは通常表示) */
+.zukan-fresh {
+  animation: zukan-pop 0.6s ease-out;
+}
+.zukan-fresh .zukan-photo {
+  box-shadow:
+    0 0 0 3px #ffd43b,
+    2px 3px 12px rgba(0, 0, 0, 0.3);
+}
+.zukan-fresh::after {
+  content: '✨';
+  position: absolute;
+  top: -8px;
+  right: -4px;
+  font-size: 30px;
+  animation: zukan-sparkle 1.2s ease-in-out infinite;
+  pointer-events: none;
+}
+@keyframes zukan-pop {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+@keyframes zukan-sparkle {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 0.5;
+  }
 }
 .zukan-unlocked {
   cursor: pointer;
@@ -590,21 +630,40 @@ body {
     transform: none;
   }
 }
-.zukan-detail .photo-card img {
-  max-height: 40vh;
+/* ---- 電車カード(図鑑の詳細・学習・お祝いで共用) ---- */
+.train-card {
+  gap: 12px;
 }
-.zukan-detail-name {
+.train-card .photo-card img {
+  max-height: 38vh;
+}
+.train-card-title {
+  font-size: 40px;
+  font-weight: bold;
+  color: var(--red);
+  text-shadow: 0 2px 0 #fff;
+}
+.train-card-name {
   font-size: 44px;
   color: var(--blue-dark);
 }
-.zukan-detail-formal {
+.train-card-formal {
   font-size: 20px;
   color: #777;
 }
-.zukan-detail-desc {
+.train-card-desc {
   font-size: 26px;
   line-height: 1.7;
   max-width: 78vw;
   color: #333;
   text-align: center;
+}
+.train-card-actions {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+.train-card-speak {
+  min-width: 96px;
+  font-size: 36px;
 }

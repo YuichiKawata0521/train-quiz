@@ -3,7 +3,8 @@ import { answer, isFinished } from '../logic/quiz';
 import { displayName } from '../logic/settings';
 import { asset } from '../ui/asset';
 import { stationBg } from '../ui/backgrounds';
-import { recordFirstTryCorrect } from '../logic/zukan';
+import { recordFirstTryCorrect, UNLOCK_COUNT } from '../logic/zukan';
+import { openTrainCard } from '../ui/trainCard';
 
 const FEEDBACK_MS = 1500;
 
@@ -48,14 +49,32 @@ export function renderQuestion(ctx: AppContext): void {
       for (const b of buttons) b.disabled = true;
       conductor.hidden = false;
       if (result === 'correct') {
-        if (firstTry) recordFirstTryCorrect(q.train.id);
+        if (firstTry && recordFirstTryCorrect(q.train.id) === UNLOCK_COUNT) {
+          ctx.newUnlocks.push(q.train.id);
+        }
         ctx.audio.play('horn');
         mark.textContent = '◯';
         mark.className = 'mark mark-correct';
         verdict.textContent = 'せいかい';
         conductor.src = asset('images/conductor/happy.png');
         overlay.hidden = false;
-        setTimeout(() => ctx.navigate(isFinished(session) ? 'arrival' : 'interlude'), FEEDBACK_MS);
+        const next = isFinished(session) ? 'arrival' : 'interlude';
+        setTimeout(() => {
+          if (firstTry) {
+            ctx.navigate(next);
+            return;
+          }
+          // 間違えた問題は、進む前に写真となまえをゆっくり確認できるようにする
+          overlay.hidden = true;
+          openTrainCard(ctx.root, {
+            train: q.train,
+            title: 'おぼえよう!',
+            closeLabel: 'つぎへ',
+            speech: ctx.settings.sound,
+            onTap: () => ctx.audio.play('tap'),
+            onClose: () => ctx.navigate(next),
+          });
+        }, FEEDBACK_MS);
       } else {
         ctx.audio.play('wrong');
         mark.textContent = '✕';
