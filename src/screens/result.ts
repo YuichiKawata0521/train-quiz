@@ -7,12 +7,14 @@ export function renderResult(ctx: AppContext): void {
   const total = session.questions.length;
   const perfect = session.score === total;
   ctx.audio.play('fanfare');
+  // ドアは遊んだモードの電車(モードIDと画像名を揃えてある)
+  const doorSrc = asset(`images/bg/doors-${ctx.currentMode?.id ?? 'all'}.webp`);
   ctx.root.innerHTML = `
     <section class="screen screen-result platform-bg"
              style="background-image:url(${asset('images/bg/result.webp')})">
       <div class="doors">
-        <div class="door door-left"><img src="${asset('images/bg/doors.webp')}" alt=""></div>
-        <div class="door door-right"><img src="${asset('images/bg/doors.webp')}" alt=""></div>
+        <div class="door door-left"><img src="${doorSrc}" alt=""></div>
+        <div class="door door-right"><img src="${doorSrc}" alt=""></div>
       </div>
       <div class="result-body">
         <img class="conductor conductor-lg" src="${asset('images/conductor/celebrate.png')}" alt="" onerror="this.hidden=true">

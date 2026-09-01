@@ -66,4 +66,19 @@ describe('renderResult', () => {
     ctx.root.querySelector<HTMLButtonElement>('[data-action=back]')!.click();
     expect(ctx.navigate).toHaveBeenCalledWith('modeSelect');
   });
+  it('ドアは遊んだモードの電車になる', () => {
+    const ctx = fixtureCtx(); // mode id = 'local'
+    renderResult(ctx);
+    const doors = [...ctx.root.querySelectorAll<HTMLImageElement>('.door img')];
+    expect(doors).toHaveLength(2);
+    for (const img of doors) expect(img.src).toContain('images/bg/doors-local.webp');
+  });
+  it('モード不明時はぜんぶ用のドアにフォールバックする', () => {
+    const ctx = fixtureCtx();
+    ctx.currentMode = null;
+    renderResult(ctx);
+    expect(ctx.root.querySelector<HTMLImageElement>('.door img')!.src).toContain(
+      'images/bg/doors-all.webp',
+    );
+  });
 });
