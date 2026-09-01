@@ -1,5 +1,5 @@
 import type { AppContext } from '../app';
-import type { Category, Train } from '../logic/types';
+import type { Category } from '../logic/types';
 import { asset } from '../ui/asset';
 import { buildAlbum, CATEGORY_ORDER, type Slot } from '../logic/zukanAlbum';
 import { loadZukanCounts, UNLOCK_COUNT, unlockedCount } from '../logic/zukan';

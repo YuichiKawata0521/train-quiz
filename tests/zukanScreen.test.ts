@@ -105,7 +105,7 @@ describe('renderZukan: ページ送りとタブ', () => {
     expect(prev.disabled).toBe(true);
     next.click();
     // 見開き2つ目 = とっきゅう e1..e8
-    expect(ctx.root.querySelector<HTMLElement>('.zukan-locked .zukan-photo img')!.src).toContain(
+    expect(ctx.root.querySelector<HTMLImageElement>('.zukan-locked .zukan-photo img')!.src).toContain(
       'e1.webp',
     );
     expect(prev.disabled).toBe(false);
@@ -126,7 +126,7 @@ describe('renderZukan: ページ送りとタブ', () => {
     const ctx = fixtureCtx();
     renderZukan(ctx);
     ctx.root.querySelector<HTMLButtonElement>('[data-cat=local]')!.click();
-    expect(ctx.root.querySelector<HTMLElement>('.zukan-locked .zukan-photo img')!.src).toContain(
+    expect(ctx.root.querySelector<HTMLImageElement>('.zukan-locked .zukan-photo img')!.src).toContain(
       'l1.webp',
     );
     expect(
