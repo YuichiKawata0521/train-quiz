@@ -442,7 +442,7 @@ body {
   width: min(94vw, 1100px);
   height: min(72vh, 680px);
   display: flex;
-  background: #f6efe0; /* album.webp 受領までのフォールバック */
+  background: #f6efe0; /* album.webp が読めない場合のフォールバック */
   background-size: cover;
   background-position: center;
   border-radius: 14px;
