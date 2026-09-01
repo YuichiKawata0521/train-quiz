@@ -96,6 +96,71 @@ describe('renderZukan: 見開きの表示', () => {
   });
 });
 
+describe('renderZukan: ページ送りとタブ', () => {
+  it('先頭では◀が無効、▶で次の見開きへ進む', () => {
+    const ctx = fixtureCtx();
+    renderZukan(ctx);
+    const prev = ctx.root.querySelector<HTMLButtonElement>('.zukan-prev')!;
+    const next = ctx.root.querySelector<HTMLButtonElement>('.zukan-next')!;
+    expect(prev.disabled).toBe(true);
+    next.click();
+    // 見開き2つ目 = とっきゅう e1..e8
+    expect(ctx.root.querySelector<HTMLElement>('.zukan-locked .zukan-photo img')!.src).toContain(
+      'e1.webp',
+    );
+    expect(prev.disabled).toBe(false);
+    expect(ctx.audio.play).toHaveBeenCalledWith('tap');
+  });
+
+  it('最終見開きでは▶が無効', () => {
+    const ctx = fixtureCtx();
+    renderZukan(ctx);
+    const next = ctx.root.querySelector<HTMLButtonElement>('.zukan-next')!;
+    next.click();
+    next.click();
+    next.click();
+    expect(next.disabled).toBe(true);
+  });
+
+  it('タブでカテゴリ先頭の見開きへ飛び、タブが強調される', () => {
+    const ctx = fixtureCtx();
+    renderZukan(ctx);
+    ctx.root.querySelector<HTMLButtonElement>('[data-cat=local]')!.click();
+    expect(ctx.root.querySelector<HTMLElement>('.zukan-locked .zukan-photo img')!.src).toContain(
+      'l1.webp',
+    );
+    expect(
+      ctx.root.querySelector<HTMLElement>('[data-cat=local]')!.classList.contains('active'),
+    ).toBe(true);
+    expect(
+      ctx.root.querySelector<HTMLElement>('[data-cat=shinkansen]')!.classList.contains('active'),
+    ).toBe(false);
+  });
+});
+
+describe('renderZukan: 拡大カード', () => {
+  it('解禁済み写真タップで せつめい が開き、とじるで閉じる', () => {
+    for (let i = 0; i < UNLOCK_COUNT; i++) recordFirstTryCorrect('s1');
+    const ctx = fixtureCtx();
+    renderZukan(ctx);
+    ctx.root.querySelector<HTMLButtonElement>('.zukan-unlocked')!.click();
+    const detail = ctx.root.querySelector<HTMLElement>('.zukan-detail')!;
+    expect(detail.hidden).toBe(false);
+    expect(detail.querySelector('.zukan-detail-name')!.textContent).toBe('でんしゃs1');
+    expect(detail.querySelector('.zukan-detail-formal')!.textContent).toBe('電車s1');
+    expect(detail.querySelector('.zukan-detail-desc')!.textContent).toBe('s1の せつめいだよ。');
+    detail.querySelector<HTMLButtonElement>('[data-action=close]')!.click();
+    expect(detail.hidden).toBe(true);
+  });
+
+  it('未解禁スロットをタップしても何も開かない', () => {
+    const ctx = fixtureCtx();
+    renderZukan(ctx);
+    (ctx.root.querySelector<HTMLElement>('.zukan-locked')!).click();
+    expect(ctx.root.querySelector<HTMLElement>('.zukan-detail')!.hidden).toBe(true);
+  });
+});
+
 describe('図鑑への入口と登録', () => {
   it('ゲーム選択画面の「でんしゃずかん」カードで zukan へ遷移する', () => {
     document.body.innerHTML = '<div id="app"></div>';
