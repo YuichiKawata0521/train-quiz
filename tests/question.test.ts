@@ -45,6 +45,7 @@ function fixtureCtx(questionCount: number): AppContext {
     currentMode: mode,
     session: createSession(trains, questionCount, 'hiragana', () => 0.42),
     newUnlocks: [],
+    player: 'hiroto',
     navigate: vi.fn(),
   } as unknown as AppContext;
   document.body.appendChild(ctx.root);

@@ -49,8 +49,12 @@ export function renderQuestion(ctx: AppContext): void {
       for (const b of buttons) b.disabled = true;
       conductor.hidden = false;
       if (result === 'correct') {
-        // れん(文字が読めない下の子)の正解は図鑑カウントに入れない
-        if (firstTry && ctx.player !== 'ren' && recordFirstTryCorrect(q.train.id) === UNLOCK_COUNT) {
+        // 図鑑カウントは ひろと の正解のみ(れん など他のプレイヤーは増やさない)
+        if (
+          firstTry &&
+          ctx.player === 'hiroto' &&
+          recordFirstTryCorrect(q.train.id) === UNLOCK_COUNT
+        ) {
           ctx.newUnlocks.push(q.train.id);
         }
         ctx.audio.play('horn');
